@@ -44,6 +44,6 @@ telescope:update-prompt
 dh:chart
 dh:api
 dh:theme
-dh:personalised
+dh:personal
 dh:dunnhumby
 dh:notifications

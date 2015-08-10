@@ -35,7 +35,7 @@ dh:api@0.1.0
 dh:chart@0.1.0
 dh:dunnhumby@0.1.0
 dh:notifications@0.1.0
-dh:personalised@0.1.0
+dh:personal@0.1.0
 dh:theme@0.1.0
 djedi:sanitize-html@1.6.1
 ejson@1.0.6

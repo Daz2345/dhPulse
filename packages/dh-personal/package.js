@@ -1,7 +1,7 @@
 Package.describe({
   summary: 'dunnhumby personalisation package',
   version: '0.1.0',
-  name: 'dh:personalised'
+  name: 'dh:personal'
 });
 
 Package.onUse(function (api) {

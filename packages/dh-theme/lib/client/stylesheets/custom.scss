@@ -29,7 +29,11 @@
     z-index: 10000;
 }
 
-a, a:link, a:visited, a:active {
-    color: #e17000;
+a:visited {
+    color: #444;
     font-weight: bold;
+}
+
+a.retry{
+  color:#4393D7;
 }

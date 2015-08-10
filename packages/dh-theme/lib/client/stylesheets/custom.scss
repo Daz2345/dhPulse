@@ -1,0 +1,35 @@
+@media (max-width: 599px) {
+
+  .side-nav .header {
+    width: 100%;
+    background-color: #353433;
+    color:#fff;
+    position: fixed;
+    height: 50px;
+    border-bottom: 1px solid #bbb;
+  }
+  
+  h1.logo.header-module.mobile-only .mobile-title {
+    color:#fff;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .grid-small,
+  .at-form {
+    max-width: 100%;
+  }
+}
+
+.post-heading .post-title:visited {
+    color: #444;
+}
+
+.meteor-status-shown {
+    z-index: 10000;
+}
+
+a, a:link, a:visited, a:active {
+    color: #e17000;
+    font-weight: bold;
+}

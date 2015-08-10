@@ -17,10 +17,10 @@ Telescope.modules.add("postComponents", [
     template: 'post_content',
     order: 20
   },
-  {
-    template: 'post_avatars',
-    order: 30
-  },
+  // {
+  //   template: 'post_avatars',
+  //   order: 30
+  // },
   {
     template: 'post_discuss',
     order: 40

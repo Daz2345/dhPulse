@@ -39,6 +39,11 @@ telescope:theme-base
 telescope:theme-hubble
 telescope:update-prompt
 
-############ Your Custom Packages ############
+############ dh Packages ############
 
-# my-custom-package
+dh:chart
+dh:api
+dh:theme
+dh:personalised
+dh:dunnhumby
+dh:notifications

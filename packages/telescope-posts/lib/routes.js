@@ -15,11 +15,17 @@ Posts.controllers.list = RouteController.extend({
 
   data: function () {
 
+    var userLoggedIn = (Meteor.user() !== null) ? true : this.userLoggedIn;
+
     var terms = {
       view: this.view,
       limit: this.params.limit || Settings.get('postsPerPage', 10),
       enableCache: true
     };
+
+    if (!!userLoggedIn && Meteor.user().categories) {
+      terms.category = Meteor.user().categories;
+    }
 
     // console.log('----------------- router running');
 

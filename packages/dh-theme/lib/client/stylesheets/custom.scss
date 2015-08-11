@@ -42,3 +42,7 @@ a.retry{
     display: inline-block !important;
     width: 150px;
 }
+
+.with-tagline a small {
+    text-transform: lowercase;
+}

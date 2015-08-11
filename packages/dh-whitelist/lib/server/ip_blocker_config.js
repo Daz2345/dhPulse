@@ -2,7 +2,7 @@
 
 IP_BLOCKER={
     redis_enabled:true,//By default IP blocker tries to use REDIS. If you don't wish to use REDIS you can switch to an in memory hashmap by setting this to false.
-    redis_host:"dhpulsev2-6587.redis.dbs.appsdeck.eu",//Your redis hostname. To be changed when using production environments like HEROKU
+    redis_host:"SCALINGO_REDIS_URL",//Your redis hostname. To be changed when using production environments like HEROKU
     redis_port:"30627",//Your redis port. To be changed when using production environments like HEROKU
     default_rule:"blacklist",//The default rule is to allow all except blacklisted. Change this to whitelist if you wish to allow some and block all.
     secret_key:"KkPoI3zD9Ho53kpRqlhtWq66G76p2x5Uqh3nbzXZkZ8S6SeB8T4cLbQnrZC43sN3",//The secret key. Change this to an A-Za-z0-9 string

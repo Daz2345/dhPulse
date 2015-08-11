@@ -1,5 +1,5 @@
 <template name="post_page">
-  {{#with post}}
+  <!--{{#with post}}-->
     {{#if isPending}}
       <div class="grid">
         <div class="error pending-message module">
@@ -15,12 +15,12 @@
       {{> post_body}}
     {{/if}}
     {{#if chart}}
-      {{ > singlePostChart}}
+      {{> singlePostChart}}
     {{/if}}    
     {{#if isdunnhumby}}
       {{> comment_submit}}
       {{> comment_list}}
     {{/if}}
   </div>
-  {{/with}}
+  <!--{{/with}}-->
 </template>

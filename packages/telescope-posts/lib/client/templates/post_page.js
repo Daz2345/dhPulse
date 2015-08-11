@@ -4,6 +4,9 @@ Template.post_page.helpers({
   },
   isdunnhumby: function () {
     return Meteor.user().isdunnhumby;
+  },
+  containsChart: function () {
+    return this.post.chart;
   }
 });
 

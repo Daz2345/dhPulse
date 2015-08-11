@@ -145,7 +145,7 @@ Posts.controllers.page = RouteController.extend({
   },
 
   data: function() {
-    return {post: this.post()};
+    return this.post();
   },
 
   onAfterAction: function () {

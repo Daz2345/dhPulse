@@ -19,6 +19,7 @@ Users.addField({
     optional: true,
     editableBy: ["dunnhumby"],
     autoform: {
+      type: "select-checkbox-inline",      
       group: 'dunnhumby',      
       noselect: true,
       options: function () {

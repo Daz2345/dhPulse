@@ -8,6 +8,7 @@ Users.addField({
     editableBy: ["dunnhumby"],
     autoform: {
       group: 'dunnhumby',      
+      type: "select-checkbox-inline",      
       noselect: true,
       options: function () {
         var categories = Categories.find().map(function (category) {

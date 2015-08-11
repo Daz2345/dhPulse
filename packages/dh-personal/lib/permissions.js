@@ -55,9 +55,11 @@ Users.can.post = function (user, returnError) {
     return returnError ? "no_account" : false;
   } else if (Users.is.admin(user)) {
     return true;
+  } else if (Users.is.dunnhumby(user)) {
+    return true;  
   } else if (Settings.get('requirePostInvite')) {
     if (user.telescope.isInvited) {
-      return true;
+      return false;
     } else {
       return false;
     }

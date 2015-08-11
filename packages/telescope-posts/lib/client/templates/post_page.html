@@ -7,15 +7,20 @@
         </div>
       </div>
     {{/if}}
-    <div class="single-post grid">
-      <div class="posts posts-list">
-        {{> post_item}}
-      </div>
-      {{#if body}}
-        {{> post_body}}
-      {{/if}}
+  <div class="single-post grid animated fadeIn">
+    <div class="posts posts-list">
+      {{> post_item}}
+    </div>
+    {{#if body}}
+      {{> post_body}}
+    {{/if}}
+    {{#if chart}}
+      {{ > singlePostChart}}
+    {{/if}}    
+    {{#if isdunnhumby}}
       {{> comment_submit}}
       {{> comment_list}}
-    </div>
+    {{/if}}
+  </div>
   {{/with}}
 </template>

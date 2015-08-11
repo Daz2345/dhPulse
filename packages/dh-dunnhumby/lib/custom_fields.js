@@ -1,7 +1,7 @@
 // Custom User Field
 
 Users.addField({
-  fieldName: 'is dunnhumby',
+  fieldName: 'isdunnhumby',
   fieldSchema: {
     type: Boolean,
     optional: true,

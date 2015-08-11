@@ -46,6 +46,7 @@ Package.onUse(function (api) {
     'lib/client/templates/main.js',
     'lib/client/templates/users_dashboard_dh.html',
     'lib/client/templates/users_dashboard_dh.js',    
+    'lib/client/templates/post_page_dh.html',
     'lib/client/templates/users_list_actions_dh.html',
     'lib/client/templates/users_list_actions_dh.js',    
     'lib/client/custom_templates.js'  

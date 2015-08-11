@@ -28,6 +28,7 @@ chuangbo:marked@0.3.5
 cmather:handlebars-server@0.2.0
 coffeescript@1.0.6
 cosmos:browserify@0.4.0
+cybit:ip-blocker@1.0.4
 dburles:collection-helpers@1.0.3
 ddp@1.1.0
 deps@1.0.7
@@ -37,6 +38,7 @@ dh:dunnhumby@0.1.0
 dh:notifications@0.1.0
 dh:personal@0.1.0
 dh:theme@0.1.0
+dh:whitelist@0.1.0
 djedi:sanitize-html@1.6.1
 ejson@1.0.6
 email@1.0.6
@@ -94,6 +96,7 @@ mobile-status-bar@1.0.3
 momentjs:moment@2.10.6
 mongo@1.1.0
 mongo-livedata@1.0.8
+mrt:redis@0.1.3
 natestrauser:animate-css@0.1.1
 npm-bcrypt@0.7.8_2
 oauth@1.1.4
@@ -155,7 +158,6 @@ telescope:rss@0.22.2
 telescope:scoring@0.22.2
 telescope:search@0.22.2
 telescope:settings@0.22.2
-telescope:share@0.22.2
 telescope:singleday@0.22.2
 telescope:subscribe-to-posts@0.22.2
 telescope:tagline-banner@0.22.2

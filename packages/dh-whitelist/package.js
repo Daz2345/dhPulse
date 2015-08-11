@@ -15,7 +15,7 @@ Package.onUse(function (api) {
   // server
 
   api.addFiles([
-    'lib/server/whitelist-prod.js'
+    'lib/server/whitelist.js'
   ], ['server']);
 
 

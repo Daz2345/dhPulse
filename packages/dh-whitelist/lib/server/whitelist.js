@@ -3,7 +3,7 @@
 
 Meteor.startup(function () {
     IP_BLOCKER.redis_enabled = true
-    IP_BLOCKER.redis_host = "$SCALINGO_REDIS_URL"//Your redis hostname. To be changed when using production environments like HEROKU
+    IP_BLOCKER.redis_host = "dhpulsev2-6587.redis.dbs.appsdeck.eu"//Your redis hostname. To be changed when using production environments like HEROKU
     IP_BLOCKER.redis_port = "30627"//Your redis port. To be changed when using production environments like HEROKU
     IP_BLOCKER.default_rule = "blacklist"//The default rule is to allow all except blacklisted. Change this to whitelist if you wish to allow some and block all.
     IP_BLOCKER.default_expiry = 0

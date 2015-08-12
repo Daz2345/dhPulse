@@ -42,6 +42,7 @@ Package.onUse(function (api) {
   // // client
 
   api.addFiles([
+    'lib/client/templates/dunnhumby_submit_button.html',    
     'lib/client/templates/main.html',
     'lib/client/templates/main.js',
     'lib/client/templates/users_dashboard_dh.html',

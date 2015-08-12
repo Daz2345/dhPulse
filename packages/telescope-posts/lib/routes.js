@@ -25,7 +25,6 @@ Posts.controllers.list = RouteController.extend({
 
     if (!!userLoggedIn && Meteor.user().categories) {
       terms.category = Meteor.user().categories;
-      console.log(terms.category);
     }
 
     // console.log('----------------- router running');

@@ -6,10 +6,9 @@ Template.singlePostChart.rendered = function() {
     var chartRotated = (chartValues.chartType == 'Bar') ? true : false ;
     var chartTypeVal = (chartValues.chartType == 'Column') ? 'bar' : chartValues.chartType.toLowerCase() ;
     var xAxisType = chartValues.chartXaxisType;
-    var xAxisCats = Papa.parse(chartValues.chartXaxisCategories).data;
+    var xAxisCats = (xAxisType == 'category') ? Papa.parse(chartValues.chartXaxisCategories).data : "";
     var chData = Papa.parse(chartValues.chartData).data;
     var yAxisFormat = (chartValues.chartYaxisFormat === undefined) ? "" : chartValues.chartYaxisFormat;
-
 
     var chart = c3.generate({
         bindto: this.find('.chart'),

@@ -25,6 +25,7 @@ Posts.controllers.list = RouteController.extend({
 
     if (!!userLoggedIn && Meteor.user().categories) {
       terms.category = Meteor.user().categories;
+      console.log(terms.category);
     }
 
     // console.log('----------------- router running');
@@ -145,7 +146,7 @@ Posts.controllers.page = RouteController.extend({
   },
 
   data: function() {
-    return this.post();
+    return {post: this.post()};
   },
 
   onAfterAction: function () {

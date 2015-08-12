@@ -46,11 +46,11 @@ Posts.getSubParams = function (terms) {
   if (!!terms.category) {
     // var categoryId = Categories.findOne({slug: terms.category})._id;
     // parameters.find.categories = {$in: [categoryId]};
-    if (terms.category.length > 1) {
+    // if (terms.category.length > 1) {
       parameters.find.categories = {$in: terms.category};
-    } else {
-      parameters.find.categories = terms.category;
-    }    
+    // } else {
+    //   parameters.find.categories = terms.category;
+    // }    
   }
   
   // console.log(parameters);

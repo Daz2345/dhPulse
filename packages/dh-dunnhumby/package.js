@@ -42,14 +42,16 @@ Package.onUse(function (api) {
   // // client
 
   api.addFiles([
-    'lib/client/templates/dunnhumby_submit_button.html',    
+    'lib/client/templates/dh_tabs.html',  
+    'lib/client/templates/dh_layout.html',   
+    'lib/client/templates/dh_submit_button.html',    
     'lib/client/templates/main.html',
     'lib/client/templates/main.js',
-    'lib/client/templates/users_dashboard_dh.html',
-    'lib/client/templates/users_dashboard_dh.js',    
-    'lib/client/templates/post_page_dh.html',
-    'lib/client/templates/users_list_actions_dh.html',
-    'lib/client/templates/users_list_actions_dh.js',    
+    'lib/client/templates/dh_users_dashboard.html',
+    'lib/client/templates/dh_users_dashboard.js',    
+    'lib/client/templates/dh_post_page.html',
+    'lib/client/templates/dh_users_list_actions.html',
+    'lib/client/templates/dh_users_list_actions.js',    
     'lib/client/custom_templates.js'  
     // 'lib/client/templates/custom_post_title.html',
     // 'lib/client/templates/custom_post_title.js',

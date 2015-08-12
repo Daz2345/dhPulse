@@ -14,6 +14,7 @@ Posts.controllers.singleday = Posts.controllers.list.extend({
       date: currentDate,
       after: moment(currentDate).startOf('day').toDate(),
       before: moment(currentDate).endOf('day').toDate(),
+      category: Meteor.user().categories,
       enableCache: true
     };
     return {terms: terms};

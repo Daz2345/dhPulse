@@ -14,13 +14,8 @@
     {{#if body}}
       {{> post_body}}
     {{/if}}
-    {{#if chart}}
-      {{> singlePostChart}}
-    {{/if}}    
-    {{#if isdunnhumby}}
-      {{> comment_submit}}
-      {{> comment_list}}
-    {{/if}}
+    {{> comment_submit}}
+    {{> comment_list}}
   </div>
   {{/with}}
 </template>

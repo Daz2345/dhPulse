@@ -1,4 +1,4 @@
-Template.users_dashboard_dh.helpers({
+Template.dh_users_dashboard.helpers({
   settings: function() {
     return {
       collection: 'all-users',

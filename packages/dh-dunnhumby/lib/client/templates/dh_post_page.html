@@ -1,4 +1,5 @@
-<template name="post_page_dh">
+<template name="dh_post_page">
+  {{#with post}}
   {{#if isPending}}
     <div class="grid">
       <div class="error pending-message module">
@@ -27,4 +28,5 @@
       {{> comment_list}}
     {{/if}}
   </div>
+    {{/with}}
 </template>

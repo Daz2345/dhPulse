@@ -96,6 +96,19 @@ Posts.addField({
 });
 
 Posts.addField({
+  fieldName: 'ShowSubChart',
+  fieldSchema: {
+    type: Boolean,
+    label: 'Show sub-chart underneath main chart',    
+    autoform: {
+         type: "boolean-checkbox",      
+         group: 'chart'
+    },
+    editableBy: ["member", "admin"]
+  }
+});
+
+Posts.addField({
   fieldName: 'chartYaxisFormat',
   fieldSchema: {
     type: String,

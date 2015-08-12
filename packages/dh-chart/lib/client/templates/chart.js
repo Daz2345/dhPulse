@@ -9,6 +9,7 @@ Template.singlePostChart.rendered = function() {
     var xAxisCats = (xAxisType == 'category') ? Papa.parse(chartValues.chartXaxisCategories).data : "";
     var chData = Papa.parse(chartValues.chartData).data;
     var yAxisFormat = (chartValues.chartYaxisFormat === undefined) ? "" : chartValues.chartYaxisFormat;
+    var showSubChart = chartValues.ShowSubChart;
 
     var chart = c3.generate({
         bindto: this.find('.chart'),
@@ -18,6 +19,9 @@ Template.singlePostChart.rendered = function() {
         },
         color: {
             pattern: Colourpalette
+        },
+        subchart: {
+            show: showSubChart
         },
         axis: {
             rotated: chartRotated,

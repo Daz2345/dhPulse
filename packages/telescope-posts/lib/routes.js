@@ -15,7 +15,8 @@ Posts.controllers.list = RouteController.extend({
 
   data: function () {
 
-    var userCats = (Meteor.user() !== null) ? Meteor.user().categories : "";
+    var userLoggedIn = (Meteor.user() !== null) ? true : this.userLoggedIn;
+    var userCats = (userLoggedIn) ? Meteor.user().categories : "";
 
     var terms = {
       view: this.view,

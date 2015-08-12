@@ -15,12 +15,12 @@ Posts.controllers.list = RouteController.extend({
 
   data: function () {
 
-    //var userLoggedIn = (Meteor.user() !== null) ? true : this.userLoggedIn;
+    var userCats = (Meteor.user() !== null) ? Meteor.user().categories : "";
 
     var terms = {
       view: this.view,
       limit: this.params.limit || Settings.get('postsPerPage', 10),
-      category: Meteor.user().categories,
+      category: userCats,
       enableCache: true
     };
 

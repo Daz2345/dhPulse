@@ -15,7 +15,7 @@ Package.onUse(function (api) {
   // // client
 
   // api.addFiles([
-  //   'lib/client/security.js'
+  //   'lib/security.js'
   // ], ['client']);
 
 });

@@ -3,9 +3,13 @@ Posts.addField({
   fieldSchema: {
     type: Boolean,
     optional: false,
-    label: 'Include Chart with Post',      
+    label: 'Include Chart?',      
     autoform: {
-        group: 'chart'
+        group: 'chart',
+        type: "boolean-select",
+        trueLabel: "Yes",
+        falseLabel: "No",
+        firstOption: "(Please Choose a Response)"        
     },        
     editableBy: ["member", "admin"]
   }
@@ -28,6 +32,7 @@ Posts.addField({
   fieldName: 'chartType',
   fieldSchema: {
     type: String,
+    optional: true,    
     autoform: {
          group: 'chart',
          label: 'Chart Type'
@@ -45,7 +50,6 @@ Posts.addField({
             "Pie",
             "Donut",
             "Gauge"],
-    optional: true,
     editableBy: ["member", "admin"]
   }
 });
@@ -104,6 +108,7 @@ Posts.addField({
          type: "boolean-checkbox",      
          group: 'chart'
     },
+    optional: true,
     editableBy: ["member", "admin"]
   }
 });

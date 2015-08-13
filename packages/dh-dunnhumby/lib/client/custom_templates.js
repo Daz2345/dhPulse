@@ -5,3 +5,4 @@ Template.dh_submit_button.replaces("submit_button");
 Template.dh_post_page.replaces("post_page");
 Template.dh_layout.replaces("layout");
 Template.dh_tabs.replaces("iris_tabs");
+Template.dh_post_submit.replaces("post_submit");

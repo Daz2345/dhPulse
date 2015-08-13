@@ -42,6 +42,7 @@ Package.onUse(function (api) {
   // // client
 
   api.addFiles([
+    'lib/client/templates/dh_post_submit.html',    
     'lib/client/templates/dh_tabs.html',  
     'lib/client/templates/dh_layout.html',   
     'lib/client/templates/dh_submit_button.html',    

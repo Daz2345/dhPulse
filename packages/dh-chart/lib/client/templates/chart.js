@@ -2,14 +2,14 @@ var Colourpalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1
 
 Template.singlePostChart.rendered = function() {
         
-    var chartValues = this.data;
-    var chartRotated = (chartValues.chartType == 'Bar') ? true : false ;
-    var chartTypeVal = (chartValues.chartType == 'Column') ? 'bar' : chartValues.chartType.toLowerCase() ;
-    var xAxisType = chartValues.chartXaxisType;
-    var xAxisCats = (xAxisType == 'category') ? Papa.parse(chartValues.chartXaxisCategories).data : "";
-    var chData = Papa.parse(chartValues.chartData).data;
-    var yAxisFormat = (chartValues.chartYaxisFormat === undefined) ? "" : chartValues.chartYaxisFormat;
-    var showSubChart = chartValues.ShowSubChart;
+    var chartValues = this.data,
+        chartRotated = (chartValues.chartType == 'Bar') ? true : false,
+        chartTypeVal = (chartValues.chartType == 'Column') ? 'bar' : chartValues.chartType.toLowerCase(),
+        xAxisType = chartValues.chartXaxisType,
+        xAxisCats = (xAxisType == 'category') ? Papa.parse(chartValues.chartXaxisCategories).data : "",
+        chData = Papa.parse(chartValues.chartData).data,
+        yAxisFormat = (chartValues.chartYaxisFormat === undefined) ? "" : chartValues.chartYaxisFormat,
+        showSubChart = chartValues.ShowSubChart;
 
 
     var chart = c3.generate({

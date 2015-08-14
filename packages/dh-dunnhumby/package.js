@@ -14,7 +14,6 @@ Package.onUse(function (api) {
     'fastclick',
     'force-ssl',
     '255kb:meteor-status',
-    'natestrauser:animate-css',
     'meteorhacks:zones',
     'mixmax:smart-disconnect'
   ];
@@ -42,6 +41,7 @@ Package.onUse(function (api) {
   // // client
 
   api.addFiles([
+    'lib/client/templates/dh_post_edit.html', 
     'lib/client/templates/dh_post_submit.html',    
     'lib/client/templates/dh_tabs.html',  
     'lib/client/templates/dh_layout.html',   

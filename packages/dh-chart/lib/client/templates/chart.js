@@ -33,7 +33,9 @@ Template.singlePostChart.rendered = function() {
             y: {
                 format: function (d) { return "" & yAxisFormat & " " & "" + d; }
             }
+        },
+        transition: {
+            duration: 2500
         }
     });
-    
 };

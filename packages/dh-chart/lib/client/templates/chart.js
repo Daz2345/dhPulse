@@ -3,7 +3,7 @@ var Colourpalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1
 Template.singlePostChart.rendered = function() {
         
     var chartValues = this.data,
-        chartRotated = (chartValues.chartType == 'Bar') ? true : false,
+        chartRotated = chartValues.chartType == 'Bar',
         chartTypeVal = (chartValues.chartType == 'Column') ? 'bar' : chartValues.chartType.toLowerCase(),
         xAxisType = chartValues.chartXaxisType,
         xAxisCats = (xAxisType == 'category') ? Papa.parse(chartValues.chartXaxisCategories).data : "",

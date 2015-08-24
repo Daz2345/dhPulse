@@ -53,6 +53,7 @@ Package.onUse(function (api) {
     'lib/client/templates/dh_post_page.html',
     'lib/client/templates/dh_users_list_actions.html',
     'lib/client/templates/dh_users_list_actions.js',    
+    'lib/client/templates/dh_user_menu_label.html',
     'lib/client/custom_templates.js'  
     // 'lib/client/templates/custom_post_title.html',
     // 'lib/client/templates/custom_post_title.js',

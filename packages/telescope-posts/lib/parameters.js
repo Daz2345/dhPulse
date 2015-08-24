@@ -37,26 +37,17 @@ Posts.getSubParams = function (terms) {
     parameters.options.limit = maxLimit;
   }
 
+  var d = new Date();
+  d.setMonth(d.getMonth() + 1);
+
   // hide future scheduled posts unless "showFuture" is set to true or postedAt is already defined
   if (!parameters.showFuture && !parameters.find.postedAt)
-    parameters.find.postedAt = {$lte: new Date()};
+    parameters.find.postedAt = {$lte: d};
 
   // filter by category if category _id is provided (unless categories parameter already specificed)
   // NOTE: this is a temporary fix because views cannot currently be combined
-// <<<<<<< HEAD
   if (!!terms.category) {
-    // var categoryId = Categories.findOne({slug: terms.category})._id;
-    // parameters.find.categories = {$in: [categoryId]};
-    // if (terms.category.length > 1) {
       parameters.find.categories = {$in: terms.category};
-    // } else {
-    //   parameters.find.categories = terms.category;
-    // }    
-// =======
-//   if (!!terms.category && !parameters.find.categories) {
-//     var categoryId = Categories.findOne({slug: terms.category})._id;
-//     parameters.find.categories = {$in: [categoryId]};
-// >>>>>>> 4a664538ff96230b1e5b1c87ef948bb164364aab
   }
   
   // console.log(parameters);

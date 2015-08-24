@@ -41,9 +41,9 @@ telescope:update-prompt
 
 ############ dh Packages ############
 
+dh:theme
 dh:chart
 dh:api
-dh:theme
 dh:personal
 dh:dunnhumby
 dh:notifications

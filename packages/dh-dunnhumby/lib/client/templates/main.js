@@ -1,9 +1,5 @@
 Meteor.startup(function() {
 
-    Mapbox.load({
-        plugins: ['markercluster']
-    });
-
   SEO.config({
     ignore: {
       meta: ['fragment', 'viewport', 'apple-mobile-web-app-capable', 'mobile-web-app-capable', 'apple-mobile-web-app-title', 'apple-mobile-web-app-status-bar-style'],

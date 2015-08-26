@@ -21,8 +21,11 @@
       {{ > pictures}}
     {{/if}}
     {{#if chart}}
-      {{ > singlePostChart}}
+      {{ > chart}}
     {{/if}}    
+    {{#if heatMap}}
+      {{ > heatMap}}
+    {{/if}}       
     {{#if isdunnhumby}}
       {{> comment_submit}}
       {{> comment_list}}

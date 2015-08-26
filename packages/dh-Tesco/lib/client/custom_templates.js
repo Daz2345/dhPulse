@@ -1,2 +1,2 @@
-// Override "post_title" template
-Template.custom_post_title.replaces("post_title");
+Template.post_submit.replaces("dh_post_submit");
+Template.post_edit.replaces("dh_post_edit");

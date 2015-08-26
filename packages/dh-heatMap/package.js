@@ -29,7 +29,8 @@ Package.onUse(function (api) {
   api.addFiles([
     'lib/client/templates/heatmap.html',
     'lib/client/templates/heatmap.js',
-    'lib/client/templates/main.js'
+    'lib/client/templates/main.js',
+    'lib/client/stylesheets/custom.css'    
   ], ['client']);
 
 });

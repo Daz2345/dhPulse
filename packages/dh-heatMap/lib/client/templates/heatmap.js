@@ -8,7 +8,7 @@ Template.heatMap.rendered = function() {
             var map = L.mapbox.map('map', 'mapbox.streets', {
                 zoomControl: false
             })
-                .setView([51.505, -0.09], 6);
+                .setView([54.104, -2.921], 6);
     
         L.control.zoomslider().addTo(map);
     

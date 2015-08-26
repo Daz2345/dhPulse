@@ -1,7 +1,7 @@
 Package.describe({
   summary: 'Tesco Customer Feedback Package',
   version: '0.1.0',
-  name: 'dh:Tesco'
+  name: 'dh:tesco'
 });
 
 Package.onUse(function (api) {

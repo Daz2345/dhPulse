@@ -1,4 +1,13 @@
-#map {
-    width: 100%;
-    height: 600px
+@media (max-width: 599px) {
+    #map {
+        width: 100%;
+        height: 400px
+    }
+}
+
+@media (min-width: 599px) {
+    #map {
+        width: 100%;
+        height: 600px
+    }
 }

@@ -12,7 +12,7 @@ telescope:core
 # Note: all following packages depend on telescope:core; Additional internal dependencies are mentioned
 
 telescope:migrations
-telescope:api
+# telescope:api
 telescope:daily # singleday
 telescope:datetimepicker
 telescope:debug

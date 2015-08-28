@@ -11,9 +11,16 @@ Template.heatMap.rendered = function() {
                 // This map option disables world wrapping. by default, it is false.
                 continuousWorld: false,
                 // This option disables loading tiles outside of the world bounds.
-                noWrap: true}
+                noWrap: true,
+                // Disable the animation on double-click and other zooms.
+                zoomAnimation: true,
+                // Disable the animation of tiles fading in and out.
+                fadeAnimation: false    
+                }
             })
                 .setView([54.104, -2.921], 6);
+
+        map.scrollWheelZoom.disable();
 
         var layers = {
               Streets: L.mapbox.tileLayer('mapbox.streets'),

@@ -10,6 +10,9 @@ Meteor.startup(function () {
         itemClass: 'item-never-active'
       }];
       var menuItems = _.map(Categories.find({}, {sort: {order: 1, name: 1}}).fetch(), function (category) {
+    // var userLoggedIn = (Meteor.user() !== null) ? true : this.userLoggedIn;    
+    // var userCats = (userLoggedIn) ? Meteor.user().categories : "";
+    // var menuItems = _.map(Categories.find({_id: {$in : userCats}}, {sort: {name: 1}}).fetch(), function (category) {          
         return {
           route: function () {
             return Categories.getUrl(category.slug);

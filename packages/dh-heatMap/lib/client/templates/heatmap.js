@@ -12,9 +12,7 @@ Template.heatMap.rendered = function() {
                 // This map option disables world wrapping. by default, it is false.
                 continuousWorld: true,
                 // This option disables loading tiles outside of the world bounds.
-                noWrap: true,
-                // Disable the animation on double-click and other zooms.
-                zoomAnimation: true,
+                noWrap: true
             });
 
         map.scrollWheelZoom.disable();
@@ -32,7 +30,7 @@ Template.heatMap.rendered = function() {
         L.control.fullscreen().addTo(map);        
 
         var hmData = Papa.parse(hmValues).data;    
-        var markers = new L.MarkerClusterGroup().addTo(map);            
+        var markers = new L.MarkerClusterGroup({ spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: false }).addTo(map);            
 
         for (var i = 0; i < hmData.length; i++) {
             var a = hmData[i];
@@ -42,11 +40,11 @@ Template.heatMap.rendered = function() {
             }).addTo(markers);
             marker.bindPopup(title);
         }
+        markers.on('clusterclick', function (a) {
+			a.layer.spiderfy();
+		})
         map.fitBounds(markers.getBounds());
         }        
     }); 
-    
-    Meteor.setInterval(function () {
-        
-    }, 5000);
+
 };

@@ -1,7 +1,7 @@
 Meteor.startup(function() {
 
     Mapbox.load({
-        plugins: ['markercluster', 'zoomslider', 'locate', 'fullscreen']
+        plugins: ['markercluster', 'locate', 'fullscreen']
     });
     
 })

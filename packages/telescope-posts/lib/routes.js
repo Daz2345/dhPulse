@@ -21,10 +21,13 @@ Posts.controllers.list = RouteController.extend({
     var terms = {
       view: this.view,
       limit: this.params.limit || Settings.get('postsPerPage', 10),
-      category: userCats,
       enableCache: true
     };
 
+    if (terms.view !== 'category') {
+      terms.category = userCats;
+    }
+    
     // console.log('----------------- router running');
 
     // note: the post list controller template will handle all subscriptions, so we just need to pass in the terms

@@ -130,5 +130,6 @@ Users.can.currentUserEdit = function (item) {
 };
 
 Users.can.invite = function (user) {
-  return Users.is.invited(user) || Users.is.admin(user);
+  // return Users.is.invited(user) || Users.is.admin(user);
+  return Users.is.admin(user);
 };

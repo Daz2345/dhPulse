@@ -63,10 +63,21 @@ Posts.schema = new SimpleSchema({
   body: {
     type: String,
     optional: true,
-    max: 3000,
     editableBy: ["member", "admin"],
     autoform: {
-      rows: 5
+      type: 'summernote',
+      settings: {height:300,
+        toolbar: [
+          ['style', ['help', 'style', 'bold', 'italic', 'underline', 'clear']],
+          ['font', ['strikethrough', 'superscript', 'subscript']],
+          ['fontsize', ['fontsize']],
+          ['insert',['link', 'hr', 'table']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['height', ['height']],
+          ['misc', ['fullscreen', 'undo', 'redo']]
+        ]
+      }
     }
   },
   /**

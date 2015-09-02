@@ -93,12 +93,12 @@ meteorhacks:zones@1.4.0
 meteorspark:util@0.2.0
 minifiers@1.1.5
 minimongo@1.0.8
-miro:mailchimp@1.1.0
 mixmax:smart-disconnect@0.0.1
 mobile-status-bar@1.0.3
 momentjs:moment@2.10.6
 mongo@1.1.0
 mongo-livedata@1.0.8
+mpowaga:autoform-summernote@0.4.2
 natestrauser:animate-css@0.1.1
 npm-bcrypt@0.7.8_2
 oauth@1.1.4
@@ -136,6 +136,7 @@ spacebars-compiler@1.0.6
 spiderable@1.0.7
 srp@1.0.3
 standard-app-packages@1.0.5
+summernote:standalone@0.6.16
 tap:i18n@1.5.1
 telescope:comments@0.23.0
 telescope:core@0.23.0
@@ -151,7 +152,6 @@ telescope:kadira@0.23.0
 telescope:lib@0.23.1
 telescope:messages@0.23.0
 telescope:migrations@0.23.0
-telescope:newsletter@0.23.0
 telescope:notifications@0.23.0
 telescope:pages@0.23.0
 telescope:post-by-feed@0.23.0

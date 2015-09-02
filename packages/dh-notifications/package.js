@@ -8,14 +8,14 @@ Package.onUse(function (api) {
 
   // ---------------------------------- 1. Core dependency -----------------------------------
 
-  // api.use("raix:push");
+  api.use("raix:push");
 
   // ---------------------------------- 2. Files to include ----------------------------------
 
   // // client
 
-  // api.addFiles([
-  //   'lib/security.js'
-  // ], ['client']);
+  api.addFiles([
+    'lib/notifications.js'
+  ], ['client']);
 
 });

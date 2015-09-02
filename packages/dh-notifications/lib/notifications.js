@@ -1,0 +1,1 @@
+Herald.settings.queueTimer = 5000;

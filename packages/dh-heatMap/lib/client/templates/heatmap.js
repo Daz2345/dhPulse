@@ -8,6 +8,7 @@ Template.heatMap.rendered = function() {
             L.mapbox.accessToken = 'pk.eyJ1IjoiZGF6MjM0NSIsImEiOiJmNDkwNmQ2NjllNzg5NDFiZWQ1M2I0OGUxMzBmZGU3MSJ9.W70b10qRbEkzfJdlKP6Fhw';
             var geocoder = L.mapbox.geocoder('mapbox.places'),
                 map = L.mapbox.map('map', null, {
+                format: 'jpg70',    
                 // This map option disables world wrapping. by default, it is false.
                 continuousWorld: true,
                 // This option disables loading tiles outside of the world bounds.
@@ -17,10 +18,10 @@ Template.heatMap.rendered = function() {
         // map.scrollWheelZoom.disable();
         
         var layers = {
-              Streets: L.mapbox.tileLayer('mapbox.streets'),
-              Outdoors: L.mapbox.tileLayer('mapbox.outdoors'),
-              Satellite: L.mapbox.tileLayer('mapbox.satellite'),
-              Pirates: L.mapbox.tileLayer('mapbox.pirates')
+              Streets: L.mapbox.tileLayer('mapbox.streets', {format: 'jpg70'}),
+              Outdoors: L.mapbox.tileLayer('mapbox.outdoors', {format: 'jpg70'}),
+              Satellite: L.mapbox.tileLayer('mapbox.satellite', {format: 'jpg70'}),
+              Pirates: L.mapbox.tileLayer('mapbox.pirates', {format: 'jpg70'})
           };
     
         layers.Streets.addTo(map);
@@ -41,11 +42,11 @@ Template.heatMap.rendered = function() {
         }
         
         markers.on('clusterclick', function (a) {
-            console.log(a)
-            if(a.layer._childClusters.length > 1) {
+            var sizeOfBound = (a.layer._bounds._northEast.lat - a.layer._bounds._southWest.lat) + (a.layer._bounds._northEast.lng - a.layer._bounds._southWest.lng);
+            if (sizeOfBound !== 0) {
                 a.layer.zoomToBounds();
             } else {
-		        a.layer.spiderfy();                    
+		        a.layer.spiderfy();
             }
 		});
         map.fitBounds(markers.getBounds());

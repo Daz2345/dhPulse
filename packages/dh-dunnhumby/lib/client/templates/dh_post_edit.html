@@ -1,8 +1,7 @@
 <template name="dh_post_edit">
   <div class="form-page post-edit animated fadein">
     <div class="grid grid-module">
-      <!--{{> quickForm col
-      lection="Posts" doc=post id="editPostForm" template="bootstrap3-horizontal" label-class="control-label" input-col-class="controls" type="method-update" meteormethod="editPost" fields=postFields}}-->
+      <!--{{> quickForm collection="Posts" doc=post id="editPostForm" template="bootstrap3-horizontal" label-class="control-label" input-col-class="controls" type="method-update" meteormethod="editPost" fields=postFields}}-->
       {{#autoForm collection="Posts" doc=post id="editPostForm" template="bootstrap3-horizontal" label-class="control-label" input-col-class="controls" type="method-update" meteormethod="editPost" fields=postFields}}
       {{> afFormGroup name="url" input-col-class="controls"}}
       {{> afFormGroup name="title" input-col-class="controls"}}
@@ -10,6 +9,7 @@
       {{> afFormGroup name="categories" input-col-class="controls"}}
       
       <!--chart section-->
+      <legend>Chart</legend>
       {{> afFormGroup name="chart" input-col-class="controls" options=optionsHelper}}
       {{#if afFieldValueIs name="chart" value=true}}
         {{> afFormGroup name="chartTitle" input-col-class="controls"}}
@@ -26,12 +26,22 @@
       {{/if}}
       
       <!--heat map section-->
+      <legend>Map</legend>
       {{> afFormGroup name="heatMap" input-col-class="controls" options=optionsHelper}}      
       {{#if afFieldValueIs name="heatMap" value=true}}      
         {{> afFormGroup name="heatMapTitle" input-col-class="controls"}}
         {{> afFormGroup name="heatMapData" input-col-class="controls"}}
         {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
-      {{/if}}  
+      {{/if}}        
+      
+      <!--Admin Section-->
+      {{#if isAdmin}}    
+        <legend>Admin</legend>
+        {{> afFormGroup name="status" input-col-class="controls"}}
+        {{> afFormGroup name="sticky" input-col-class="controls"}}
+        {{> afFormGroup name="postedAt" input-col-class="controls"}}   
+      {{/if}}      
+      
         <div class="form-group">
             <div></div>
           <div class="controls">

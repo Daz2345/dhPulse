@@ -2,7 +2,7 @@ Posts.addField({
   fieldName: 'chart',
   fieldSchema: {
     type: Boolean,
-    optional: false,
+    optional: true,
     label: 'Include Chart?',      
     autoform: {
         group: 'chart',

@@ -9,6 +9,7 @@
       {{> afFormGroup name="categories" input-col-class="controls"}}
       
       <!--chart section-->
+      <legend>Chart</legend>
       {{> afFormGroup name="chart" input-col-class="controls" options=optionsHelper}}
       {{#if afFieldValueIs name="chart" value=true}}
         {{> afFormGroup name="chartTitle" input-col-class="controls"}}
@@ -25,12 +26,22 @@
       {{/if}}
       
       <!--heat map section-->
+      <legend>Map</legend>
       {{> afFormGroup name="heatMap" input-col-class="controls" options=optionsHelper}}      
       {{#if afFieldValueIs name="heatMap" value=true}}      
         {{> afFormGroup name="heatMapTitle" input-col-class="controls"}}
         {{> afFormGroup name="heatMapData" input-col-class="controls"}}
         {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
       {{/if}}        
+      
+      <!--Admin Section-->
+      {{#if isAdmin}}    
+        <legend>Admin</legend>
+        {{> afFormGroup name="status" input-col-class="controls"}}
+        {{> afFormGroup name="sticky" input-col-class="controls"}}
+        {{> afFormGroup name="postedAt" input-col-class="controls"}}   
+      {{/if}}      
+      
         <div class="form-group">
             <div></div>
           <div class="controls">

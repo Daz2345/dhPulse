@@ -2,8 +2,8 @@ Posts.addField({
   fieldName: 'heatMap',
   fieldSchema: {
     type: Boolean,
-    optional: false,
-    label: 'Include Heat Map?',      
+    optional: true,
+    label: 'Include Map?',      
     autoform: {
         group: 'heatMap',
         type: "boolean-select",

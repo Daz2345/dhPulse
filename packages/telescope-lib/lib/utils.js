@@ -191,7 +191,7 @@ Telescope.utils.addHttp = function (url) {
 /////////////////////////////
 
 Telescope.utils.cleanUp = function(s) {
-  return this.stripHTML(s);
+  return  s //this.stripHTML(s);
 };
 
 Telescope.utils.sanitize = function(s) {
@@ -203,8 +203,11 @@ Telescope.utils.sanitize = function(s) {
         'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul',
         'ol', 'nl', 'li', 'b', 'i', 'strong', 'em', 'strike',
         'code', 'hr', 'br', 'div', 'table', 'thead', 'caption',
-        'tbody', 'tr', 'th', 'td', 'pre', 'img', 'src'
-      ]
+        'tbody', 'tr', 'th', 'td', 'pre', 'img', 'src', 'span', 'style'
+      ],
+      allowedAttributes: {
+        '*': [ '*' ]
+      }
     });
     // console.log('// after sanitization:')
     // console.log(s)

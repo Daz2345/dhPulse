@@ -15,14 +15,51 @@ Posts.addField({
   }
 });
 
+
+
+// Incomplete chart schema - need to create chart object to show many charts!!
+
+// Chart.schema = new SimpleSchema({
+//   chartTitle: {
+//     type: String,
+//     optional: true,
+//     autoform: {
+//         group: 'chart',
+//         label: 'Title'
+//     },        
+//     editableBy: ["member", "admin"]
+//   },
+//   chartType: {
+//     type: String,
+//     optional: true,
+//     autoform: {
+//         group: 'chart',
+//         label: 'Chart Type'
+//     },
+//     allowedValues: [
+//             "Line",
+//             "Bar",
+//             "Column",
+//             "Spline",
+//             "Step",
+//             "Area",
+//             "Area-Spline",
+//             "Area-Step",
+//             "Scatter",
+//             "Pie",
+//             "Donut",
+//             "Gauge"],
+//     editableBy: ["member", "admin"]
+//   },
+
 Posts.addField({
   fieldName: 'chartTitle',
   fieldSchema: {
     type: String,
     optional: true,
     autoform: {
-         group: 'chart',
-         label: 'Title'
+        group: 'chart',
+        label: 'Title'
     },        
     editableBy: ["member", "admin"]
   }

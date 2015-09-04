@@ -48,7 +48,7 @@ Package.onUse(function (api) {
     'utilities:avatar@0.8.2',
     'fortawesome:fontawesome@4.3.0',
     'ccan:cssreset@1.0.0',
-    'djedi:sanitize-html@1.7.0',
+    'djedi:sanitize-html@1.10.0',
     'dburles:collection-helpers@1.0.3',
     'jparker:gravatar@0.3.1',
     'sanjo:meteor-files-helpers@1.1.0_7',

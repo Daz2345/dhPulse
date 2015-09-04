@@ -40,7 +40,7 @@ dh:dunnhumby@0.1.0
 dh:heatmap@0.1.0
 dh:personal@0.1.0
 dh:theme@0.1.0
-djedi:sanitize-html@1.7.0
+djedi:sanitize-html@1.10.0
 ejson@1.0.6
 email@1.0.6
 facebook@1.2.1
@@ -51,6 +51,7 @@ fourseven:scss@3.2.0
 geojson-utils@1.0.3
 handlebars@1.0.3
 harrison:papa-parse@1.1.0
+hausor:autoform-bs-minicolors@1.0.0
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0

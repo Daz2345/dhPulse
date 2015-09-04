@@ -65,6 +65,8 @@ Posts.schema = new SimpleSchema({
     optional: true,
     editableBy: ["member", "admin"],
     autoform: {
+      // rows : 10
+      // type: 'medium'
       type: 'summernote',
       settings: {height:300,
         toolbar: [

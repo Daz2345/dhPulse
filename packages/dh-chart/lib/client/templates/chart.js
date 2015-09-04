@@ -1,4 +1,4 @@
-var Colourpalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1e391', '#bbb8dc', '#a3dad9'];
+var colourPalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1e391', '#bbb8dc', '#a3dad9'];
 
 Template.chart.rendered = function() {
         
@@ -11,6 +11,7 @@ Template.chart.rendered = function() {
         yAxisFormat = (chartValues.chartYaxisFormat === undefined) ? "" : chartValues.chartYaxisFormat,
         showSubChart = chartValues.ShowSubChart;
 
+
     var chart = c3.generate({
         bindto: this.find('.chart'),
         data: {
@@ -18,7 +19,7 @@ Template.chart.rendered = function() {
             type: chartTypeVal
         },
         color: {
-            pattern: Colourpalette
+            pattern: colourPalette
         },
         subchart: {
             show: showSubChart

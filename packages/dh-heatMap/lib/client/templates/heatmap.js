@@ -34,11 +34,10 @@ Template.heatMap.rendered = function() {
 
         for (var i = 0; i < hmData.length; i++) {
             var a = hmData[i];
-            var title = a[2];
             var marker = L.marker(new L.LatLng(a[0], a[1]), {
-                title: title
+                // title: a[2]
             }).addTo(markers);
-            marker.bindPopup(title);
+            marker.bindPopup(a[2]);
         }
         
         markers.on('clusterclick', function (a) {

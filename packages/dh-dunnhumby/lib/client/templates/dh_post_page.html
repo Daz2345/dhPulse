@@ -25,7 +25,10 @@
     {{/if}}    
     {{#if heatMap}}
       {{ > heatMap}}
-    {{/if}}       
+    {{/if}}   
+    {{#if d3Viz}}
+      {{ > d3Viz}}
+    {{/if}}          
     {{#if isdunnhumby}}
       {{> comment_submit}}
       {{> comment_list}}

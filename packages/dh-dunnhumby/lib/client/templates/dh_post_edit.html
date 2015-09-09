@@ -34,6 +34,16 @@
         {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
       {{/if}}        
       
+      <!--d3 Viz section-->
+      <legend>d3</legend>
+      {{> afFormGroup name="d3Viz" input-col-class="controls" options=optionsHelper}}      
+      {{#if afFieldValueIs name="d3Viz" value=true}}      
+        {{> afFormGroup name="d3Title" input-col-class="controls"}}
+        {{> afFormGroup name="d3Type" input-col-class="controls" options="allowed"}}        
+        {{> afFormGroup name="d3Data" input-col-class="controls"}}
+        {{> afFormGroup name="d3Description" input-col-class="controls"}}   
+      {{/if}}   
+      
       <!--Admin Section-->
       {{#if isAdmin}}    
         <legend>Admin</legend>

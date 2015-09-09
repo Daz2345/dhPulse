@@ -13,7 +13,7 @@ Package.onUse(function (api) {
     'telescope:users',
     'fastclick',
     'force-ssl',
-    '255kb:meteor-status',
+    // '255kb:meteor-status',
     'meteorhacks:zones',
     'mixmax:smart-disconnect'
   ];

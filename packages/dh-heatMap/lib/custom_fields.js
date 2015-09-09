@@ -6,10 +6,9 @@ Posts.addField({
     label: 'Include Map?',      
     autoform: {
         group: 'heatMap',
-        type: "boolean-select",
+        type: "boolean-radios",
         trueLabel: "Yes",
-        falseLabel: "No",
-        firstOption: "(Please Choose a Response)"        
+        falseLabel: "No"
     },        
     editableBy: ["member", "admin"]
   }

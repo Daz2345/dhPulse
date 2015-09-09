@@ -20,7 +20,7 @@
           {{> afFormGroup name="chartXaxisCategories" input-col-class="controls"}}
         {{else}}          
         {{/if}}
-        {{> afFormGroup name="ShowSubChart" input-col-class="controls"}}
+        {{> afFormGroup name="showSubChart" input-col-class="controls"}}
         {{> afFormGroup name="chartYaxisFormat" input-col-class="controls"}}
         {{> afFormGroup name="chartDescription" input-col-class="controls"}}    
       {{/if}}
@@ -33,6 +33,16 @@
         {{> afFormGroup name="heatMapData" input-col-class="controls"}}
         {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
       {{/if}}        
+      
+      <!--d3 Viz section-->
+      <legend>d3</legend>
+      {{> afFormGroup name="d3Viz" input-col-class="controls" options=optionsHelper}}      
+      {{#if afFieldValueIs name="d3Viz" value=true}}      
+        {{> afFormGroup name="d3Title" input-col-class="controls"}}
+        {{> afFormGroup name="d3Type" input-col-class="controls" options="allowed"}}       
+        {{> afFormGroup name="d3Data" input-col-class="controls"}}
+        {{> afFormGroup name="d3Description" input-col-class="controls"}}   
+      {{/if}}   
       
       <!--Admin Section-->
       {{#if isAdmin}}    

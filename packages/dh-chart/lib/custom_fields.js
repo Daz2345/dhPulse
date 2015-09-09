@@ -1,26 +1,14 @@
-Posts.addField({
-  fieldName: 'chart',
-  fieldSchema: {
-    type: Boolean,
-    optional: true,
-    label: 'Include Chart?',      
-    autoform: {
-        group: 'chart',
-        type: "boolean-select",
-        trueLabel: "Yes",
-        falseLabel: "No",
-        firstOption: "(Please Choose a Response)"        
-    },        
-    editableBy: ["member", "admin"]
-  }
-});
-
-
-
 // Incomplete chart schema - need to create chart object to show many charts!!
 
-// Chart.schema = new SimpleSchema({
-//   chartTitle: {
+// Posts.chartSchema = new SimpleSchema({
+//   charts:{
+//     type: Array,
+//     optional: true
+//   },
+//   "charts.$": {
+//     type: Object
+//   },
+//   "charts.$.Title": {
 //     type: String,
 //     optional: true,
 //     autoform: {
@@ -29,7 +17,7 @@ Posts.addField({
 //     },        
 //     editableBy: ["member", "admin"]
 //   },
-//   chartType: {
+//   "charts.$.chartType": {
 //     type: String,
 //     optional: true,
 //     autoform: {
@@ -50,7 +38,26 @@ Posts.addField({
 //             "Donut",
 //             "Gauge"],
 //     editableBy: ["member", "admin"]
-//   },
+//   }
+// });
+
+Posts.addField({
+  fieldName: 'chart',
+  fieldSchema: {
+    type: Boolean,
+    optional: true,
+    label: 'Include Chart?',      
+    autoform: {
+        group: 'chart',
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
+        firstOption: "(Please Choose a Response)"        
+    },        
+    editableBy: ["member", "admin"]
+  }
+});
+
 
 Posts.addField({
   fieldName: 'chartTitle',
@@ -137,7 +144,7 @@ Posts.addField({
 });
 
 Posts.addField({
-  fieldName: 'ShowSubChart',
+  fieldName: 'showSubChart',
   fieldSchema: {
     type: Boolean,
     label: 'Show sub-chart underneath main chart',    

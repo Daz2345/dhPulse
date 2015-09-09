@@ -1,0 +1,30 @@
+<template name="d3Viz">
+    <div>
+        <h4>{{d3Title}}</h4></div>
+    {{> UI.dynamic template=myTemplate}}
+    <div>
+        <p><small>{{d3Description}}</small></p>
+    </div>
+</template>
+
+<template name='chord'>
+    <div class="chordViz"></div>
+</template>
+
+<template name='tree'>
+    <form>
+        <label>
+            <input type="radio" name="mode" value="radialtree">Radial Tree</label>
+        <label>
+            <input type="radio" name="mode" value="radialcluster">Radial Cluster</label>
+        <label>
+            <input type="radio" name="mode" value="tree">Tree</label>
+        <label>
+            <input type="radio" name="mode" value="cluster" checked>Cluster</label>
+    </form>
+    <div class="treeViz"></div>
+</template>
+
+<template name='circle'>
+    <div class="circleViz"></div>
+</template>

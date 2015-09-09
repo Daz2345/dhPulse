@@ -11,8 +11,6 @@ Template.chart.rendered = function() {
         yAxisFormat = (chartValues.chartYaxisFormat === undefined) ? "" : chartValues.chartYaxisFormat,
         showSubChart = chartValues.ShowSubChart;
 
-    console.log(yAxisFormat)
-
     var chart = c3.generate({
         bindto: this.find('.chart'),
         data: {

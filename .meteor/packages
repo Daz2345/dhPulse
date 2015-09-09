@@ -45,8 +45,7 @@ dh:theme
 dh:chart
 dh:api
 dh:personal
-# dh:notifications
 dh:heatmap
-mpowaga:autoform-summernote
 dh:d3
 dh:dunnhumby
+mpowaga:autoform-summernote

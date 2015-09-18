@@ -31,20 +31,20 @@ Meteor.startup(function() {
     back: "times"
   };
 
-  Tracker.autorun(function() {
-    if (Meteor.user() && !Meteor.loggingIn()) {
-      var intercomSettings = {
-        name: Meteor.user().profile.username,
-        bio: Meteor.user().profile.bio,
-        email: Meteor.user().emails[0].address,
-        dunnhumby: Meteor.user().isdunnhumby,
-        admin: Meteor.user().isAdmin,
-        created_at: Math.round(Meteor.user().createdAt / 1000),
-        app_id: "rmdzek63"
-      };
-      Intercom('boot', intercomSettings);
-    }
-  });
+  // Tracker.autorun(function() {
+  //   if (Meteor.user() && !Meteor.loggingIn()) {
+  //     var intercomSettings = {
+  //       name: Meteor.user().profile.username,
+  //       bio: Meteor.user().profile.bio,
+  //       email: Meteor.user().emails[0].address,
+  //       dunnhumby: Meteor.user().isdunnhumby,
+  //       admin: Meteor.user().isAdmin,
+  //       created_at: Math.round(Meteor.user().createdAt / 1000),
+  //       app_id: "rmdzek63"
+  //     };
+  //     Intercom('boot', intercomSettings);
+  //   }
+  // });
 
   // Session.set('postscount', Settings.get('postsPerPage', 10));
 

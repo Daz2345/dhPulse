@@ -1,7 +1,7 @@
 var colourPalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1e391', '#bbb8dc', '#a3dad9'];
 
 Template.chart.rendered = function() {
-        
+
     var chartValues = this.data,
         chartTypeVal = (chartValues.chartType === 'Column') ? 'bar' : chartValues.chartType.toLowerCase(),
         chartRotated = chartTypeVal === 'bar',
@@ -31,7 +31,7 @@ Template.chart.rendered = function() {
             },
             y: {
                 tick: {
-                format: d3.format(yAxisFormat)
+                    format: d3.format(yAxisFormat)
                 },
                 min: 0
             }
@@ -40,4 +40,5 @@ Template.chart.rendered = function() {
             duration: 2500
         }
     });
+
 };

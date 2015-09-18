@@ -30,7 +30,8 @@ Package.onUse(function (api) {
     'lib/client/templates/heatmap.html',
     'lib/client/templates/heatmap.js',
     'lib/client/templates/main.js',
-    'lib/client/stylesheets/custom.css'    
+    'lib/client/stylesheets/custom.scss',
+    'lib/client/stylesheets/_mixins.scss'
   ], ['client']);
 
 });

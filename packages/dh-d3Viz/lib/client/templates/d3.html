@@ -1,7 +1,7 @@
 <template name="d3Viz">
     <div>
         <h4>{{d3Title}}</h4></div>
-    {{> UI.dynamic template=myTemplate}}
+        {{> UI.dynamic template=myTemplate}}
     <div>
         <p><small>{{d3Description}}</small></p>
     </div>
@@ -11,7 +11,31 @@
     <div class="chordViz"></div>
 </template>
 
-<template name='tree'>
+<template name='circle'>
+    <div class="circleViz"></div>
+</template>
+
+<template name='treemap'>
+    <div class="treemapViz"></div>
+</template>
+
+<template name='force'>
+    <div class="forceViz"></div>
+</template>
+
+<template name='sankey'>
+    <div class="sankeyViz"></div>
+</template>
+
+<template name='sunburst'>
+    <div class="sunburstViz"></div>
+</template>
+
+<template name='matrix'>
+    <div class="matrixViz"></div>
+</template>
+
+<template name='dendogram'>
     <form>
         <label>
             <input type="radio" name="mode" value="radialtree">Radial Tree</label>
@@ -22,9 +46,5 @@
         <label>
             <input type="radio" name="mode" value="cluster" checked>Cluster</label>
     </form>
-    <div class="treeViz"></div>
-</template>
-
-<template name='circle'>
-    <div class="circleViz"></div>
+    <div class="dendogramViz"></div>
 </template>

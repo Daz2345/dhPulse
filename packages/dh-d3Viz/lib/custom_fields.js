@@ -37,9 +37,14 @@ Posts.addField({
       label: 'Viz Type'
     },
     allowedValues: [
-      "Chord",
       "Circle",
-      "Tree"
+      "Chord",
+      "Dendogram",
+      "Force",
+      "Matrix",
+      "Sunburst",
+      "Sankey",
+      "Treemap"
     ],
     editableBy: ["member", "admin"]
   }

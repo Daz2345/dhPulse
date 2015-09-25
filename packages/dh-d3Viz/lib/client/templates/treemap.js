@@ -1,7 +1,7 @@
 Template.treemap.rendered = function() {
 
     var width = $(".treemapViz").parent().width(),
-        height = (width < 600)? width : width * 0.4,
+        height = (width < 600)? width : width * 0.5,
         x = d3.scale.linear().range([0, width]),
         y = d3.scale.linear().range([0, height]),
         color = d3.scale.category20c(),

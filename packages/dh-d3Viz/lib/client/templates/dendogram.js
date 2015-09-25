@@ -1,6 +1,6 @@
 Template.dendogram.rendered = function() {
     var width = $(".dendogramViz").parent().width(), 
-        height = (width < 600)? width : width * 0.4,
+        height = (width < 600)? width : width * 0.5,
         diameter = Math.min(width, height) * .41,
         duration = 2000;
 

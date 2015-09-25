@@ -1,7 +1,7 @@
 Template.sunburst.rendered = function() {
 
     var width = $(".sunburstViz").parent().width(), //Math.min(window.outerWidth, 960),
-        height = (width < 600)? width : width * 0.4,
+        height = (width < 600)? width : width * 0.5,
         radius = Math.min(width, height) / 2;
 
     var x = d3.scale.linear()

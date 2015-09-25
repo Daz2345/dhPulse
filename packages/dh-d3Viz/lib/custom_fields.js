@@ -6,9 +6,9 @@ Posts.addField({
     label: 'Include d3 Visualisation?',
     autoform: {
       group: 'd3',
-      type: "boolean-radios",
-      trueLabel: "Yes",
-      falseLabel: "No"
+      type: "boolean-checkbox"
+        // trueLabel: "Yes",
+        // falseLabel: "No",
     },
     editableBy: ["member", "admin"]
   }

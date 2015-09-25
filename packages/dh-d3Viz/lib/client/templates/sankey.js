@@ -304,7 +304,7 @@ d3.sankey = function() {
       left: 1
     },
     width = $(".sankeyViz").parent().width(), //Math.min(window.outerWidth, 960),
-    height = (width < 600)? width : width * 0.4
+    height = (width < 600)? width : width * 0.5
 
   var formatNumber = d3.format(",.0f"),
     format = function(d) {

@@ -1,7 +1,7 @@
 Template.circle.rendered = function() {
 
     var width = $(".circleViz").parent().width(),
-        height = (width < 600)? width : width * 0.4,
+        height = (width < 600)? width : width * 0.5,
         margin = 20,
         diameter = height;
 

@@ -8,3 +8,10 @@ Template.dh_tabs.replaces("iris_tabs");
 Template.dh_post_submit.replaces("post_submit");
 Template.dh_post_edit.replaces("post_edit");
 Template.dh_user_menu_label.replaces("user_menu_label");
+
+Session.set("Mongol", {
+	'collections': ['Posts', 'Users', '_raix_push_notifications', 'Categories', 'Pages'],
+	'display': true,
+	'opacity_normal': ".5",
+	'opacity_expand': "1",
+});

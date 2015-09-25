@@ -40,6 +40,7 @@ dh:d3@0.1.0
 dh:dunnhumby@0.1.0
 dh:heatmap@0.1.0
 dh:personal@0.1.0
+dh:push@0.1.0
 dh:theme@0.1.0
 djedi:sanitize-html@1.10.0
 ejson@1.0.6
@@ -99,6 +100,7 @@ momentjs:moment@2.10.6
 mongo@1.1.0
 mongo-livedata@1.0.8
 mpowaga:autoform-summernote@0.4.2
+msavin:mongol@0.1.1
 natestrauser:animate-css@0.1.1
 npm-bcrypt@0.7.8_2
 oauth@1.1.4
@@ -113,6 +115,8 @@ pauloborges:mapbox@2.1.5
 peernohell:c3@1.1.3
 percolatestudio:synced-cron@1.1.0
 raix:eventemitter@0.1.3
+raix:eventstate@0.0.4
+raix:push@2.6.12
 random@1.0.3
 react-meteor-data@0.1.6
 reactive-dict@1.1.0

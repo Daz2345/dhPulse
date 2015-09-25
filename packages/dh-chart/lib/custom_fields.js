@@ -49,9 +49,9 @@ Posts.addField({
     label: 'Include Chart?',      
     autoform: {
         group: 'chart',
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
         firstOption: "(Please Choose a Response)"        
     },        
     editableBy: ["member", "admin"]

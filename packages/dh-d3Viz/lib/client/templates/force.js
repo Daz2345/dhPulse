@@ -1,7 +1,7 @@
 Template.force.rendered = function() {
 
 var width = $(".forceViz").parent().width(),
-    height = (width < 600)? width : width * 0.4,
+    height = (width < 600)? width : width * 0.5,
     node,
     link,
     root;

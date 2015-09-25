@@ -15,9 +15,9 @@ Template.matrix.rendered = function() {
     var svg = d3.select(".matrixViz").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-        .style("margin-left", -margin.left + "px")
+        .style("margin-left", margin.left + "px")
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", "translate(" + margin.left +  "," + margin.top + ")");
 
     miserables = JSON.parse(this.data.d3Data);
     var matrix = [],

@@ -14,6 +14,7 @@ Package.onUse(function (api) {
     'fastclick',
     'force-ssl',
     '255kb:meteor-status',
+    'msavin:mongol',
     'meteorhacks:zones',
     'mixmax:smart-disconnect'
   ];

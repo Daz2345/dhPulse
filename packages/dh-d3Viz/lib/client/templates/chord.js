@@ -10,7 +10,7 @@ Template.chord.rendered = function() {
         .matrix(matrix);
 
     var width = $(".chordViz").parent().width(),
-        height = (width < 600)? width : width * 0.4,
+        height = (width < 600)? width : width * 0.5,
         innerRadius = (width * .41) / 2,
         outerRadius = innerRadius * 1.1;
 

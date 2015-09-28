@@ -30,8 +30,9 @@ telescope:rss
 telescope:scoring
 telescope:search
 # telescope:share
-telescope:singleday
+# telescope:singleday
 # telescope:sitemap
+telescope:spiderable
 telescope:subscribe-to-posts # notifications
 telescope:tagline-banner
 telescope:tags
@@ -41,12 +42,14 @@ telescope:update-prompt
 
 ############ dh Packages ############
 
+
 dh:theme
 dh:chart
 dh:api
 dh:personal
 dh:heatmap
 dh:d3
-dh:dunnhumby
+# dh:dunnhumby
 dh:push
 mpowaga:autoform-summernote
+

@@ -1,11 +1,11 @@
 Meteor.startup(function() {
 
-  SEO.config({
-    ignore: {
-      meta: ['fragment', 'viewport', 'apple-mobile-web-app-capable', 'mobile-web-app-capable', 'apple-mobile-web-app-title', 'apple-mobile-web-app-status-bar-style'],
-      link: ['stylesheet', 'icon', 'apple-touch-icon', 'apple-touch-icon-precomposed', 'apple-touch-startup-image', 'alternate']
-    }
-  });
+  // SEO.config({
+  //   ignore: {
+  //     meta: ['fragment', 'viewport', 'apple-mobile-web-app-capable', 'mobile-web-app-capable', 'apple-mobile-web-app-title', 'apple-mobile-web-app-status-bar-style'],
+  //     link: ['stylesheet', 'icon', 'apple-touch-icon', 'apple-touch-icon-precomposed', 'apple-touch-startup-image', 'alternate']
+  //   }
+  // });
 
   Telescope.utils.icons = {
     open: "plus",

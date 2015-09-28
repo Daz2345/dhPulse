@@ -8,7 +8,7 @@ Meteor.startup(function() {
 
       if (!_.isFunction(postView)) return null;
 
-      var params = Posts.getSubParams(postView(terms));
+      var params = Posts.parameters.get(postView(terms));
       var post = Posts.findOne(params.find, {
         'fields': {'postedAt': 1},
         'sort': params.options.sort
@@ -21,7 +21,7 @@ Meteor.startup(function() {
       {page: "/", lastmod: _getLatest(Settings.get("defaultView", "top")), changefreq: "hourly"},
       {page: "/top", lastmod: _getLatest("top"), changefreq: "hourly"},
       {page: "/new", lastmod: _getLatest("new"), changefreq: "hourly"},
-      {page: "/best", lastmod: _getLatest("best"), changefreq: "daily"},
+      {page: "/best", lastmod: _getLatest("best"), changefreq: "daily"}
     ];
 
     // Categories (if telescope-tags is included)
@@ -43,15 +43,14 @@ Meteor.startup(function() {
     var postPages = {};
     _.each(["top", "new", "best"], function(key) {
       var siteUrl = Telescope.utils.getSiteUrl();
-      var params = Posts.getSubParams(Posts.views[key]());
+      var params = Posts.parameters.get(Posts.views[key]());
       var posts = Posts.find(params.find, {
         fields: {postedAt: 1, slug: 1, _id: 1},
         limit: 100,
         sort: params.options.sort
       });
       posts.forEach(function(post) {
-        var url = Posts.getLink(post);
-        postPages[url] = {page: url, lastmod: post.postedAt, changefreq: "daily"};
+        postPages[url] = {page: post.getPageUrl(), lastmod: post.postedAt, changefreq: "daily"};
       });
     });
 

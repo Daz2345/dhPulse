@@ -21,7 +21,8 @@ Package.onUse(function (api) {
   // //  server
 
   api.addFiles([
-    'lib/server/pushnotifications.js'
+    'lib/server/pushMethods.js',
+    'lib/server/pushNotifications.js'
   ], ['server']);
 
 });

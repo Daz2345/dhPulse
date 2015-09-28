@@ -1,9 +1,8 @@
 daysPerPage = 5;
 
 Telescope.menuItems.add("viewsMenu", {
-  route: 'postsDaily',
+  route: Posts.getRoute,
   label: 'daily',
-  description: 'day_by_day_view'
+  description: 'day_by_day_view',
+  viewTemplate: 'posts_daily'
 });
-
-_.findWhere(Telescope.modules.top,{template: "posts_views_nav"}).only.push("postsDaily");

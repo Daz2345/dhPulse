@@ -1,22 +1,27 @@
 <template name="dh_layout">
-  {{> css}}
-  <div class="outer-wrapper {{currentPage}} {{navLayout}}">
-    {{> mobile_nav}}
-    <div class="inner-wrapper template-{{pageName}}">
-      {{> header}}      
-      <div class="content-wrapper">
-        {{> iris_main_header}}
-        {{> iris_sub_header}}
-        {{> messages}}
+  {{#if appIsReady}}
+    {{> css}}
+    <div class="outer-wrapper {{currentPage}} {{navLayout}}">
+      {{> mobile_nav}}
+      <div class="inner-wrapper template-{{pageName}}">
+        {{> header}}
         {{> modules zone="hero"}}
-        {{> yield "adminMenu"}}
-        {{> modules zone="top" zoneClass="top"}}
-        {{> yield}}
-        {{> modules zone="footer" zoneClass="footer"}}
-      </div>        
-      {{> iris_bottom_nav}}
-      <div class="overlay hidden"></div>
+        <div class="content-wrapper">
+          {{> messages}}
+          {{#if notAllowed}}
+            {{> Template.dynamic template=notAllowed.template data=notAllowed.data}}
+          {{else}}
+            {{> Template.dynamic template=adminMenu}}
+            {{> modules zone="top"}}
+            {{> Template.dynamic template=main}}
+          {{/if}}
+          {{> modules zone="footer"}}
+        </div>
+        <div class="overlay hidden"></div>
+      </div>
+      {{{extraCode}}}
     </div>
-    {{{extraCode}}}
-  </div>
+  {{else}}
+    <div class="app-loading">{{> loading}}</div>
+  {{/if}}
 </template>

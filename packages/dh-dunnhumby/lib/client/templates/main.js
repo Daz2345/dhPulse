@@ -8,8 +8,10 @@ Meteor.startup(function() {
   // });
 
   Telescope.utils.icons = {
-    open: "plus",
-    close: "minus",
+    expand: "angle-right",
+    collapse: "angle-down",
+    next: "angle-right",
+    close: "times",
     upvote: "thumbs-up",
     voted: "check",
     downvote: "thumbs-down",
@@ -28,8 +30,20 @@ Meteor.startup(function() {
     time: "clock-o",
     best: "star",
     search: "search",
-    back: "times"
+    edit: "pencil",
+    approve: "check-circle-o",
+    reject: "times-circle-o",
+    views: "eye",
+    clicks: "mouse-pointer", 
+    score: "line-chart"
   };
+
+  // Session.set("Mongol", {
+  // 	'collections': ['Posts', 'Users', 'Categories', 'Pages'],
+  // 	'display': false,
+  // 	'opacity_normal': ".5",
+  // 	'opacity_expand': "1",
+  // });
 
   // Tracker.autorun(function() {
   //   if (Meteor.user() && !Meteor.loggingIn()) {

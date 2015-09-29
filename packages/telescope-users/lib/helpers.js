@@ -267,3 +267,13 @@ Users.hasCompletedProfile = function (user) {
 };
 Users.helpers({hasCompletedProfile: function () {return Users.hasCompletedProfile(this);}});
 Users.hasCompletedProfileById = function (userId) {return Users.hasCompletedProfile(Meteor.users.findOne(userId));};
+
+// /**
+// * Get a user's Categories
+// * @param {Object} user
+// */
+// Users.getCategories = function (user) {
+//     return user.categories;
+// };
+// Users.helpers({getCategories: function () {return Users.getCategories(this);}});
+// Users.getCategoriesById = function (userId) {return Users.getCategories(Meteor.users.findOne(userId));};

@@ -103,30 +103,6 @@ function hideFuturePosts (parameters, terms) {
 
   var now = new Date();
 
-// <<<<<<< HEAD
-//   var d = new Date();
-//   d.setMonth(d.getMonth() + 1);
-
-//   // hide future scheduled posts unless "showFuture" is set to true or postedAt is already defined
-//   if (!parameters.showFuture && !parameters.find.postedAt)
-//     parameters.find.postedAt = {$lte: d};
-
-//   // filter by category if category _id is provided (unless categories parameter already specificed)
-//   // NOTE: this is a temporary fix because views cannot currently be combined
-//     // if (!!terms.category) {
-//     //     parameters.find.categories = {$in: terms.category};
-//     // }
-//     if (terms.view == 'category') {
-//       var categoryId = Categories.findOne({slug: terms.category})._id;
-//       parameters.find.categories = {$in: [categoryId]};
-//     }  else {
-//       if (!!terms.category) {
-//         parameters.find.categories = {$in: terms.category};
-//       }
-//     }
-
-//   // console.log(parameters);
-// =======
   if (!parameters.showFuture) {
 
     if (!!parameters.find.postedAt) {
@@ -152,7 +128,6 @@ function hideFuturePosts (parameters, terms) {
     }
 
   }
-// >>>>>>> 4d2d328da12fd78f6e5d7b4f0b3b90b3f9283700
 
   return parameters;
 }

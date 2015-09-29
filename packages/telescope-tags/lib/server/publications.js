@@ -1,6 +1,7 @@
 Meteor.publish('categories', function() {
   if(Users.can.viewById(this.userId)){
-    var categories = Categories.find();
+    // var userCats = Users.getCategoriesById(this.userId);
+    var categories = Categories.find();//{"_id": { $in : userCats}});
     var publication = this;
 
     categories.forEach(function (category) {

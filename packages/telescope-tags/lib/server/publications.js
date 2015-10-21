@@ -1,11 +1,12 @@
 Meteor.publish('categories', function() {
+    
   if(Users.can.viewById(this.userId)){
     var userCats = Users.getCategoriesById(this.userId);
     
   if (typeof userCats !== 'undefined') {
       var categories = Categories.find({"_id": { $in : userCats}});
     } else {
-       var categories = Categories.find();
+      var categories = Categories.find();
     }
     
     var publication = this;

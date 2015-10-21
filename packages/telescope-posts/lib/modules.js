@@ -1,8 +1,8 @@
 Telescope.modules.add("postComponents", [
-  {
-    template: 'post_rank',
-    order: 1
-  },
+  // {
+  //   template: 'post_rank',
+  //   order: 1
+  // },
   // {
   //   template: 'post_vote',
   //   order: 10

@@ -6,20 +6,35 @@ Package.describe({
 
 Package.onUse(function (api) {
 
-  // ---------------------------------- 1. Core dependency -----------------------------------
+  var packages = [
+    'telescope:core',
+    'telescope:posts',
+    'telescope:users'
+  ];
 
-  api.use("telescope:core");
+  api.use(packages);
+  api.imply(packages);
 
   // ---------------------------------- 2. Files to include ----------------------------------
+
+  // client
+
+  api.addFiles([
+    'lib/client/stylesheets/mention.css',
+    'lib/client/stylesheets/bootstrap-combined.no-icons.min.css',
+    'lib/client/mentions.js',
+    'lib/client/bootstrap-typeahead2.js',
+    'lib/client/mention.html',  
+    'lib/client/mention.js'
+  ], ['client']);
 
   // client & server
 
   api.addFiles([
-    'lib/custom_fields.js',
-    'lib/permissions.js'
+    'lib/custom_fields.js'
   ], ['client', 'server']);
 
 });
 
 
-// There are also changes within telescope:posts that need to be checked
+// There are also changes within telescope:posts and telescope:users that need to be checked

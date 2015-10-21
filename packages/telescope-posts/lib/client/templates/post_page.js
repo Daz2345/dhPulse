@@ -1,14 +1,22 @@
-var doSEOStuff = function (post) {
+var doSEOStuff = function(post) {
 
-  var link = {rel: "canonical", href: "post.getPageUrl(true)"};
+  var link = {
+    rel: "canonical",
+    href: "post.getPageUrl(true)"
+  };
   DocHead.addLink(link);
-  
+
   // Set SEO properties
-  
-  var seoProperties = {meta: {}};
+
+  var seoProperties = {
+    meta: {}
+  };
 
   // Set site name
-  DocHead.addMeta({property: "og:site_name", content: Settings.get("title")});
+  DocHead.addMeta({
+    property: "og:site_name",
+    content: Settings.get("title")
+  });
 
   // Set title
   Telescope.SEO.setTitle(post.title);
@@ -22,18 +30,24 @@ var doSEOStuff = function (post) {
   // Set image
   if (!!post.thumbnailUrl) {
     var image = Telescope.utils.addHttp(post.thumbnailUrl);
-    DocHead.addMeta({property: "twitter:card", content: "summary_large_image"});
+    DocHead.addMeta({
+      property: "twitter:card",
+      content: "summary_large_image"
+    });
     Telescope.SEO.setImage(image);
   }
 
   // Set Twitter username
   if (!!Settings.get("twitterAccount")) {
-    DocHead.addMeta({property: "twitter:site", content: Settings.get("twitterAccount")});
+    DocHead.addMeta({
+      property: "twitter:site",
+      content: Settings.get("twitterAccount")
+    });
   }
-  
+
 };
 
-Template.post_page.onCreated(function () {
+Template.post_page.onCreated(function() {
 
   var template = this;
   var postId = FlowRouter.getParam("_id");
@@ -43,10 +57,13 @@ Template.post_page.onCreated(function () {
 
   var postSubscription = Telescope.subsManager.subscribe('singlePost', postId);
   var postUsersSubscription = Telescope.subsManager.subscribe('postUsers', postId);
-  var commentSubscription = Telescope.subsManager.subscribe('commentsList', {view: 'postComments', postId: postId});
-  
+  var commentSubscription = Telescope.subsManager.subscribe('commentsList', {
+    view: 'postComments',
+    postId: postId
+  });
+
   // Autorun 3: when subscription is ready, update the data helper's terms
-  template.autorun(function () {
+  template.autorun(function() {
 
     var subscriptionsReady = postSubscription.ready(); // ⚡ reactive ⚡
 
@@ -60,30 +77,37 @@ Template.post_page.onCreated(function () {
 });
 
 Template.post_page.helpers({
-  ready: function () {
+  ready: function() {
     return Template.instance().ready.get();
   },
-  post: function () {
+  post: function() {
     return Posts.findOne(FlowRouter.getParam("_id"));
   },
-  canView: function () {
+  canView: function() {
     var post = this;
     var user = Meteor.user();
     if (post.status === Posts.config.STATUS_PENDING && !Users.can.viewPendingPost(user, post)) {
       return false;
-    } else if (post.status === Posts.config.STATUS_REJECTED && !Users.can.viewRejectedPost(user, post)) {
+    }
+    else if (post.status === Posts.config.STATUS_REJECTED && !Users.can.viewRejectedPost(user, post)) {
       return false;
+    }
+    if (!!user.categories && !!post.categories) {
+      // if the user shares no categories with the post categories
+      if (_.intersection(user.categories, post.categories).length === 0) {
+        return false;
+      }
     }
     return true;
   },
-  isPending: function () {
+  isPending: function() {
     return this.status === Posts.config.STATUS_PENDING;
   },
-  isdunnhumby: function () {
+  isdunnhumby: function() {
     return Meteor.user().isdunnhumby;
   }
 });
 
-Template.post_page.rendered = function(){
+Template.post_page.rendered = function() {
   $('body').scrollTop(0);
 };

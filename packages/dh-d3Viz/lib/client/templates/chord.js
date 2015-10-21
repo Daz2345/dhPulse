@@ -2,7 +2,7 @@ Template.chord.rendered = function() {
 
     var matrix = Papa.parse(this.data.d3Data).data
 
-    ArrayStringToNumber(matrix);
+    ArrayStringToNumber(matrix, 0, 0);
 
     var chord = d3.layout.chord()
         .padding(.05)
@@ -105,9 +105,9 @@ Template.chord.rendered = function() {
 
 };
 
-function ArrayStringToNumber(arrayVal) {
-    for (var i = 0; i < arrayVal.length; i++) {
-        for (var j = 0; j < arrayVal[i].length; j++) {
+function ArrayStringToNumber(arrayVal, startRow, startColumn) {
+    for (var i = startRow; i < arrayVal.length; i++) {
+        for (var j = startColumn; j < arrayVal[i].length; j++) {
             arrayVal[i][j] = +arrayVal[i][j];
         }
     }

@@ -11,8 +11,9 @@ Package.onUse(function (api) {
   var packages = [
     'telescope:core',    
     'telescope:users',
+    'dh:personal',
     'fastclick',
-    'force-ssl',
+    // 'force-ssl',
     '255kb:meteor-status@1.4.2',
     // 'msavin:mongol',
     'mpowaga:autoform-summernote@0.4.2',
@@ -34,10 +35,8 @@ Package.onUse(function (api) {
   // // client & server
 
   api.addFiles([
-    'lib/custom_fields.js',
+    // 'lib/custom_fields.js',
     'lib/users.js',
-    // 'lib/template_modules.js',
-    // 'lib/callbacks.js'
   ], ['client', 'server']);
 
   // // client

@@ -1,11 +1,15 @@
 <template name="dh_post_submit">
   <div class="form-page post-submit animated fadein">
     <div class="grid grid-module">
+      
+      {{> mention}}
+      
       <!--{{> quickForm collection="Posts" id="submitPostForm" template="bootstrap3-horizontal" input-col-class="controls" type="method" meteormethod="submitPost" fields=postFields}} -->
       {{#autoForm collection="Posts" id="submitPostForm" template="bootstrap3-horizontal" input-col-class="controls" type="method" meteormethod="submitPost"}}
       {{> afFormGroup name="url" input-col-class="controls"}}
       {{> afFormGroup name="title" input-col-class="controls"}}
       {{> afFormGroup name="body" input-col-class="controls"}}
+      {{> afFormGroup name="sendNotification" input-col-class="controls"}}
       {{> afFormGroup name="categories" input-col-class="controls"}}
       
       <!--chart section-->
@@ -15,6 +19,7 @@
         {{> afFormGroup name="chartTitle" input-col-class="controls"}}
         {{> afFormGroup name="chartType" input-col-class="controls" options="allowed"}}
         {{> afFormGroup name="chartData" input-col-class="controls"}}
+        {{> afFormGroup name="chartColours" input-col-class="controls"}}
         {{> afFormGroup name="chartXaxisType" input-col-class="controls" options="allowed"}}
         {{#if afFieldValueIs name="chartXaxisType" value="category"}}
           {{> afFormGroup name="chartXaxisCategories" input-col-class="controls"}}
@@ -40,6 +45,10 @@
       {{#if afFieldValueIs name="d3Viz" value=true}}      
         {{> afFormGroup name="d3Title" input-col-class="controls"}}
         {{> afFormGroup name="d3Type" input-col-class="controls" options="allowed"}}       
+        {{#if afFieldValueIs name="d3Type" value="CircularHeatmap"}}          
+          {{> afFormGroup name="radialLabels" input-col-class="controls"}}
+          {{> afFormGroup name="segmentLabels" input-col-class="controls"}}        
+        {{/if}} 
         {{> afFormGroup name="d3Data" input-col-class="controls"}}
         {{> afFormGroup name="d3Description" input-col-class="controls"}}   
       {{/if}}   
@@ -50,6 +59,7 @@
         {{> afFormGroup name="status" input-col-class="controls"}}
         {{> afFormGroup name="sticky" input-col-class="controls"}}
         {{> afFormGroup name="postedAt" input-col-class="controls"}}   
+        {{> afFormGroup name="author" input-col-class="controls"}} 
       {{/if}}      
       
         <div class="form-group">

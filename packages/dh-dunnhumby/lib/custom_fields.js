@@ -17,7 +17,7 @@ Users.addField({
   fieldSchema: {
     type: [String],
     optional: true,
-    editableBy: ["dunnhumby"],
+    editableBy: ["dunnhumby", "admin"],
     autoform: {
       type: "select-checkbox-inline",      
       group: 'dunnhumby',      

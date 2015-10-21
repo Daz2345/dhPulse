@@ -131,7 +131,7 @@ function hideFuturePosts (parameters, terms) {
 
   return parameters;
 }
-Telescope.callbacks.add("postsParameters", hideFuturePosts);
+// Telescope.callbacks.add("postsParameters", hideFuturePosts);
 
 // limit the post categories to those that the user has pemission to see
 function userCategories (parameters, terms) {

@@ -5,24 +5,41 @@
 // add new post Push callback on post submit
 function postSubmitPush(post) {
 
-    var adminIds = _.pluck(Users.find({'isAdmin': true}, {fields: {_id: 1}}).fetch(), '_id');
-    var notifiedUserIds = _.pluck(Users.find({'telescope.notifications.posts': true, categories : post.categories}, {fields: { _id: 1}}).fetch(), '_id');
     var pushData = {
-        post: _.pick(post, '_id', 'userId', 'title', 'url')
+        post: _.pick(post, '_id', 'userId', 'title', 'url', 'sendNotification')
     };
 
-    // remove post author ID from arrays
-    adminIds = _.without(adminIds, post.userId);
-    // notifiedUserIds = _.without(notifiedUserIds, post.userId);
+    if (post.sendNotification) {
+        var adminIds = _.pluck(Users.find({
+            'isAdmin': true
+        }, {
+            fields: {
+                _id: 1
+            }
+        }).fetch(), '_id');
+        var notifiedUserIds = _.pluck(Users.find({
+            'telescope.notifications.posts': true,
+            categories: post.categories
+        }, {
+            fields: {
+                _id: 1
+            }
+        }).fetch(), '_id');
 
-    if (post.status === Posts.config.STATUS_PENDING && !!adminIds.length) {
-        // if post is pending, only notify admins
-        // Herald.createPush(adminIds, {courier: 'newPendingPost', data: pushData});
-    }
-    else if (!!notifiedUserIds.length) {
-        // if post is approved, notify everybody
-        // Herald.createPush(notifiedUserIds, {courier: 'newPost', data: pushData});
-        Meteor.call("serverNotification", 'A new post has been submitted', pushData.post.title, notifiedUserIds);
+        // remove post author ID from arrays
+        adminIds = _.without(adminIds, post.userId);
+        notifiedUserIds = _.without(notifiedUserIds, post.userId);
+
+        if (post.status === Posts.config.STATUS_PENDING && !!adminIds.length) {
+            // if post is pending, only notify admins
+            // Herald.createPush(adminIds, {courier: 'newPendingPost', data: pushData});
+            Meteor.call("serverNotification", 'A new post has been submitted', pushData.post.title, notifiedUserIds);
+        }
+        else if (!!notifiedUserIds.length) {
+            // if post is approved, notify everybody
+            // Herald.createPush(notifiedUserIds, {courier: 'newPost', data: pushData});
+            Meteor.call("serverNotification", 'A new post has been submitted', pushData.post.title, notifiedUserIds);
+        }
     }
 }
 Telescope.callbacks.add("postSubmitAsync", postSubmitPush);
@@ -43,7 +60,7 @@ Telescope.callbacks.add("postApprovedAsync", postApprovedPush);
 // ------------------------------------------------------------------------------------------- //
 
 // add new comment Push callback on comment submit
-function commentSubmitPushs(comment) {
+function commentSubmitPush(comment) {
 
     // note: dummy content has disablePushs set to true
     if (Meteor.isServer && !comment.disablePushs) {
@@ -98,11 +115,9 @@ function commentSubmitPushs(comment) {
             var subscriberIdsToNotify = _.difference(post.subscribers, userIdsNotified, [comment.userId]);
             // Herald.createPush(subscriberIdsToNotify, {courier: 'newCommentSubscribed', data: pushData});
             Meteor.call("serverNotification", 'New Comment', pushData.post.title, subscriberIdsToNotify);
-            
+
             userIdsNotified = userIdsNotified.concat(subscriberIdsToNotify);
         }
     }
 }
-Telescope.callbacks.add("commentSubmitAsync", commentSubmitPushs);
-
-
+Telescope.callbacks.add("commentSubmitAsync", commentSubmitPush);

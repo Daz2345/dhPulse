@@ -38,12 +38,12 @@ Meteor.startup(function() {
     score: "line-chart"
   };
 
-  // Session.set("Mongol", {
-  // 	'collections': ['Posts', 'Users', 'Categories', 'Pages'],
-  // 	'display': false,
-  // 	'opacity_normal': ".5",
-  // 	'opacity_expand': "1",
-  // });
+  Session.set("Mongol", {
+  	'collections': ['Posts', 'Users', 'Categories', 'Pages'],
+  	'display': false,
+  	'opacity_normal': ".5",
+  	'opacity_expand': "1",
+  });
 
   // Tracker.autorun(function() {
   //   if (Meteor.user() && !Meteor.loggingIn()) {

@@ -27,13 +27,20 @@ Template.chart.rendered = function() {
             rotated: chartRotated,
             x: {
                 type: xAxisType,
-                categories: xAxisCats
+                categories: xAxisCats,
+                padding: {
+                    top: 0,
+                    bottom: 0
+                }
             },
             y: {
                 tick: {
                     format: d3.format(yAxisFormat)
                 },
-                min: 0
+                padding: {
+                    top: 0,
+                    bottom: 0
+                }
             }
         },
         transition: {

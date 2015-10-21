@@ -273,7 +273,11 @@ Users.hasCompletedProfileById = function (userId) {return Users.hasCompletedProf
 * @param {Object} user
 */
 Users.getCategories = function (user) {
-    return user.categories;
+  if (typeof user !== "undefined") {
+        return user.categories;
+    } else {
+      return {};
+  }
 };
 Users.helpers({getCategories: function () {return Users.getCategories(this);}});
 Users.getCategoriesById = function (userId) {return Users.getCategories(Meteor.users.findOne(userId));};

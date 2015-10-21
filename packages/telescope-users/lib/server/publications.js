@@ -66,3 +66,10 @@ ReactiveTable.publish("all-users", function() {
     return [];
   }
 });
+
+// publish all users for mentions
+// TODO: find a better way
+
+ Meteor.publish('allUsers', function() {
+   return Meteor.users.find({}, {fields: Users.pubsub.publicProperties});
+ })

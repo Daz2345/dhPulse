@@ -1,6 +1,10 @@
 [![Build Status](https://travis-ci.org/TelescopeJS/Telescope.svg)](https://travis-ci.org/TelescopeJS/Telescope)
 [![Code Climate](https://codeclimate.com/github/TelescopeJS/Telescope/badges/gpa.svg)](https://codeclimate.com/github/TelescopeJS/Telescope)
 
+dhPulse is a platform used for the distribution of actionable insights to our clients and suppliers within dunnhumby
+
+It is based upon the amazing Telescope news site by [Sacha Greif](http://sachagreif.com) 
+
 Telescope is an open-source, real-time social news site built with [Meteor](http://meteor.com)
 
 **Note:** Telescope is beta software. Most of it should work but it's still a little unpolished and you'll probably find some bugs. Use at your own risk :)

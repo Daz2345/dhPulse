@@ -37,11 +37,16 @@ Posts.addField({
       label: 'Viz Type'
     },
     allowedValues: [
+      "BoxPlot",
+      "Bundle",
       "Circle",
+      "CircularHeatmap",      
       "Chord",
       "Dendogram",
       "Force",
       "Matrix",
+      "Parallel",
+      "ParallelSets",
       "Sunburst",
       "Sankey",
       "Treemap"
@@ -58,6 +63,34 @@ Posts.addField({
     autoform: {
       group: 'd3',
       label: 'Data',
+      rows: 10
+    },
+    editableBy: ["member", "admin"]
+  }
+});
+
+Posts.addField({
+  fieldName: 'radialLabels',
+  fieldSchema: {
+    type: String,
+    optional: true,
+    autoform: {
+      group: 'd3',
+      label: 'Radial Labels',
+      rows: 10
+    },
+    editableBy: ["member", "admin"]
+  }
+});
+
+Posts.addField({
+  fieldName: 'segmentLabels',
+  fieldSchema: {
+    type: String,
+    optional: true,
+    autoform: {
+      group: 'd3',
+      label: 'Segment Labels',
       rows: 10
     },
     editableBy: ["member", "admin"]

@@ -1,14 +1,26 @@
-// Custom User Field
+// Custom User Fields
+
+Users.addField({
+  fieldName: 'isdunnhumby',
+  fieldSchema: {
+    type: Boolean,
+    optional: true,
+    editableBy: ["admin"],
+    autoform: {    
+    group: 'dunnhumby'
+    }
+  }
+});
 
 Users.addField({
   fieldName: 'categories',
   fieldSchema: {
     type: [String],
     optional: true,
-    editableBy: ["dunnhumby"],
+    editableBy: ["dunnhumby", "admin"],
     autoform: {
-      group: 'dunnhumby',      
       type: "select-checkbox-inline",      
+      group: 'dunnhumby',      
       noselect: true,
       options: function () {
         var categories = Categories.find().map(function (category) {

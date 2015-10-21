@@ -43,7 +43,7 @@ Posts.fastRenderSubscribe = function (params) {
 
       fr.subscribe('postsList', subscriptionTerms);
       fr.subscribe('postsListUsers', subscriptionTerms);
-
+    
     });
 
 

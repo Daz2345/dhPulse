@@ -29,22 +29,22 @@ Categories.schema = new SimpleSchema({
     optional: true,
     editableBy: ["admin"]
   },
-  // parentId: {
-  //   type: String,
-  //   optional: true,
-  //   editableBy: ["admin"],
-  //   autoform: {
-  //     options: function () {
-  //       var categories = Categories.find().map(function (category) {
-  //         return {
-  //           value: category._id,
-  //           label: category.name
-  //         };
-  //       });
-  //       return categories;
-  //     }
-  //   }
-  // }
+  parentId: {
+    type: String,
+    optional: true,
+    editableBy: ["admin"],
+    autoform: {
+      options: function () {
+        var categories = Categories.find().map(function (category) {
+          return {
+            value: category._id,
+            label: category.name
+          };
+        });
+        return categories;
+      }
+    }
+  }
 });
 
 Meteor.startup(function(){

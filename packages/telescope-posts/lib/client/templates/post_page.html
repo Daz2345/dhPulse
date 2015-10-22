@@ -1,34 +1,3 @@
-<!--<template name="post_page">-->
-<!--  {{#if ready}}-->
-<!--    {{#with post}}-->
-<!--      {{#if canView}}-->
-<!--        {{#if isPending}}-->
-<!--          <div class="grid">-->
-<!--            <div class="error pending-message module">-->
-<!--              {{_ "thanks_your_post_is_awaiting_approval"}}-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        {{/if}}-->
-<!--        <div class="single-post">-->
-<!--          <div class="posts posts-list">-->
-<!--            {{> post_item}}-->
-<!--          </div>-->
-<!--          {{#if body}}-->
-<!--            {{> post_body}}-->
-<!--          {{/if}}-->
-<!--          {{> comment_submit}}-->
-<!--          {{> comment_list}}-->
-<!--          {{> heatMap}}-->
-<!--        </div>-->
-<!--      {{else}}-->
-<!--        {{> no_rights}}-->
-<!--      {{/if}}-->
-<!--    {{/with}}-->
-<!--  {{else}}-->
-<!--    <div class="posts-loading">{{> loading}}</div>-->
-<!--  {{/if}}-->
-<!--</template>-->
-
 <template name="post_page">
   {{#if ready}}
     {{#if post}}
@@ -42,9 +11,9 @@
             </div>
           {{/if}}
         <div class="single-post grid animated fadeIn">
-          <div class="posts posts-list">
-            {{> post_item}}
-          </div>
+            <div class="posts posts-list">
+              {{> post_item post=this}}
+            </div>
           {{#if body}}
             {{> post_body}}
           {{/if}}
@@ -61,10 +30,11 @@
             {{> comment_submit}}
             {{> comment_list}}
           {{/if}}
-        </div>
-      {{else}}
-        {{> no_rights}}
-      {{/if}}
+          </div>
+        {{else}}
+          {{> no_rights}}
+        {{/if}}
+      {{/with}}
     {{else}}
       {{> not_found}}
     {{/if}}

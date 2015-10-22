@@ -17,7 +17,7 @@ Template.user_complete.helpers({
     var schema = Users.simpleSchema()._schema;
     var requiredFields = _.filter(_.keys(schema), function (fieldName) {
       var field = schema[fieldName];
-      return !!field.required && !Telescope.getNestedProperty(Meteor.user(), fieldName);
+      return !!field.required && !Telescope.getNestedProperty(user, fieldName);
     });
     return requiredFields;
   }

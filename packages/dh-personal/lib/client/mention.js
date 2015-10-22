@@ -1,4 +1,4 @@
-Meteor.subscribe('allUsers');
+// Meteor.subscribe('allUsers');
     
 Template.mention.rendered = function() {
     

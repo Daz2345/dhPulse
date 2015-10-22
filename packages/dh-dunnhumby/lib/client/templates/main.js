@@ -43,6 +43,7 @@ Meteor.startup(function() {
   	'display': false,
   	'opacity_normal': ".5",
   	'opacity_expand': "1",
+  	'disable_warning': 'false'
   });
 
   // Tracker.autorun(function() {
@@ -60,10 +61,4 @@ Meteor.startup(function() {
   //   }
   // });
 
-  // Session.set('postscount', Settings.get('postsPerPage', 10));
-
 });
-
-// Meteor.setInterval(function() {
-//     Session.set("datetime", new Date());
-// }, 30000);

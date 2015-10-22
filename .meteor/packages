@@ -18,7 +18,7 @@ telescope:datetimepicker
 telescope:debug
 telescope:email
 # telescope:embedly
-# telescope:getting-started
+telescope:getting-started
 telescope:invites
 telescope:kadira
 # telescope:newsletter
@@ -46,7 +46,7 @@ telescope:update-prompt
 dh:chart
 dh:api
 dh:personal
-dh:heatmap
+dh:map
 dh:d3
 dh:dunnhumby
 dh:push

@@ -1,7 +1,7 @@
 Package.describe({
-  summary: 'dunnhumby heatmap package',
+  summary: 'dunnhumby Map package',
   version: '0.1.0',
-  name: 'dh:heatmap'
+  name: 'dh:map'
 });
 
 Package.onUse(function (api) {
@@ -27,8 +27,8 @@ Package.onUse(function (api) {
   // client
 
   api.addFiles([
-    'lib/client/templates/heatmap.html',
-    'lib/client/templates/heatmap.js',
+    'lib/client/templates/map.html',
+    'lib/client/templates/map.js',
     'lib/client/templates/main.js',
     'lib/client/stylesheets/custom.scss',
     'lib/client/stylesheets/_mixins.scss'

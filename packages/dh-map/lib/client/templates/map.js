@@ -67,50 +67,50 @@ Template.heatMap.rendered = function() {
             map.addLayer(markers);
             
             // List on right hand side
-            var InViewTable = document.getElementById('InViewTable');
-            CreateList();
+            // var InViewTable = document.getElementById('InViewTable');
+            // CreateList();
 
-            map.on('move', function() {
-                CreateList();
-            });
+            // map.on('move', function() {
+            //     CreateList();
+            // });
 
-            function CreateList() {
-                // Construct an empty list to fill with onscreen markers.
-                var inBounds = [];
-                // Get the map bounds - the top-left and bottom-right locations.
-                var bounds = map.getBounds();
-                // For each marker, consider whether it is currently visible by comparing
-                // with the current map bounds.
-                markers.eachLayer(function(marker) {
-                    if (bounds.contains(marker.getLatLng())) {
-                        inBounds.push(marker);
-                    }
-                });
-                // sort the markers by function sortBy                
-                inBounds.sort(sortBy);                
-                // switch sort if toggled
-                if (Session.get('sortOrder')) 
-                    inBounds.reverse();
-                InViewTable.innerHTML = "";                      
-                // Create the li elements - 1 for each store
-                inBounds.map(function(marker, id) {
-                    var item = InViewTable.appendChild(document.createElement('li'));
-                    item.innerHTML = (id + 1) + "). " + marker.options.customTitle + " " + marker.options.feedbackCount;
-                    // desktop mouse clicks
-                    item.onclick = function() {
-                        map.setView(marker._latlng, 19);
-                    };
-                    // mobile touch
-                    item.ontouchstart = function() {
-                        map.setView(marker._latlng, 19);
-                    };
-                });
-            }
+            // function CreateList() {
+            //     // Construct an empty list to fill with onscreen markers.
+            //     var inBounds = [];
+            //     // Get the map bounds - the top-left and bottom-right locations.
+            //     var bounds = map.getBounds();
+            //     // For each marker, consider whether it is currently visible by comparing
+            //     // with the current map bounds.
+            //     markers.eachLayer(function(marker) {
+            //         if (bounds.contains(marker.getLatLng())) {
+            //             inBounds.push(marker);
+            //         }
+            //     });
+            //     // sort the markers by function sortBy                
+            //     inBounds.sort(sortBy);                
+            //     // switch sort if toggled
+            //     if (Session.get('sortOrder')) 
+            //         inBounds.reverse();
+            //     InViewTable.innerHTML = "";                      
+            //     // Create the li elements - 1 for each store
+            //     inBounds.map(function(marker, id) {
+            //         var item = InViewTable.appendChild(document.createElement('li'));
+            //         item.innerHTML = (id + 1) + "). " + marker.options.customTitle + " " + marker.options.feedbackCount;
+            //         // desktop mouse clicks
+            //         item.onclick = function() {
+            //             map.setView(marker._latlng, 19);
+            //         };
+            //         // mobile touch
+            //         item.ontouchstart = function() {
+            //             map.setView(marker._latlng, 19);
+            //         };
+            //     });
+            // }
 
-            $(".switch-input").click(function() {
-                Session.set('sortOrder', !Session.get('sortOrder'));
-                CreateList();
-            });
+            // $(".switch-input").click(function() {
+            //     Session.set('sortOrder', !Session.get('sortOrder'));
+            //     CreateList();
+            // });
         }
     });
 };

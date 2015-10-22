@@ -143,7 +143,7 @@ function userCategories (parameters, terms) {
 
   if (typeof userCats !== 'undefined') {
 
-    if (typeof userCats === "string") { // cat is a string
+    if (userCats.length === 1) { // One Category
       find = {"_id": userCats};
     } else { // cat is an array
       find = {"_id": { $in : userCats}};

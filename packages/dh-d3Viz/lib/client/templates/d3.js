@@ -1,6 +1,5 @@
 Template.d3Viz.helpers({
     myTemplate: function() {
-        // console.log(this.d3Type.toLowerCase());
         return this.d3Type.toLowerCase();
     }
 });

@@ -327,8 +327,6 @@ d3.sankey = function() {
 
   var energy = JSON.parse(this.data.d3Data);
 
-  console.log(energy);
-
   sankey
     .nodes(energy.nodes)
     .links(energy.links)

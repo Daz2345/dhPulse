@@ -27,6 +27,7 @@ Package.onUse(function (api) {
     'lib/client/templates/d3.html',
     'lib/client/templates/d3.js',
     'lib/client/templates/bundle.js',
+    'lib/client/templates/bullet.js',
     'lib/client/templates/boxplot.js',
     'lib/client/templates/chord.js',
     'lib/client/templates/circle.js',    

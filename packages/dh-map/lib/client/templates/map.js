@@ -44,8 +44,7 @@ Template.heatMap.rendered = function() {
                 var a = hmData[i];
                 var marker = L.marker(new L.LatLng(a[0], a[1]), {
                     // Can enter multiple custom data points within the object
-                    customTitle: a[2],
-                    feedbackCount: Math.floor((Math.random() * 100) + 1)
+                    customTitle: a[2]
                 }).addTo(markers);
                 marker.bindPopup(a[2]);
             }

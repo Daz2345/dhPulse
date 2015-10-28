@@ -153,18 +153,18 @@ Posts.addField({
         label: 'Chart Type'
     },
     allowedValues: [
-            "Line",
-            "Bar",
-            "Column",
-            "Spline",
-            "Step",
             "Area",
             "Area-Spline",
             "Area-Step",
-            "Scatter",
-            "Pie",
+            "Bar",
+            "Column",
             "Donut",
-            "Gauge"],
+            "Gauge",            
+            "Line",
+            "Pie",            
+            "Scatter",
+            "Spline",
+            "Step"],
     editableBy: ["member", "admin"]
   }
 });

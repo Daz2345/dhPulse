@@ -1,6 +1,5 @@
 Template.post_submit.onCreated(function () {
   Telescope.subsManager.subscribe('allUsersAdmin');
-  Telescope.subsManager.subscribe('allUsersList');
 });
 
 Template.post_submit.helpers({

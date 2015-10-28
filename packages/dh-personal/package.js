@@ -31,7 +31,8 @@ Package.onUse(function (api) {
   // client & server
 
   api.addFiles([
-    'lib/custom_fields.js'
+    'lib/custom_fields.js',
+    'lib/parameters.js'
   ], ['client', 'server']);
 
 });

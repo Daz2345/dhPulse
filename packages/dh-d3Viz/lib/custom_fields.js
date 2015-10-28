@@ -38,6 +38,7 @@ Posts.addField({
     },
     allowedValues: [
       "BoxPlot",
+      "Bullet",
       "Bundle",
       "Circle",
       "CircularHeatmap",      

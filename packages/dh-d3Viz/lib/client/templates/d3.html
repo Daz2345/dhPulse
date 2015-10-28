@@ -1,9 +1,11 @@
 <template name="d3Viz">
-    <div>
-        <h4>{{d3Title}}</h4></div>
+    <div class="zone-wrapper post d3section">
+        <div>
+            <h4>{{d3Title}}</h4></div>
         {{> UI.dynamic template=myTemplate}}
-    <div>
-        <p><small>{{d3Description}}</small></p>
+        <div>
+            <p><small>{{d3Description}}</small></p>
+        </div>
     </div>
 </template>
 
@@ -13,6 +15,10 @@
 
 <template name='parallelsets'>
     <div class="parallelsetsViz"></div>
+</template>
+
+<template name='bullet'>
+    <div class="bulletViz"></div>
 </template>
 
 <template name='chord'>

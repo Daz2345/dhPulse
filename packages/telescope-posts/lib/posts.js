@@ -38,7 +38,8 @@ Posts.schema = new SimpleSchema({
     max: 500,
     editableBy: ["member", "admin"],
     autoform: {
-      type: "bootstrap-url"
+      type: "bootstrap-url",
+      order: 10
     }
   },
   /**
@@ -48,7 +49,10 @@ Posts.schema = new SimpleSchema({
     type: String,
     optional: false,
     max: 500,
-    editableBy: ["member", "admin"]
+    editableBy: ["member", "admin"],
+    autoform: {
+      order: 20
+    }
   },
   /**
     Slug
@@ -79,6 +83,7 @@ Posts.schema = new SimpleSchema({
       //     ['misc', ['fullscreen', 'undo', 'redo']]
       //   ]
       // }
+      order: 30
     }
   },
   /**

@@ -27,7 +27,7 @@ telescope:pages
 telescope:post-by-feed
 telescope:prerender
 telescope:releases
-# telescope:rss
+telescope:rss
 telescope:scoring
 telescope:search
 # telescope:share
@@ -43,7 +43,7 @@ telescope:update-prompt
 
 ############ dh Packages ############
 
-# dh:theme
+dh:theme
 dh:chart
 dh:api
 dh:personal

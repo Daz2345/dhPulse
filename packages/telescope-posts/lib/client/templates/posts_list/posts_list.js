@@ -2,25 +2,31 @@
 
 Template.posts_list.created = function() {
   Session.set('listPopulatedAt', new Date());
+  var title = Settings.get("title", "dhPulse");
+  // if (!!Settings.get("tagline")) {
+    title += ": "+Settings.get("tagline");
+  // }  
+  Telescope.SEO.setTitle(title);  
 };
 
 Template.posts_list.helpers({
-  postsLayout: function () {
+  postsLayout: function() {
     return Settings.get('postsLayout', 'posts-list');
   },
-  description: function () {
+  description: function() {
     var controller = Iron.controller();
     if (typeof controller.getDescription === 'function')
       return Iron.controller().getDescription();
   },
-  postsCursor : function () {
+  postsCursor: function() {
     if (this.postsCursor) { // not sure why this should ever be undefined, but it can apparently
-      var posts = this.postsCursor.map(function (post, index) {
+      var posts = this.postsCursor.map(function(post, index) {
         post.rank = index;
         return post;
       });
       return posts;
-    } else {
+    }
+    else {
       console.log('postsCursor not defined');
     }
   }
@@ -37,36 +43,41 @@ Template.postsListIncoming.events({
 // ----------------------------------- Load More -----------------------------------//
 
 Template.postsLoadMore.helpers({
-  postsReady: function () {
+  postsReady: function() {
     return this.postsReady;
   },
-  showInfiniteScroll: function () {
+  showInfiniteScroll: function() {
     if (this.controllerOptions && this.controllerOptions.loadMoreBehavior === "button") {
       return false;
-    } else {
+    }
+    else {
       return this.hasMorePosts;
     }
   },
-  showLoadMoreButton: function () {
+  showLoadMoreButton: function() {
     if (this.controllerOptions && this.controllerOptions.loadMoreBehavior === "scroll") {
       return false;
-    } else {
-      return this.hasMorePosts;
     }
+    else {
+      return this.hasMorePosts;
+    }    
   },
-  hasPosts: function () {
+  hasPosts: function() {
     return !!this.postsCursor.count();
   }
 });
 
-Template.postsLoadMore.onCreated(function () {
+Template.postsLoadMore.onCreated(function() {
 
   var context = Template.currentData();
 
   if (context.controllerOptions && context.controllerOptions.loadMoreBehavior === "scroll") {
-
+    
+    if ($(window).height() === $(document).height()) {
+      context.loadMoreHandler(context.controllerInstance);
+    }
     $(window).scroll(function() {
-      if($(window).scrollTop() + $(window).height() === $(document).height()) {
+      if ($(window).scrollTop() + $(window).height() === $(document).height()) {
         context.loadMoreHandler(context.controllerInstance);
       }
     });
@@ -75,7 +86,7 @@ Template.postsLoadMore.onCreated(function () {
 });
 
 Template.postsLoadMore.events({
-  'click .more-button': function (event) {
+  'click .more-button': function(event) {
     event.preventDefault();
     this.loadMoreHandler(this.controllerInstance);
   }

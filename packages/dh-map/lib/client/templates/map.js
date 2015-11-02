@@ -54,12 +54,7 @@ Template.heatMap.rendered = function() {
             markers.on('clusterclick', function(a) {
                 // basicaly size of square
                 var sizeOfBound = (a.layer._bounds._northEast.lat - a.layer._bounds._southWest.lat) + (a.layer._bounds._northEast.lng - a.layer._bounds._southWest.lng);
-                if (sizeOfBound !== 0) {
-                    a.layer.zoomToBounds();
-                }
-                else {
-                    a.layer.spiderfy();
-                }
+                (sizeOfBound !== 0) ? a.layer.zoomToBounds() : a.layer.spiderfy();
             });
             // fit the map viewpoint to the markers bounds
             map.fitBounds(markers.getBounds());

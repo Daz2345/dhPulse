@@ -21,7 +21,7 @@ Posts.views.baseParameters = {
     status: Posts.config.STATUS_APPROVED
   },
   options: {
-    limit: 10
+    limit: Settings.get('postsPerPage', 15)
   }
 };
 

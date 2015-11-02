@@ -11,7 +11,7 @@ Package.onUse(function (api) {
   var packages = [
     'telescope:core',
     // 'webbroi:telescope-theme-iris@0.2.5',
-    'natestrauser:animate-css',    
+    'natestrauser:animate-css@3.4.0',    
   ];
 
   api.use(packages);

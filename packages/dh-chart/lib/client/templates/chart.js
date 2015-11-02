@@ -3,22 +3,31 @@ var colourPalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1
 Template.chart.rendered = function() {
 
     var chartValues = this.data,
-        chartTypeVal = (chartValues.chartType === 'Column') ? 'bar' : chartValues.chartType.toLowerCase(),
-        chartRotated = chartTypeVal === 'bar',
+        grouped = (chartValues.chartType.indexOf("Stacked ") > -1) ? true : false,
+        chartTypeBase = chartValues.chartType.replace("Stacked ", ""),
+        chartTypeVal = (chartTypeBase === 'Column') ? 'bar' : chartTypeBase.toLowerCase(),
+        chartRotated = chartTypeBase === 'bar',
         xAxisType = chartValues.chartXaxisType,
         xAxisCats = (xAxisType === 'category') ? Papa.parse(chartValues.chartXaxisCategories).data : "",
         chData = Papa.parse(chartValues.chartData).data,
+        chartColours = (chartValues.chartColours === undefined) ? colourPalette : Papa.parse(chartValues.chartColours.split(",").join("\n")).data,
         yAxisFormat = (chartValues.chartYaxisFormat === undefined) ? "" : chartValues.chartYaxisFormat,
-        showSubChart = chartValues.ShowSubChart;
+        showSubChart = chartValues.ShowSubChart,
+        groupData = (grouped) ? chData[0] : [];
+
+    console.log(chartColours)
 
     var chart = c3.generate({
         bindto: this.find('.chart'),
         data: {
             rows: chData,
-            type: chartTypeVal
+            type: chartTypeVal,
+            groups: [
+                groupData
+                ]
         },
         color: {
-            pattern: colourPalette
+            pattern: chartColours
         },
         subchart: {
             show: showSubChart

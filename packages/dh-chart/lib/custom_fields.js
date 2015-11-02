@@ -157,7 +157,9 @@ Posts.addField({
             "Area-Spline",
             "Area-Step",
             "Bar",
+            "Stacked Bar",
             "Column",
+            "Stacked Column",
             "Donut",
             "Gauge",            
             "Line",
@@ -183,6 +185,19 @@ Posts.addField({
   }
 });
 
+Posts.addField({
+  fieldName: 'chartColours',
+  fieldSchema: {
+    type: String,
+    autoform: {
+        group: 'chart',
+        label: 'Colours'
+    },
+    optional: true,
+    editableBy: ["member", "admin"]
+  }
+});
+
 // Posts.addField({
 //   fieldName: 'chartColours',
 //   fieldSchema: {
@@ -203,7 +218,7 @@ Posts.addField({
     type: String,
     autoform: {
         group: 'chart',
-        label: 'X Axis Type'
+        label: 'Axis Type'
     },
     allowedValues: [
           "timeseries",
@@ -220,7 +235,7 @@ Posts.addField({
     type: String,
     autoform: {
         group: 'chart',
-        label: 'X Axis Categories',
+        label: 'Categories',
         rows: 10
     },
     optional: true,

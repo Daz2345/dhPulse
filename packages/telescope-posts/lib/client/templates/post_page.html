@@ -14,12 +14,12 @@
             <div class="posts posts-list">
               {{> post_item post=this}}
             </div>
-          {{#if body}}
-            {{> post_body}}
-          {{/if}}
           {{#if chart}}
             {{ > chart}}
           {{/if}}    
+          {{#if body}}
+            {{> post_body}}
+          {{/if}}
           {{#if heatMap}}
             {{ > heatMap}}
           {{/if}}   

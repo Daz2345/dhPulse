@@ -51,7 +51,10 @@ Template.postsLoadMore.helpers({
       return false;
     }
     else {
-      return this.hasMorePosts;
+      if ($(window).scrollTop() + $(window).height() === $(document).height()) {      
+        return this.hasMorePosts;
+      }
+      return false
     }
   },
   showLoadMoreButton: function() {
@@ -73,9 +76,6 @@ Template.postsLoadMore.onCreated(function() {
 
   if (context.controllerOptions && context.controllerOptions.loadMoreBehavior === "scroll") {
     
-    if ($(window).height() === $(document).height()) {
-      context.loadMoreHandler(context.controllerInstance);
-    }
     $(window).scroll(function() {
       if ($(window).scrollTop() + $(window).height() === $(document).height()) {
         context.loadMoreHandler(context.controllerInstance);

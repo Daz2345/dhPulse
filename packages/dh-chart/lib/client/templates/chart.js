@@ -6,16 +6,14 @@ Template.chart.rendered = function() {
         grouped = (chartValues.chartType.indexOf("Stacked ") > -1) ? true : false,
         chartTypeBase = chartValues.chartType.replace("Stacked ", ""),
         chartTypeVal = (chartTypeBase === 'Column') ? 'bar' : chartTypeBase.toLowerCase(),
-        chartRotated = chartTypeBase === 'bar',
+        chartRotated = chartTypeVal === 'bar',
         xAxisType = chartValues.chartXaxisType,
         xAxisCats = (xAxisType === 'category') ? Papa.parse(chartValues.chartXaxisCategories).data : "",
         chData = Papa.parse(chartValues.chartData).data,
         chartColours = (chartValues.chartColours === undefined) ? colourPalette : Papa.parse(chartValues.chartColours.split(",").join("\n")).data,
         yAxisFormat = (chartValues.chartYaxisFormat === undefined) ? "" : chartValues.chartYaxisFormat,
-        showSubChart = chartValues.ShowSubChart,
+        showSubChart = chartValues.showSubChart,
         groupData = (grouped) ? chData[0] : [];
-
-    console.log(chartColours)
 
     var chart = c3.generate({
         bindto: this.find('.chart'),
@@ -53,7 +51,7 @@ Template.chart.rendered = function() {
             }
         },
         transition: {
-            duration: 2500
+            duration: 500
         }
     });
 

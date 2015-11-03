@@ -5,8 +5,8 @@ Template.dh_users_dashboard.helpers({
       rowsPerPage: 20,
       showFilter: true,
       fields: [
-        { key: 'avatar', label: '', tmpl: Template.users_list_avatar, sortable: false },
-        { key: 'createdAt', label: 'Member Since', tmpl: Template.users_list_created_at, sort: 'descending' },
+        // { key: 'avatar', label: '', tmpl: Template.users_list_avatar, sortable: false },
+        { key: 'createdAt', label: 'Member Since', tmpl: Template.users_list_created_at, sortDirection: 'descending' },
         { key: 'isAdmin', label: 'Admin', fn: function(val){return val ? 'Yes':'No'} },
         { key: 'isdunnhumby', label: 'dunnhumby', fn: function(val){return val ? 'Yes':'No'} },
         { key: 'username', label: 'Username', tmpl: Template.users_list_username },
@@ -15,7 +15,7 @@ Template.dh_users_dashboard.helpers({
         { key: 'telescope.postCount', label: 'Posts' },
         { key: 'telescope.commentCount', label: 'Comments' },
         { key: 'telescope.karma', label: 'Karma', fn: function(val){return Math.round(100*val)/100} },
-        { key: 'telescope.inviteCount', label: 'Invites' },
+        // { key: 'telescope.inviteCount', label: 'Invites' },
         { key: 'telescope.newsletter.subscribeToNewsletter', label: 'Newsletter', fn: function(val){return val ? 'Yes':'No'} },        
         // { key: 'telescope.isInvited', label: 'Invited', fn: function(val){return val ? 'Yes':'No'} },
         { key: 'actions', label: 'Actions', tmpl: Template.users_list_actions, sortable: false }

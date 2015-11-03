@@ -1,60 +1,58 @@
 <template name="dh_post_edit">
   <div class="form-page post-edit animated fadein">
     <div class="grid grid-module">
+      
+      {{> mention}}
+            
       <!--{{> quickForm collection="Posts" doc=post id="editPostForm" template="bootstrap3-horizontal" label-class="control-label" input-col-class="controls" type="method-update" meteormethod="editPost" fields=postFields}}-->
       {{#autoForm collection="Posts" doc=post id="editPostForm" template="bootstrap3-horizontal" label-class="control-label" input-col-class="controls" type="method-update" meteormethod="editPost" fields=postFields}}
       {{> afFormGroup name="url" input-col-class="controls"}}
       {{> afFormGroup name="title" input-col-class="controls"}}
       {{> afFormGroup name="body" input-col-class="controls"}}
       {{> afFormGroup name="categories" input-col-class="controls"}}
+      {{> afFormGroup name="sendNotification" input-col-class="controls"}}
       
       <!--chart section-->
-      <legend>Chart</legend>
-      {{> afFormGroup name="chart" input-col-class="controls" options=optionsHelper}}
-      {{#if afFieldValueIs name="chart" value=true}}
-        {{> afFormGroup name="chartTitle" input-col-class="controls"}}
-        {{> afFormGroup name="chartType" input-col-class="controls" options="allowed"}}
-        {{> afFormGroup name="chartData" input-col-class="controls"}}
-        {{> afFormGroup name="chartXaxisType" input-col-class="controls" options="allowed"}}
-        {{#if afFieldValueIs name="chartXaxisType" value="category"}}
-          {{> afFormGroup name="chartXaxisCategories" input-col-class="controls"}}
-        {{else}}          
+      <div class="form-group">
+        <label class="control-label">Visualisations</label><br>
+        <hr>
+        {{> afFormGroup name="chart" input-col-class="controls" options=optionsHelper}}
+        {{#if afFieldValueIs name="chart" value=true}}
+          {{> afFormGroup name="chartTitle" input-col-class="controls"}}
+          {{> afFormGroup name="chartType" input-col-class="controls" options="allowed"}}
+          {{> afFormGroup name="chartData" input-col-class="controls"}}
+          {{> afFormGroup name="chartColours" input-col-class="controls"}}
+          {{> afFormGroup name="chartXaxisType" input-col-class="controls" options="allowed"}}
+          {{#if afFieldValueIs name="chartXaxisType" value="category"}}
+            {{> afFormGroup name="chartXaxisCategories" input-col-class="controls"}}
+          {{else}}          
+          {{/if}}
+          {{> afFormGroup name="showSubChart" input-col-class="controls"}}
+          {{> afFormGroup name="chartYaxisFormat" input-col-class="controls"}}
+          {{> afFormGroup name="chartDescription" input-col-class="controls"}}    
         {{/if}}
-        {{> afFormGroup name="ShowSubChart" input-col-class="controls"}}
-        {{> afFormGroup name="chartYaxisFormat" input-col-class="controls"}}
-        {{> afFormGroup name="chartDescription" input-col-class="controls"}}    
-      {{/if}}
-      
-      <!--heat map section-->
-      <legend>Map</legend>
-      {{> afFormGroup name="heatMap" input-col-class="controls" options=optionsHelper}}      
-      {{#if afFieldValueIs name="heatMap" value=true}}      
-        {{> afFormGroup name="heatMapTitle" input-col-class="controls"}}
-        {{> afFormGroup name="heatMapData" input-col-class="controls"}}
-        {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
-      {{/if}}        
-      
-      <!--d3 Viz section-->
-      <legend>d3</legend>
-      {{> afFormGroup name="d3Viz" input-col-class="controls" options=optionsHelper}}      
-      {{#if afFieldValueIs name="d3Viz" value=true}}      
-        {{> afFormGroup name="d3Title" input-col-class="controls"}}
-        {{> afFormGroup name="d3Type" input-col-class="controls" options="allowed"}}     
-        {{#if afFieldValueIs name="d3Type" value="CircularHeatmap"}}          
-          {{> afFormGroup name="radialLabels" input-col-class="controls"}}
-          {{> afFormGroup name="segmentLabels" input-col-class="controls"}}        
-        {{/if}}         
-        {{> afFormGroup name="d3Data" input-col-class="controls"}}
-        {{> afFormGroup name="d3Description" input-col-class="controls"}}   
-      {{/if}}   
-      
-      <!--Admin Section-->
-      {{#if isAdmin}}    
-        <legend>Admin</legend>
-        {{> afFormGroup name="status" input-col-class="controls"}}
-        {{> afFormGroup name="sticky" input-col-class="controls"}}
-        {{> afFormGroup name="postedAt" input-col-class="controls"}}   
-      {{/if}}      
+        
+        <!-- map section-->
+        {{> afFormGroup name="heatMap" input-col-class="controls" options=optionsHelper}}      
+        {{#if afFieldValueIs name="heatMap" value=true}}      
+          {{> afFormGroup name="heatMapTitle" input-col-class="controls"}}
+          {{> afFormGroup name="heatMapData" input-col-class="controls"}}
+          {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
+        {{/if}}        
+        
+        <!--d3 Viz section-->
+        {{> afFormGroup name="d3Viz" input-col-class="controls" options=optionsHelper}}      
+        {{#if afFieldValueIs name="d3Viz" value=true}}      
+          {{> afFormGroup name="d3Title" input-col-class="controls"}}
+          {{> afFormGroup name="d3Type" input-col-class="controls" options="allowed"}}       
+          {{#if afFieldValueIs name="d3Type" value="CircularHeatmap"}}          
+            {{> afFormGroup name="radialLabels" input-col-class="controls"}}
+            {{> afFormGroup name="segmentLabels" input-col-class="controls"}}        
+          {{/if}} 
+          {{> afFormGroup name="d3Data" input-col-class="controls"}}
+          {{> afFormGroup name="d3Description" input-col-class="controls"}}   
+        {{/if}}   
+      </div>
       
         <div class="form-group">
             <div></div>

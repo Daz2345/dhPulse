@@ -70,19 +70,18 @@ Posts.schema = new SimpleSchema({
     editableBy: ["member", "admin"],
     autoform: {
       rows : 10,
-      // type: 'summernote',
-      // settings: {height:300,
-      //   toolbar: [
-      //     ['style', ['help', 'style', 'bold', 'italic', 'underline', 'clear']],
-      //     ['font', ['strikethrough', 'superscript', 'subscript']],
-      //     ['fontsize', ['fontsize']],
-      //     ['insert',['link', 'hr', 'table']],
-      //     ['color', ['color']],
-      //     ['para', ['ul', 'ol', 'paragraph']],
-      //     ['height', ['height']],
-      //     ['misc', ['fullscreen', 'undo', 'redo']]
-      //   ]
-      // }
+      type: 'summernote',
+      settings: {height:300,
+        toolbar: [
+          ['style', ['help', 'style', 'bold', 'italic', 'underline', 'clear']],
+          ['font', ['strikethrough', 'superscript', 'subscript']],
+          ['fontsize', ['fontsize']],
+          ['insert',['link', 'hr', 'table']],
+          ['color', ['color']],
+          ['para', ['paragraph']],
+          ['height', ['height']]
+        ]
+      },
       order: 30
     }
   },

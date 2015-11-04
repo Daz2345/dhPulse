@@ -10,6 +10,7 @@ Package.onUse(function (api) {
   api.versionsFrom(['METEOR@1.0']);
 
   api.use([
+    'summernote:summernote@0.1.0',
     'telescope:lib@0.25.5',
     'telescope:i18n@0.25.5',
     'telescope:settings@0.25.5',

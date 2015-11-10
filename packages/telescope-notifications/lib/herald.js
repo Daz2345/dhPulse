@@ -1,8 +1,10 @@
 // send emails every second when in dev environment
-if (Meteor.absoluteUrl().indexOf('localhost') !== -1)
-  Herald.settings.queueTimer = 1000;
+// if (Meteor.absoluteUrl().indexOf('localhost') !== -1)
+
 
 Meteor.startup(function () {
+
+  Herald.settings.queueTimer = 1000;
 
   Herald.collection.deny({
     update: function(){ return !Users.can.editById; },

@@ -24,6 +24,7 @@ Package.onUse(function (api) {
   // client
 
   api.addFiles([
+    'lib/client/stylesheets/custom.scss',    
     'lib/client/templates/d3.html',
     'lib/client/templates/d3.js',
     'lib/client/templates/bundle.js',
@@ -39,8 +40,7 @@ Package.onUse(function (api) {
     'lib/client/templates/force.js',   
     'lib/client/templates/parallel.js', 
     'lib/client/templates/parallelsets.js',    
-    'lib/client/templates/matrix.js',   
-    'lib/client/stylesheets/custom.scss'
+    'lib/client/templates/matrix.js'
   ], ['client']);
 
 });

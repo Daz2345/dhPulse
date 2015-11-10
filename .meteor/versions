@@ -60,7 +60,7 @@ fortawesome:fontawesome@4.4.0
 fourseven:scss@3.4.1
 geojson-utils@1.0.4
 handlebars@1.0.4
-harrison:papa-parse@1.1.0
+harrison:papa-parse@1.1.1
 hot-code-push@1.0.0
 html-tools@1.0.5
 htmljs@1.0.5
@@ -169,6 +169,7 @@ telescope:rss@0.25.5
 telescope:scoring@0.25.5
 telescope:search@0.25.5
 telescope:settings@0.25.5
+telescope:singleday@0.25.5
 telescope:subscribe-to-posts@0.25.5
 telescope:tagline-banner@0.25.5
 telescope:tags@0.25.5

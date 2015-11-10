@@ -5,7 +5,7 @@ function userCategories (parameters, terms) {
     var find = {};
     var userCats = Users.getCategoriesById(terms.userId);
 
-  if (typeof userCats !== 'undefined') {
+  if (typeof userCats !== 'undefined' && !terms.cat ) {//&& parameters.find.categories === 'undefined') {
 
     if (userCats.length === 1) { // One Category
       find = {"_id": userCats};

@@ -12,9 +12,3 @@ Template.post_actions.events({
     }
   }
 });
-
-Template.post_actions.helpers({
-  isdunnhumby: function () {
-    return Meteor.user().isdunnhumby;
-  }
-});

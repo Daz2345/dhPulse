@@ -1,3 +1,122 @@
+Telescope.schemas.visual = new SimpleSchema({
+   visual:{
+     type: [Object]
+   },
+   "visual.$.Title": {
+      type: String,
+      optional: true,
+      autoform: {
+         label: "Title"
+      }
+   },
+   "visual.$.type": {
+      type: String,
+      optional: true,
+      autoform: {
+         label: "Visual Type"
+      },
+      allowedValues: [
+         "Chart",
+         "Map",
+         "D3"
+      ]
+   },
+   "visual.$.chartType":{
+      type: String,
+      optional: true,
+      autoform: {
+         label: "Chart Type"
+      },
+      allowedValues: [
+         "Line",
+         "Bar",
+         "Column",
+         "Spline",
+         "Step",
+         "Area",
+         "Area-Spline",
+         "Area-Step",
+         "Scatter",
+         "Pie",
+         "Donut",
+         "Gauge"
+      ]         
+   },   
+   "visual.$.data": {
+      type: String,
+      optional: true,
+      autoform: {
+         label: "Data",
+         rows: 10
+      }
+   },
+   "visual.$.chartXaxisType": {
+      type: String,
+      autoform: {
+         label: "X Axis Type"
+      },
+      allowedValues: [
+         "timeseries",
+         "category",
+         "indexed"
+      ],
+      optional: true
+   },
+   "visual.$.chartXaxisCategories": {
+      type: String,
+      autoform: {
+         label: "X Axis Categories",
+         rows: 10
+      },
+      optional: true
+   },
+   "visual.$.chartYaxisFormat": {
+      type: String,
+      autoform: {
+         label: "Y Axis Format"
+      },
+      optional: true
+   },
+   "visual.$.showSubChart": {
+      type: Boolean,
+      label: "Zoomable sub-chart",
+      autoform: {
+         type: "boolean-checkbox"
+      },
+      optional: true
+   },   
+   "visual.$.d3Type":{
+      type: String,
+      optional: true,
+      autoform: {
+         label: "D3 Type"
+      },
+      allowedValues: [
+         "BoxPlot",
+         "Bullet",
+         "Bundle",
+         "Circle",
+         "CircularHeatmap",
+         "Chord",
+         "Dendogram",
+         "Force",
+         "Matrix",
+         "Parallel",
+         "ParallelSets",
+         "Sunburst",
+         "Sankey",
+         "Treemap"  
+      ]         
+   },
+   "visual.$.description": {
+      type: String,
+      optional: true,
+      autoform: {
+         label: "Description"
+      }
+   }
+});
+
 /**
  * Posts schema
  * @type {SimpleSchema}
@@ -54,6 +173,11 @@ Posts.schema = new SimpleSchema({
       order: 20
     }
   },
+  // visuals: {
+  //   type: Telescope.schemas.visual,
+  //   optional: true,
+  //   editableBy: ["member", "admin"]
+  // },
   /**
     Slug
   */
@@ -79,7 +203,7 @@ Posts.schema = new SimpleSchema({
           ['insert',['link', 'hr', 'table']],
           ['color', ['color']],
           ['para', ['paragraph']],
-          ['height', ['height']]
+          ['height', ['height', 'codeview', 'video']]
         ]
       },
       order: 30
@@ -163,6 +287,7 @@ Posts.schema = new SimpleSchema({
     type: [String],
     optional: true
   },
+  
   /**
     The post's current score (factoring in age)
   */
@@ -212,6 +337,7 @@ Posts.schema = new SimpleSchema({
     type: Boolean,
     optional: true
   },
+
   /**
     The post author's name
   */

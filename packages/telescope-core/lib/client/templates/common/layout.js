@@ -79,6 +79,7 @@ Template.layout.helpers({
 
 Template.layout.onCreated( function () {
   Session.set('currentScroll', null);
+  Session.set('hideMenu', false);
 });
 
 Template.layout.onRendered( function () {

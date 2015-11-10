@@ -7,9 +7,10 @@ Package.describe({
 Package.onUse(function (api) {
 
   var packages = [
-    'telescope:core',
-    'telescope:posts',
-    'telescope:users'
+    'telescope:core@0.25.5',
+    'telescope:posts@0.25.5',
+    'telescope:comments@0.25.5',
+    'telescope:users@0.25.5'
   ];
 
   api.use(packages);

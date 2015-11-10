@@ -9,7 +9,8 @@ Package.onUse(function (api) {
   // ---------------------------------- 1. Core dependency -----------------------------------
 
   var packages = [
-    'telescope:core',    
+    'telescope:core@0.25.5',    
+    'telescope:lib@0.25.5',    
     'telescope:users',
     'dh:personal',
     'fastclick',

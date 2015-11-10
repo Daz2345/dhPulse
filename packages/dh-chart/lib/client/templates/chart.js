@@ -1,5 +1,16 @@
 var colourPalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1e391', '#bbb8dc', '#a3dad9'];
 
+// to be completed!!
+// Template.chart.helpers({
+//     colourPalette: function() {
+//         return ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1e391', '#bbb8dc', '#a3dad9'];
+//     },
+//     chartValues: function() {
+//         return this.data
+//     },
+    
+// })
+
 Template.chart.rendered = function() {
 
     var chartValues = this.data,

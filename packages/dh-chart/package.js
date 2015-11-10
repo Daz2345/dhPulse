@@ -8,9 +8,10 @@ Package.onUse(function (api) {
 
 
   var packages = [
-    'telescope:core',
+    'telescope:core@0.25.5',
+    'telescope:lib@0.25.5',    
     'peernohell:c3@1.1.3',
-    'harrison:papa-parse@1.1.0'
+    'harrison:papa-parse@1.1.1'
   ];
 
   api.use(packages);

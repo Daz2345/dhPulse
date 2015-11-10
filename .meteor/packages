@@ -31,7 +31,7 @@ telescope:rss
 telescope:scoring
 telescope:search
 # telescope:share
-# telescope:singleday
+telescope:singleday
 # telescope:sitemap
 # telescope:spiderable
 telescope:subscribe-to-posts # notifications
@@ -49,5 +49,6 @@ dh:api
 dh:personal
 dh:map
 dh:d3
+# dh:visual
 dh:dunnhumby
 dh:push

@@ -60,8 +60,8 @@ var notifications = {
     subject: function () {
       return this.authorName+' left a new comment on "' + this.postTitle + '"';
     },
-    emailTemplate: "notification_new_comment",
-    onsite: "notification_new_comment"
+    emailTemplate: "emailNewComment",
+    onsiteTemplate: "notification_new_comment"
   }
 
 };

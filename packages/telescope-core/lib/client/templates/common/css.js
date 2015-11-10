@@ -1,4 +1,5 @@
 Template.css.helpers({
+
   elementColors: function () {
     var css = "";
 
@@ -53,5 +54,8 @@ Template.css.helpers({
   },
   extraCSS: function () {
     return Settings.get("extraCSS");
+  },
+  hideMenu: function () {
+    return Session.get("hideMenu");
   }
 });

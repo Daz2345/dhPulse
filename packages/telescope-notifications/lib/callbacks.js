@@ -54,7 +54,6 @@ function commentSubmitNotifications (comment) {
           post: _.pick(post, '_id', 'userId', 'title', 'url')
         };
 
-
     // 1. Notify author of post (if they have new comment notifications turned on)
     //    but do not notify author of post if they're the ones posting the comment
     if (Users.getSetting(postAuthor, "notifications.comments", true) && comment.userId !== postAuthor._id) {

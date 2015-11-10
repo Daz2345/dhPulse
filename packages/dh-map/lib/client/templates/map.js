@@ -12,7 +12,7 @@ Template.heatMap.rendered = function() {
             var geocoder = L.mapbox.geocoder('mapbox.places'),
                 map = L.mapbox.map('map', null, {
                     // This map option disables world wrapping. by default, it is false.
-                    continuousWorld: true,
+                    continuousWorld: false,
                     // This option disables loading tiles outside of the world bounds.
                     noWrap: true
                 });

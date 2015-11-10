@@ -115,7 +115,6 @@ function commentSubmitPush(comment) {
             var subscriberIdsToNotify = _.difference(post.subscribers, userIdsNotified, [comment.userId]);
             // Herald.createPush(subscriberIdsToNotify, {courier: 'newCommentSubscribed', data: pushData});
             Meteor.call("serverNotification", 'New Comment', pushData.post.title, subscriberIdsToNotify);
-
             userIdsNotified = userIdsNotified.concat(subscriberIdsToNotify);
         }
     }

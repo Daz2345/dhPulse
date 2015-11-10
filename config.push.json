@@ -1,4 +1,10 @@
 {
+  "apn": {
+    "passphrase": "Prodigy9",  
+    "key": "aps_development.pem",
+    "cert": "dhpulseprivate.pem",
+    "gateway": "gateway.sandbox.push.apple.com"
+  },
   "gcm": {
     "apiKey": "AIzaSyCfam7hMZepdV0ApR5nkjDt3eSoY9Huch0",
     "projectNumber": 436977711212

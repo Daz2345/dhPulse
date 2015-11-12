@@ -14,7 +14,7 @@ Package.onUse(function (api) {
     'telescope:users',
     'dh:personal',
     'fastclick',
-    'force-ssl',
+    // 'force-ssl',
     '255kb:meteor-status@1.4.2',
     'msavin:mongol@1.5.0',
     'mpowaga:autoform-summernote@0.4.2',

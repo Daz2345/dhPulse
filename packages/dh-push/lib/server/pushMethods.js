@@ -38,7 +38,7 @@ Meteor.methods({
                 text:text
             },
             query: {
-                userId: [ usersVal ]
+                userId:  usersVal 
             }
         });
     },

@@ -2,13 +2,11 @@
   "apn": {
     "passphrase": "Prodigy9",  
     "key": "151110dhpulsekey.pem",
-    "cert": "151110dhpulsecert.pem",
-    "gateway": "gateway.sandbox.push.apple.com"
+    "cert": "151110dhpulsecert.pem"
   },
   "production": false,
   "badge": true,
   "sound": true,
   "alert": true,
   "vibrate": true
-
 }

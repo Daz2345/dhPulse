@@ -32,7 +32,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'lib/client/handlebars.js',
-    'lib/client/main.html',
+    // 'lib/client/main.html',
     'lib/client/main.js',
     'lib/client/scripts/jquery.quickfit.js',
     'lib/client/templates/modules/modules.html',

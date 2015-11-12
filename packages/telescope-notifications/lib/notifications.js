@@ -60,8 +60,8 @@ var notifications = {
     subject: function () {
       return this.authorName+' left a new comment on "' + this.postTitle + '"';
     },
-    emailTemplate: "emailNewComment",
-    onsiteTemplate: "notification_new_comment"
+    emailTemplate: "notification_new_comment",
+    onsite: "notification_new_comment"
   }
 
 };
@@ -94,4 +94,17 @@ _.each(notifications, function (notification, notificationName) {
 
   Herald.addCourier(notificationName, courier);
 
+});
+
+Herald.addCourier('newPostWebNotification', {
+    media: {
+        webNotification: {
+            title: 'dhPulse',
+            body: function() {
+                console.log(this);
+                return 'New post: '+this.data.post.title;
+            },
+            icon: 'https://dhpulse-daz2345.c9.io/img/dhlogo_sq.png'
+        }
+    }
 });

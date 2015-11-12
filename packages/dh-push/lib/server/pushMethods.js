@@ -23,6 +23,7 @@ Meteor.methods({
                 // this will send to all users
             }
         });
+        
     },
     serverNotification: function(text,title, usersVal) {
         var badge = 1;

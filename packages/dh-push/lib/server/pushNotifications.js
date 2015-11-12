@@ -9,7 +9,11 @@ function postSubmitPush(post) {
         post: _.pick(post, '_id', 'userId', 'title', 'url', 'sendNotification')
     };
 
-    if (post.sendNotification) {
+    if (!post.categories) {
+        post.categories = {};
+    }
+
+    if (!!post.sendNotification) {
         var adminIds = _.pluck(Users.find({
             'isAdmin': true
         }, {
@@ -18,17 +22,21 @@ function postSubmitPush(post) {
             }
         }).fetch(), '_id');
         var notifiedUserIds = _.pluck(Users.find({
-            'telescope.notifications.posts': true,
-            categories: post.categories
+            'telescope.notifications.posts': true//,
+            // categories: post.categories
         }, {
             fields: {
                 _id: 1
             }
         }).fetch(), '_id');
 
+    console.log(notifiedUserIds);
+
         // remove post author ID from arrays
         adminIds = _.without(adminIds, post.userId);
         notifiedUserIds = _.without(notifiedUserIds, post.userId);
+
+    console.log(notifiedUserIds);
 
         if (post.status === Posts.config.STATUS_PENDING && !!adminIds.length) {
             // if post is pending, only notify admins

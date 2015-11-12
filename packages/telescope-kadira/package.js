@@ -11,7 +11,7 @@ Package.onUse(function (api) {
 
   api.use([
     'telescope:core@0.25.5',
-    'meteorhacks:kadira@2.25.0',
+    'meteorhacks:kadira@2.26.3',
     'kadira:debug@2.2.4'
   ], ['client', 'server']);
 

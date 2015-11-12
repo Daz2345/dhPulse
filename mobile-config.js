@@ -39,3 +39,7 @@ App.launchScreens({
   'android_xhdpi_portrait': 'public/Android/res/drawable-xhdpi/screen.png',
   'android_xhdpi_landscape': 'public/Android/res/drawable-land-xhdpi/screen.png'  
 });
+
+App.accessRule('*://*.tiles.mapbox.com/*');
+App.accessRule('*://enginex.kadira.io/*');
+App.accessRule('*://secure.gravatar.com/*');

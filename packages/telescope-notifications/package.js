@@ -12,7 +12,8 @@ Package.onUse(function (api) {
   api.use([
     'telescope:core@0.25.5',
     'kestanous:herald@1.3.0',
-    'kestanous:herald-email@0.5.0'
+    'kestanous:herald-email@0.5.0',
+    'kestanous:herald-web-notifications@0.4.0'
   ]);
 
   api.addFiles([

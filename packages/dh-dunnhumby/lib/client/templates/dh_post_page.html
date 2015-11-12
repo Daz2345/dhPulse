@@ -15,17 +15,21 @@
               {{> post_item post=this}}
             </div>
           {{> mention}}  
-          {{#if chart}}
-            {{> chart}}
-          {{/if}}
-          {{#if heatMap}}
-            {{> heatMap}}
-          {{/if}}   
-          {{#if d3Viz}}
-            {{ > d3}}
-          {{/if}}                    
-          {{#if body}}
-            {{> post_body}}
+          {{#if sections}}
+            {{> sections}}
+          {{else}}
+            {{#if chart}}
+              {{> chart}}
+            {{/if}}
+            {{#if heatMap}}
+              {{> heatMap}}
+            {{/if}}   
+            {{#if d3Viz}}
+              {{ > d3}}
+            {{/if}}                    
+            {{#if body}}
+              {{> post_body}}
+            {{/if}}
           {{/if}}
           {{#if isdunnhumby}}
             {{> comment_submit}}

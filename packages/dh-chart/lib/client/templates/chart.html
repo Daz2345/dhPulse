@@ -1,5 +1,9 @@
 <template name="chart">
-    <div><h4>{{chartTitle}}</h4></div>
+    {{#if chartTitle}}
+        <div><h4>{{chartTitle}}</h4></div>
+    {{/if}}
     <div class="chart"></div>
-    <div><p><small><em>{{chartDescription}}</em></small></p></div>
+    {{#if chartDescription}}    
+        <div><p><small><em>{{chartDescription}}</em></small></p></div>
+    {{/if}}
 </template>

@@ -1,0 +1,19 @@
+{
+	"electron" : {
+		"killMeteorOnExit": true,
+		"packageApp": false,
+		"runOnStartup": false,
+		"appName": "dhPulse",
+		"platform": "win32",
+		"arch": "x64",
+		"out": "",
+		"icon": "",
+		"app-bundle-id": "",
+		"app-version": "",
+		"helper-bundle-id": "",
+		"ignore": "",
+		"prune": "",
+		"asar": "",
+		"version": "0.25.3"
+	}
+}

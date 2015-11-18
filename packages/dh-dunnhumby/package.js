@@ -16,7 +16,7 @@ Package.onUse(function (api) {
     'fastclick',
     // 'force-ssl',
     '255kb:meteor-status@1.4.2',
-    'msavin:mongol@1.5.0',
+    'msavin:mongol@1.6.1',
     'mpowaga:autoform-summernote@0.4.2',
     'meteorhacks:zones@1.6.0',
     // 'mixmax:smart-disconnect'
@@ -37,7 +37,7 @@ Package.onUse(function (api) {
 
   api.addFiles([
     // 'lib/custom_fields.js',
-    'lib/users.js',
+    'lib/users.js'
   ], ['client', 'server']);
 
   // // client
@@ -61,9 +61,10 @@ Package.onUse(function (api) {
 
   // // server
 
-  // api.addFiles([
-  //   'lib/server/templates/custom_emailPostItem.handlebars'
-  // ], ['server']);
+  api.addFiles([
+    // 'lib/server/templates/custom_emailPostItem.handlebars'
+    'lib/server/start.js'
+  ], ['server']);
 
   // // i18n languages (must come last)
 

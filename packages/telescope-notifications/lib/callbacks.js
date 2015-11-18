@@ -11,8 +11,6 @@ function postSubmitNotification (post) {
     post: _.pick(post, '_id', 'userId', 'title', 'url')
   };
 
-console.log(notificationData);
-
   // remove post author ID from arrays
   adminIds = _.without(adminIds, post.userId);
   notifiedUserIds = _.without(notifiedUserIds, post.userId);
@@ -30,16 +28,15 @@ console.log(notificationData);
 }
 Telescope.callbacks.add("postSubmitAsync", postSubmitNotification);
 
-function postApprovedNotification (post) {
+// function postApprovedNotification (post) {
 
-  var notificationData = {
-    post: _.pick(post, '_id', 'userId', 'title', 'url')
-  };
+//   var notificationData = {
+//     post: _.pick(post, '_id', 'userId', 'title', 'url')
+//   };
 
-  // Herald.createNotification(post.userId, {courier: 'postApproved', data: notificationData});
-  // Herald.createNotification(post.userId, {courier: 'postApproved', data: notificationData});  
-}
-Telescope.callbacks.add("postApproveAsync", postApprovedNotification);
+//   Herald.createNotification(post.userId, {courier: 'postApproved', data: notificationData});
+// }
+// Telescope.callbacks.add("postApproveAsync", postApprovedNotification);
 
 // ------------------------------------------------------------------------------------------- //
 // ---------------------------------------- Comments ----------------------------------------- //

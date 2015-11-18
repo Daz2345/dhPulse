@@ -43,3 +43,6 @@ App.launchScreens({
 App.accessRule('*://*.tiles.mapbox.com/*');
 App.accessRule('*://enginex.kadira.io/*');
 App.accessRule('*://secure.gravatar.com/*');
+
+App.setPreference('StatusBarOverlaysWebView', 'false');
+App.setPreference('StatusBarBackgroundColor', '#353433');

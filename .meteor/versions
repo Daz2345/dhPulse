@@ -9,9 +9,10 @@ aldeed:http@0.2.2
 aldeed:simple-schema@1.3.3
 aldeed:template-extension@3.4.3
 anti:i18n@0.4.3
+appcache@1.0.6
 aramk:tinycolor@1.1.0_1
-arillo:flow-router-helpers@0.4.5
-aslagle:reactive-table@0.8.17
+arillo:flow-router-helpers@0.4.6
+aslagle:reactive-table@0.8.18
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
 babel-runtime@0.1.4
@@ -31,7 +32,7 @@ chuangbo:cookie@1.1.0
 chuangbo:marked@0.3.5_1
 cmather:handlebars-server@2.0.0
 coffeescript@1.0.11
-cosmos:browserify@0.8.3
+cosmos:browserify@0.8.4
 dburles:collection-helpers@1.0.4
 dburles:mongo-collection-instances@0.3.4
 ddp@1.2.2
@@ -101,7 +102,7 @@ meteorhacks:picker@1.0.3
 meteorhacks:subs-manager@1.6.2
 meteorhacks:zones@1.6.0
 meteorspark:util@0.2.0
-meteortoys:toykit@2.1.2
+meteortoys:toykit@2.2.1
 minifiers@1.1.7
 minimongo@1.0.10
 mobile-status-bar@1.0.6
@@ -110,12 +111,12 @@ mongo@1.1.3
 mongo-id@1.0.1
 mongo-livedata@1.0.9
 mpowaga:autoform-summernote@0.4.2
-msavin:mongol@1.5.0
+msavin:mongol@1.6.1
 natestrauser:animate-css@3.4.0
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
-okgrow:router-autoscroll@0.1.1
+okgrow:router-autoscroll@0.1.4
 ongoworks:speakingurl@6.0.0
 ordered-dict@1.0.4
 package-version-parser@3.0.4
@@ -142,7 +143,7 @@ sergeyt:d3@3.4.1
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4
-softwarerero:accounts-t9n@1.1.4
+softwarerero:accounts-t9n@1.1.6
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4
@@ -197,5 +198,5 @@ utilities:menu@0.1.6
 utilities:onsubscribed@0.1.2
 webapp@1.2.3
 webapp-hashing@1.0.5
-xcv58:collection-api@0.2.4
+xcv58:collection-api@0.2.5
 zimme:active-route@2.3.2

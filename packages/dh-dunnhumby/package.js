@@ -14,6 +14,7 @@ Package.onUse(function (api) {
     'telescope:users',
     'dh:personal',
     'fastclick',
+    'appcache',
     // 'force-ssl',
     '255kb:meteor-status@1.4.2',
     'msavin:mongol@1.6.1',
@@ -37,7 +38,8 @@ Package.onUse(function (api) {
 
   api.addFiles([
     // 'lib/custom_fields.js',
-    'lib/users.js'
+    'lib/users.js',
+    'lib/start.js'    
   ], ['client', 'server']);
 
   // // client
@@ -63,7 +65,6 @@ Package.onUse(function (api) {
 
   api.addFiles([
     // 'lib/server/templates/custom_emailPostItem.handlebars'
-    'lib/server/start.js'
   ], ['server']);
 
   // // i18n languages (must come last)

@@ -39,7 +39,7 @@ Package.onUse(function (api) {
   api.addFiles([
     // 'lib/custom_fields.js',
     'lib/users.js',
-    'lib/start.js'    
+    'lib/start.js',    
   ], ['client', 'server']);
 
   // // client
@@ -63,9 +63,9 @@ Package.onUse(function (api) {
 
   // // server
 
-  api.addFiles([
-    // 'lib/server/templates/custom_emailPostItem.handlebars'
-  ], ['server']);
+  // api.addFiles([
+  //   'lib/server/templates/custom_emailPostItem.handlebars'
+  // ], ['server']);
 
   // // i18n languages (must come last)
 

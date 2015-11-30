@@ -3,9 +3,9 @@ function addSearchQueryParameter (parameters, terms) {
     var parameters = Telescope.utils.deepExtend(true, parameters, {
       find: {
         $or: [
-          {title: {$regex: terms.query, $options: 'i'}},
-          {url: {$regex: terms.query, $options: 'i'}},
-          {body: {$regex: terms.query, $options: 'i'}}
+          {title: {$regex: terms.query, $options: 'i'}}//,
+          // {url: {$regex: terms.query, $options: 'i'}},
+          // {body: {$regex: terms.query, $options: 'i'}}
         ]
       }
     });

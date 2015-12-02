@@ -281,3 +281,20 @@ Users.getCategories = function (user) {
 };
 Users.helpers({getCategories: function () {return Users.getCategories(this);}});
 Users.getCategoriesById = function (userId) {return Users.getCategories(Meteor.users.findOne(userId));};
+
+/**
+ * Get a user's username (unique, no special characters or spaces)
+ * @param {Object} user
+ */
+Users.getId = function (user) {
+  try{
+    if (user._id)
+      return user._id;
+  }
+  catch (error){
+    console.log(error);
+    return null;
+  }
+};
+Users.helpers({getId: function () {return Users.getId(this);}});
+Users.getIdByUserName = function (userName) {return Users.getId(Meteor.users.findOne(userName))};

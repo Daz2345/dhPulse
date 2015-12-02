@@ -11,13 +11,13 @@ Package.onUse(function (api) {
   var packages = [
     'telescope:core@0.25.5',    
     'telescope:lib@0.25.5',    
-    'telescope:users',
+    'telescope:users@0.25.5',
     'dh:personal',
     'fastclick',
     'appcache',
     // 'force-ssl',
-    '255kb:meteor-status@1.4.2',
-    'msavin:mongol@1.6.1',
+    // '255kb:meteor-status@1.4.2',
+    // 'meteortoys:allthings@2.2.0',
     'mpowaga:autoform-summernote@0.4.2',
     'meteorhacks:zones@1.6.0',
     // 'mixmax:smart-disconnect'

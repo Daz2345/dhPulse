@@ -1,8 +1,8 @@
 {
   "apn": {
     "passphrase": "Prodigy9",  
-    "key": "151110dhpulsekey.pem",
-    "cert": "151110dhpulsecert.pem"
+    "key": "dhpulseKey.pem",
+    "cert": "dhpulseCert.pem"
   },
   "production": false,
   "badge": true,

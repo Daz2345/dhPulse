@@ -71,5 +71,7 @@ ReactiveTable.publish("all-users", function() {
 // TODO: find a better way
 
  Meteor.publish('allUsers', function() {
-   return Meteor.users.find({}, {fields: Users.pubsub.publicProperties});
- })
+   var options = Users.is.adminById(this.userId) ? {} : {fields: Users.pubsub.avatarProperties};
+   var usersList = Meteor.users.find({}, options);
+   return usersList;
+ });

@@ -1,17 +1,19 @@
-// Meteor.subscribe('allUsers');
-    
 Template.mention.rendered = function() {
-    
-    // if (Users.is.dunnhumby(Meteor.user())) {
-    //     var userLkp = Users.find().fetch()
-    // } else {
-    //     // var myCats = 
-    //     var userLkp = Users.find({}).fetch() // this needs looking at to limit the people that can be contacted by each individual!!
-    // }
-    
+
+    var myCats = Users.getCategories(Meteor.user())
+    var postCats = Posts.current().categories
+    var mentionCats = _.intersection(myCats, postCats)
+
+    if (myCats !== undefined) {
+        var userLkp = Users.find({categories: {$in: mentionCats}}).fetch() // this needs looking at to limit the people that can be contacted by each individual!!
+    }
+    else {
+        var userLkp = Users.find().fetch()
+    }
+
     $("textarea").mention({
         delimiter: '@',
-        users: Users.find().fetch(), 
+        users: userLkp,
         typeaheadOpts: {
             items: 10 // Max number of items you want to show
         },

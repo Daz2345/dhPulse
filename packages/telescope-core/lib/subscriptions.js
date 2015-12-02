@@ -2,6 +2,7 @@
 
 Telescope.subscriptions.preload('settings');
 Telescope.subscriptions.preload('currentUser');
+Telescope.subscriptions.preload('allUsers');
 
 FlowRouter.subscriptions = function() {
   var flow = this;

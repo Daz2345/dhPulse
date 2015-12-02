@@ -1,5 +1,5 @@
 {
-  "apn": {
+  "apn-dev": {
     "passphrase": "Prodigy9",  
     "key": "dhpulseKey.pem",
     "cert": "dhpulseCert.pem"

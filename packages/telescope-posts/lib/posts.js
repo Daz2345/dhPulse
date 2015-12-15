@@ -117,6 +117,46 @@ Telescope.schemas.visual = new SimpleSchema({
    }
 });
 
+Telescope.schemas.poll = new SimpleSchema({
+   "pollOptions": {
+      type: [Object],
+      optional: true,      
+      autoform: {
+         label: "Options",
+         editableBy: ["member", "admin"]
+      }
+   },   
+   "pollOptions.$.Option": {
+      type: String,
+      optional: true,
+      autoform: {
+         label: "Option",
+         editableBy: ["member", "admin"]
+      }
+   },     
+   "pollOptions.$.Voters": {
+      type: [String],
+      optional: true,      
+      autoform: {
+         type: "hidden"
+      }      
+   }, 
+   "pollOptions.$.Count": {
+      type: Number,
+      optional: true,      
+      autoform: {
+         type: "hidden"
+      }      
+   },     
+   "pollVoters": {
+      type: [String],
+      optional: true,      
+      autoform: {
+         type: "hidden"
+      }      
+   }
+});
+
 /**
  * Posts schema
  * @type {SimpleSchema}
@@ -173,6 +213,17 @@ Posts.schema = new SimpleSchema({
       order: 20
     }
   },
+  /**
+    Poll
+  */  
+  poll: {
+    type: Telescope.schemas.poll,
+    optional: true,
+    editableBy: ["member", "admin"]
+  },  
+  /**
+    Visuals
+  */  
   // visuals: {
   //   type: Telescope.schemas.visual,
   //   optional: true,

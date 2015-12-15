@@ -13,7 +13,7 @@ var colourPalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1
 
 Template.chart.rendered = function() {
 
-    var chartValues = this.data,
+    var chartValues = Posts.findOne({'_id' : FlowRouter.getParam("_id")}).data,
         grouped = (chartValues.chartType.indexOf("Stacked ") > -1) ? true : false,
         chartTypeBase = chartValues.chartType.replace("Stacked ", ""),
         chartTypeVal = (chartTypeBase === 'Column') ? 'bar' : chartTypeBase.toLowerCase(),

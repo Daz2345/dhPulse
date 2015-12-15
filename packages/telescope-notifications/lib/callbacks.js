@@ -28,14 +28,14 @@ function postSubmitNotification (post) {
 }
 Telescope.callbacks.add("postSubmitAsync", postSubmitNotification);
 
-// function postApprovedNotification (post) {
+function postApprovedNotification (post) {
 
-//   var notificationData = {
-//     post: _.pick(post, '_id', 'userId', 'title', 'url')
-//   };
+  var notificationData = {
+    post: _.pick(post, '_id', 'userId', 'title', 'url')
+  };
 
-//   Herald.createNotification(post.userId, {courier: 'postApproved', data: notificationData});
-// }
+  Herald.createNotification(post.userId, {courier: 'postApproved', data: notificationData});
+}
 // Telescope.callbacks.add("postApproveAsync", postApprovedNotification);
 
 // ------------------------------------------------------------------------------------------- //
@@ -102,4 +102,4 @@ function commentSubmitNotifications (comment) {
 
   }
 }
-Telescope.callbacks.add("commentSubmitAsync", commentSubmitNotifications);
+// Telescope.callbacks.add("commentSubmitAsync", commentSubmitNotifications);

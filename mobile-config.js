@@ -4,7 +4,7 @@ App.info({
   author: 'Darren Impey',
   email: 'darren.impey@dunnhumby.com',
   website: 'www.dunnhumby.com',
-  version: '0.0.1'
+  version: '0.0.2'
 });
 
 App.icons({
@@ -46,3 +46,6 @@ App.accessRule('*://secure.gravatar.com/*');
 
 App.setPreference('StatusBarOverlaysWebView', 'false');
 App.setPreference('StatusBarBackgroundColor', '#353433');
+App.setPreference('ShowSplashScreenSpinner', 'false');
+App.setPreference('Fullscreen', 'true');
+App.setPreference('Orientation', 'portrait');

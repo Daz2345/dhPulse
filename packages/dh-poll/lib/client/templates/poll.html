@@ -1,0 +1,41 @@
+<template name="poll">
+    <div class=" zone-wrapper post padded">
+        {{#if hasVoted}} 
+            {{#if awaitingVotes}}
+                {{ > moreVotes}}
+            {{else}}
+                {{ > pollResult}} 
+            {{/if}}
+        {{else}} 
+            {{ > pollElements}} 
+        {{/if}}
+    </div>
+</template>
+
+<template name="pollElements">
+    <form class="pollElements">
+        {{#each this.poll.pollOptions}} 
+            {{ > pollOption}} 
+        {{/each}} 
+        {{ > pollButton}}
+    </form>
+</template>
+
+<template name="pollOption">
+    <label>
+        <input type="radio" name="Options" value={{this.Option}}><i>{{this.Option}}</i>
+    </label>
+    <br>
+</template>
+
+<template name="pollButton">
+    <input type="submit" value="Vote">
+</template>
+
+<template name="pollResult">
+    <div class="chart"></div>
+</template>
+
+<template name="moreVotes">
+    <div>Votes are being counted and verified, results available soon...</div>
+</template>

@@ -5,7 +5,6 @@
     "cert": "dhpulseCert.pem"
   },
   "production": false,
-  "badge": true,
   "sound": true,
   "alert": true,
   "vibrate": true

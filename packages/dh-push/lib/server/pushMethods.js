@@ -8,11 +8,11 @@ Push.allow({
 
 Meteor.methods({
     allUserNotification: function(text,title) {
-        var badge = 1;
+        var badge = +1;
         Push.send({
             from: Settings.get('title'),
-            title: title,
-            text: text,
+            title: title + " - " + text,
+            text: title + " - " + text,
             badge: badge,
             sound: 'airhorn.caf',
             payload: {
@@ -26,11 +26,11 @@ Meteor.methods({
         
     },
     serverNotification: function(text,title, usersVal) {
-        var badge = 1;
+        var badge = +1;
         Push.send({
             from: Settings.get('title'),
-            title: title,
-            text: text,
+            title: title + " - " + text,
+            text: title + " - " + text,
             badge: badge,
             sound: 'airhorn.caf',
             payload: {
@@ -38,16 +38,16 @@ Meteor.methods({
                 text:text
             },
             query: {
-                userId:  usersVal 
+                userId:  {$in : usersVal}
             }
         });
     },
     userNotification: function(text,title,userId) {
-        var badge = 1;
+        var badge = +1;
         Push.send({
             from: Settings.get('title'),
-            title: title,
-            text: text,
+            title: title + " - " + text,
+            text: title + " - " + text,
             badge: badge,
             sound: 'airhorn.caf',
             payload: {

@@ -18,8 +18,9 @@ Package.onUse(function (api) {
     // 'force-ssl',
     // '255kb:meteor-status@1.4.2',
     // 'meteortoys:allthings@2.2.0',
+    'mdg:reload-on-resume@1.0.4',
     'mpowaga:autoform-summernote@0.4.2',
-    'meteorhacks:zones@1.6.0',
+    // 'meteorhacks:zones@1.6.0',
     // 'mixmax:smart-disconnect'
   ];
 

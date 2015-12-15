@@ -30,23 +30,19 @@ function postSubmitPush(post) {
             }
         }).fetch(), '_id');
 
-    console.log(notifiedUserIds);
-
         // remove post author ID from arrays
         adminIds = _.without(adminIds, post.userId);
         notifiedUserIds = _.without(notifiedUserIds, post.userId);
 
-    console.log(notifiedUserIds);
-
         if (post.status === Posts.config.STATUS_PENDING && !!adminIds.length) {
             // if post is pending, only notify admins
             // Herald.createPush(adminIds, {courier: 'newPendingPost', data: pushData});
-            Meteor.call("serverNotification", 'A new post has been submitted', pushData.post.title, notifiedUserIds);
+            Meteor.call("serverNotification", pushData.post.title, 'New Post', adminIds);
         }
         else if (!!notifiedUserIds.length) {
             // if post is approved, notify everybody
             // Herald.createPush(notifiedUserIds, {courier: 'newPost', data: pushData});
-            Meteor.call("serverNotification", 'A new post has been submitted', pushData.post.title, notifiedUserIds);
+            Meteor.call("serverNotification", pushData.post.title, 'New Post', notifiedUserIds);
         }
     }
 }
@@ -59,7 +55,7 @@ function postApprovedPush(post) {
     };
 
     //   Herald.createPush(post.userId, {courier: 'postApproved', data: pushData});
-    Meteor.call("serverNotification", 'A new post has been approved', pushData.post.title, post.userId);
+    Meteor.call("serverNotification", 'Post has been approved', pushData.post.title, post.userId);
 }
 Telescope.callbacks.add("postApprovedAsync", postApprovedPush);
 

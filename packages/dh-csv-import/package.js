@@ -51,7 +51,7 @@ Package.onUse(function (api) {
 
   api.addFiles([
     'lib/cron.js',
-    'lib/importCSV.js'
+    'lib/importPostCSV.js'
   ], ['server']);
 
   // i18n languages (must come last)

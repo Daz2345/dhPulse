@@ -22,6 +22,10 @@ Package.onUse(function (api) {
 
   api.addFiles([
     'lib/custom_fields.js',
+    'lib/routes.js',
+    'lib/namespace.js',
+    'lib/stockalerts.js',
+    'lib/callbacks.js'
   ], ['client', 'server']);
 
   // client

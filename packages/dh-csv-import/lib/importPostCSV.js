@@ -11,7 +11,8 @@ var getFirstAdminUser = function() {
     })[0];
 };
 
-fetchCSV = function() {
+fetchPostCSV = function () {
+    
     fsExists(fileName, Meteor.bindEnvironment(function(err, result) {
         if (result) {
             CSV.readCsvFileLineByLine(fileName, {
@@ -25,7 +26,6 @@ fetchCSV = function() {
                         title: line.title,
                         userId: userId
                     };
-
                     if (line.body)
                         post.body = line.body;
 
@@ -42,17 +42,16 @@ fetchCSV = function() {
                     return true; // just go to next CSV URL
                 }
             }));
-            fs.move(fileName, process.env.HOME + '/imported/' + new Date() + "/imported.csv", function (err) {
-              if (err) return Telescope.log(err)
-            //   console.log("success!");
+            fs.move(fileName, process.env.HOME + '/imported/' + new Date() + "/imported.csv", function(err) {
+                if (err) return Telescope.log(err)
+                    //   console.log("success!");
             });
         }
     }));
-
-};
+}
 
 Meteor.methods({
-    fetchCSV: function() {
-        fetchCSV();
+    fetchPostCSV: function() {
+        fetchPostCSV();
     }
 });

@@ -5,7 +5,7 @@ function userCategories (parameters, terms) {
     var find = {};
     var userCats = Users.getCategoriesById(terms.userId);
 
-  if (typeof userCats !== 'undefined' && !terms.cat ) {//&& parameters.find.categories === 'undefined') {
+  if (typeof userCats !== 'undefined' && !terms.cat && userCats.length !== 0) {//&& parameters.find.categories === 'undefined') {
 
     if (userCats.length === 1) { // One Category
       find = {"_id": userCats};
@@ -28,7 +28,7 @@ function userCategories (parameters, terms) {
 }
 Telescope.callbacks.add("postsParameters", userCategories);
 
-// Telescope.callbacks.remove("postsParameters", "addCategoryParameter");
+Telescope.callbacks.remove("postsParameters", "addCategoryParameter");
 
 // function addCategoryIntersectionParameter (parameters, terms) {
 //   // filter by category if category slugs are provided

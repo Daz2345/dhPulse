@@ -38,7 +38,7 @@ Posts.addField({
     optional: true,
     autoform: {
         group: 'chart',
-        label: 'Title'
+        label: 'Chart Title'
     },        
     editableBy: ["member", "admin"]
   }
@@ -165,7 +165,8 @@ Posts.addField({
     optional: true,
     autoform: {
         group: 'chart',
-        label: 'Description'
+        label: 'Description',
+        rows : 10,        
     },        
     editableBy: ["member", "admin"]
   }

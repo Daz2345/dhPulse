@@ -21,7 +21,7 @@ Posts.addField({
     optional: true,
     autoform: {
          group: 'heatMap',
-         label: 'Title'
+         label: 'Map Title'
     },        
     editableBy: ["member", "admin"]
   }
@@ -48,7 +48,8 @@ Posts.addField({
     optional: true,
     autoform: {
          group: 'heatMap',
-         label: 'Description'
+         label: 'Description',
+         rows : 10,         
     },        
     editableBy: ["member", "admin"]
   }

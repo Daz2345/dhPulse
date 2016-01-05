@@ -1,6 +1,6 @@
 App.info({
   name: 'dhPulse',
-  description: 'What your customers are doing, thinking and feeling',
+  description: 'What your customers are thinking, feeling and doing',
   author: 'Darren Impey',
   email: 'darren.impey@dunnhumby.com',
   website: 'www.dunnhumby.com',
@@ -44,8 +44,8 @@ App.accessRule('*://*.tiles.mapbox.com/*');
 App.accessRule('*://enginex.kadira.io/*');
 App.accessRule('*://secure.gravatar.com/*');
 
+App.setPreference('Fullscreen', 'true');
+App.setPreference('Orientation', 'portrait');
 App.setPreference('StatusBarOverlaysWebView', 'false');
 App.setPreference('StatusBarBackgroundColor', '#353433');
 App.setPreference('ShowSplashScreenSpinner', 'false');
-App.setPreference('Fullscreen', 'true');
-App.setPreference('Orientation', 'portrait');

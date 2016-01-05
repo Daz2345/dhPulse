@@ -1,36 +1,22 @@
-// Custom User Field
+// Custom Post Field
 
-Users.addField({
-  fieldName: 'isdunnhumby',
+Posts.addField({
+  fieldName: 'postType',
   fieldSchema: {
-    type: Boolean,
+    type: String,
     optional: true,
-    editableBy: ["admin"],
-    autoform: {    
-    group: 'dunnhumby'
-    }
-  }
-});
-
-Users.addField({
-  fieldName: 'categories',
-  fieldSchema: {
-    type: [String],
-    optional: true,
-    editableBy: ["dunnhumby", "admin"],
     autoform: {
-      type: "select-checkbox-inline",      
-      group: 'dunnhumby',      
-      noselect: true,
-      options: function () {
-        var categories = Categories.find().map(function (category) {
-          return {
-            value: category._id,
-            label: category.name
-          };
-        });
-        return categories;
-      }
-    }
+      label: 'Post Type',
+      order: 1
+    },
+    allowedValues: [
+      "Article",
+      "D3 Visual",
+      "Chart",
+      "Map",
+      "Poll",
+      "Custom"
+    ],
+    editableBy: ["member", "admin"]
   }
 });

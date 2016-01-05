@@ -9,16 +9,17 @@ Package.onUse(function (api) {
   // ---------------------------------- 1. Core dependency -----------------------------------
 
   var packages = [
-    'telescope:core@0.25.5',    
-    'telescope:lib@0.25.5',    
-    'telescope:users@0.25.5',
+    'telescope:core@0.25.6',    
+    'telescope:lib@0.25.6',    
+    'telescope:users@0.25.6',
+    'telescope:posts@0.25.6',
     'dh:personal',
     'fastclick',
-    'appcache',
+    // 'appcache',
     // 'force-ssl',
     // '255kb:meteor-status@1.4.2',
     // 'meteortoys:allthings@2.2.0',
-    'mdg:reload-on-resume@1.0.4',
+    // 'mdg:reload-on-resume@1.0.4',
     'mpowaga:autoform-summernote@0.4.2',
     // 'meteorhacks:zones@1.6.0',
     // 'mixmax:smart-disconnect'
@@ -38,7 +39,7 @@ Package.onUse(function (api) {
   // // client & server
 
   api.addFiles([
-    // 'lib/custom_fields.js',
+    'lib/custom_fields.js',
     'lib/users.js',
     'lib/start.js',    
   ], ['client', 'server']);

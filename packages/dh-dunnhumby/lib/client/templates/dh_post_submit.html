@@ -3,21 +3,31 @@
     <div class="grid grid-module">
       
       {{> mention}}
-      
+
       <!--{{> quickForm collection="Posts" id="submitPostForm" template="bootstrap3-horizontal" input-col-class="controls" type="method" meteormethod="submitPost" fields=postFields}} -->
       {{#autoForm collection="Posts" id="submitPostForm" template="bootstrap3-horizontal" input-col-class="controls" type="method" meteormethod="submitPost"}}
-      {{> afFormGroup name="url" input-col-class="controls"}}
-      {{> afFormGroup name="title" input-col-class="controls"}}
-      {{> afFormGroup name="body" input-col-class="controls"}}
-      {{> afFormGroup name="categories" input-col-class="controls"}}
-      {{> afFormGroup name="sendNotification" input-col-class="controls"}}
+      
+      {{> afFormGroup name="postType" input-col-class="controls" options="allowed"}}
+      
+      {{> afFormGroup name="title" input-col-class="controls"}}      
+      
+      <!--poll section-->
+      {{#if afFieldValueIs name="postType" value="Poll"}}
+
+      {{> afQuickField name="poll" template="bootstrap3-horizontal" input-col-class="controls"}}
+
+      {{/if}}    
+    
+    <!--Article Section-->
+      {{#if afFieldValueIs name="postType" value="Article"}}
+        {{> afFormGroup name="url" input-col-class="controls"}}
+        {{> afFormGroup name="body" input-col-class="controls"}}
+      {{/if}}    
       
       <!--chart section-->
-      <div class="form-group">
-        <label class="control-label">Visualisations</label><br>
-        <hr>
-        {{> afFormGroup name="chart" input-col-class="controls" options=optionsHelper}}
-        {{#if afFieldValueIs name="chart" value=true}}
+      {{#if afFieldValueIs name="postType" value="Chart"}}
+        <!--{{> afFormGroup name="chart" input-col-class="controls" options=optionsHelper}}-->
+        <!--  {{#if afFieldValueIs name="chart" value=true}}-->
           {{> afFormGroup name="chartTitle" input-col-class="controls"}}
           {{> afFormGroup name="chartType" input-col-class="controls" options="allowed"}}
           {{> afFormGroup name="chartData" input-col-class="controls"}}
@@ -25,25 +35,29 @@
           {{> afFormGroup name="chartXaxisType" input-col-class="controls" options="allowed"}}
           {{#if afFieldValueIs name="chartXaxisType" value="category"}}
             {{> afFormGroup name="chartXaxisCategories" input-col-class="controls"}}
-          {{else}}          
+            {{else}}          
           {{/if}}
           {{> afFormGroup name="showSubChart" input-col-class="controls"}}
           {{> afFormGroup name="chartYaxisFormat" input-col-class="controls"}}
           {{> afFormGroup name="chartDescription" input-col-class="controls"}}    
-        {{/if}}
-        
-        <!-- map section-->
-        {{> afFormGroup name="heatMap" input-col-class="controls" options=optionsHelper}}      
-        {{#if afFieldValueIs name="heatMap" value=true}}      
+        <!--{{/if}}-->
+      {{/if}}
+      
+      <!-- map section-->
+      {{#if afFieldValueIs name="postType" value="Map"}} 
+        <!--{{> afFormGroup name="heatMap" input-col-class="controls" options=optionsHelper}}      -->
+        <!--{{#if afFieldValueIs name="heatMap" value=true}}      -->
           {{> afFormGroup name="heatMapTitle" input-col-class="controls"}}
           {{> afFormGroup name="heatMapData" input-col-class="controls"}}
           {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
-        {{/if}}        
-        
-        <!--d3 Viz section-->
-        {{> afFormGroup name="d3Viz" input-col-class="controls" options=optionsHelper}}      
-        {{#if afFieldValueIs name="d3Viz" value=true}}      
-          {{> afFormGroup name="d3Title" input-col-class="controls"}}
+        <!--{{/if}}        -->
+      {{/if}}  
+      
+      <!--d3 Viz section-->
+      {{#if afFieldValueIs name="postType" value="D3 Visual"}} 
+        <!--{{> afFormGroup name="d3Viz" input-col-class="controls" options=optionsHelper}}      -->
+        <!--{{#if afFieldValueIs name="d3Viz" value=true}}      -->
+          {{> afFormGroup name="d3Title" label="Visualisation Title" input-col-class="controls"}}
           {{> afFormGroup name="d3Type" input-col-class="controls" options="allowed"}}       
           {{#if afFieldValueIs name="d3Type" value="CircularHeatmap"}}          
             {{> afFormGroup name="radialLabels" input-col-class="controls"}}
@@ -51,19 +65,22 @@
           {{/if}} 
           {{> afFormGroup name="d3Data" input-col-class="controls"}}
           {{> afFormGroup name="d3Description" input-col-class="controls"}}   
-        {{/if}}   
-      </div>
+        <!--{{/if}}   -->
+      {{/if}} 
+
+      {{> afFormGroup name="categories" input-col-class="controls"}}
+      {{> afFormGroup name="sendNotification" input-col-class="controls"}}
       
       <!--Admin Section-->
       {{#if isAdmin}}    
-      <div class="form-group">      
-        <label class="control-label">Admin</label><br>
-        <hr>
-        {{> afFormGroup name="status" input-col-class="controls"}}
-        {{> afFormGroup name="sticky" input-col-class="controls"}}
-        {{> afFormGroup name="postedAt" input-col-class="controls"}}   
-        {{> afFormGroup name="author" input-col-class="controls"}} 
-      </div>
+        <div class="form-group">      
+          <label class="control-label">Admin</label><br>
+          <hr>
+          {{> afFormGroup name="status" input-col-class="controls"}}
+          {{> afFormGroup name="sticky" input-col-class="controls"}}
+          {{> afFormGroup name="postedAt" input-col-class="controls"}}   
+          {{> afFormGroup name="author" input-col-class="controls"}} 
+        </div>
       {{/if}}      
       
         <div class="form-group">

@@ -21,9 +21,9 @@ Package.onUse(function (api) {
 
   // client & server
 
-  api.addFiles([
-    'lib/custom_fields.js',
-  ], ['client', 'server']);
+  // api.addFiles([
+  //   'lib/custom_fields.js',
+  // ], ['client', 'server']);
 
   // client
 

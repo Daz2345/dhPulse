@@ -122,7 +122,7 @@ Telescope.schemas.poll = new SimpleSchema({
       type: [Object],
       optional: true,      
       autoform: {
-         label: "Options",
+         label: "Poll Options",
          editableBy: ["member", "admin"]
       }
    },   
@@ -130,7 +130,6 @@ Telescope.schemas.poll = new SimpleSchema({
       type: String,
       optional: true,
       autoform: {
-         label: "Option",
          editableBy: ["member", "admin"]
       }
    },     
@@ -210,6 +209,7 @@ Posts.schema = new SimpleSchema({
     max: 500,
     editableBy: ["member", "admin"],
     autoform: {
+      label: "Post Title",
       order: 20
     }
   },
@@ -219,7 +219,10 @@ Posts.schema = new SimpleSchema({
   poll: {
     type: Telescope.schemas.poll,
     optional: true,
-    editableBy: ["member", "admin"]
+    autoform: {
+      label: "Poll",    
+      editableBy: ["member", "admin"]
+    }
   },  
   /**
     Visuals

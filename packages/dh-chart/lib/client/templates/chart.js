@@ -6,14 +6,14 @@ var colourPalette = ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1
 //         return ['#A31A7E', '#B19B00', '#009B74', '#E17000', '#fec575', '#d1e391', '#bbb8dc', '#a3dad9'];
 //     },
 //     chartValues: function() {
-//         return this.data
+//         return this.data;
 //     },
     
 // })
 
 Template.chart.rendered = function() {
 
-    var chartValues = Posts.findOne({'_id' : FlowRouter.getParam("_id")}).data,
+    var chartValues = this.data,//Posts.findOne({'_id' : FlowRouter.getParam("_id")}),
         grouped = (chartValues.chartType.indexOf("Stacked ") > -1) ? true : false,
         chartTypeBase = chartValues.chartType.replace("Stacked ", ""),
         chartTypeVal = (chartTypeBase === 'Column') ? 'bar' : chartTypeBase.toLowerCase(),

@@ -13,7 +13,7 @@ Package.onUse(function (api) {
     'telescope:lib@0.25.6',    
     'telescope:users@0.25.6',
     'telescope:posts@0.25.6',
-    'dh:personal',
+    // 'dh:personal',
     'fastclick',
     // 'appcache',
     // 'force-ssl',

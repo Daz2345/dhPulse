@@ -17,7 +17,7 @@ Template.chart.rendered = function() {
         grouped = (chartValues.chartType.indexOf("Stacked ") > -1) ? true : false,
         chartTypeBase = chartValues.chartType.replace("Stacked ", ""),
         chartTypeVal = (chartTypeBase === 'Column') ? 'bar' : chartTypeBase.toLowerCase(),
-        chartRotated = chartTypeVal === 'bar',
+        chartRotated = chartTypeBase === 'Column',
         xAxisType = chartValues.chartXaxisType,
         xAxisCats = (xAxisType === 'category') ? Papa.parse(chartValues.chartXaxisCategories).data : "",
         chData = Papa.parse(chartValues.chartData).data,
@@ -26,7 +26,9 @@ Template.chart.rendered = function() {
         showSubChart = chartValues.showSubChart,
         groupData = (grouped) ? chData[0] : [];
 
-    var chart = c3.generate({
+    console.log(chartRotated);
+
+    var chartSetup = {
         bindto: this.find('.chart'),
         data: {
             rows: chData,
@@ -64,6 +66,10 @@ Template.chart.rendered = function() {
         transition: {
             duration: 500
         }
-    });
+    };
+
+    var chart = c3.generate(chartSetup);
+    
+    console.log(chartSetup);
 
 };

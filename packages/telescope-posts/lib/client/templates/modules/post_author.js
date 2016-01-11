@@ -6,5 +6,8 @@ Template.post_author.helpers({
     } else {
       return this.author;
     }
+  },
+  getProfileUrl: function (userId) {
+    return FlowRouter.url("userProfile", {_idOrSlug: userId});
   }
 });

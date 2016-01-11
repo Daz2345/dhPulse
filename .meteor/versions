@@ -10,7 +10,7 @@ aldeed:template-extension@3.4.3
 anti:i18n@0.4.3
 aramk:tinycolor@1.1.0_1
 arillo:flow-router-helpers@0.4.7
-aslagle:reactive-table@0.8.21
+aslagle:reactive-table@0.8.23
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
 babel-runtime@0.1.4
@@ -96,7 +96,7 @@ meteorhacks:inject-initial@1.0.3
 meteorhacks:kadira@2.26.3
 meteorhacks:meteorx@1.4.1
 meteorhacks:picker@1.0.3
-meteorhacks:subs-manager@1.6.2
+meteorhacks:subs-manager@1.6.3
 meteorspark:util@0.2.0
 minifiers@1.1.7
 minimongo@1.0.10
@@ -110,7 +110,7 @@ natestrauser:animate-css@3.4.0
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
-okgrow:router-autoscroll@0.1.4
+okgrow:router-autoscroll@0.1.6
 ongoworks:speakingurl@6.0.0
 ordered-dict@1.0.4
 package-version-parser@3.0.4
@@ -176,7 +176,7 @@ telescope:theme-hubble@0.25.6
 telescope:users@0.25.6
 templating@1.1.5
 templating-tools@1.0.0
-tmeasday:publish-counts@0.7.2
+tmeasday:publish-counts@0.7.3
 tracker@1.0.9
 tsega:bootstrap3-datetimepicker@4.17.37_1
 twbs:bootstrap@3.3.6

@@ -45,7 +45,7 @@ telescope:theme-hubble
 
 dh:theme
 dh:chart
-dh:api
+dh:apiv2
 dh:personal
 dh:map
 dh:d3
@@ -54,3 +54,4 @@ dh:dunnhumby
 dh:push
 dh:csv-import
 dh:poll
+simonrycroft:ip-whitelist

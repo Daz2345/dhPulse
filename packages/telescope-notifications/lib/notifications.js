@@ -104,7 +104,7 @@ Herald.addCourier('newPostWebNotification', {
                 console.log(this);
                 return 'New post: '+this.data.post.title;
             },
-            icon: 'https://dhpulse-daz2345.c9.io/img/dhlogo_sq.png'
+            icon: 'https://dhpulse-daz2345.c9.io/img/dhlogo.png'
         }
     }
 });

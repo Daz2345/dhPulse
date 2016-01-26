@@ -1,0 +1,4 @@
+SimpleRest.configure({
+  collections: [],
+  methods: []
+});

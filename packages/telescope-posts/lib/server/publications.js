@@ -1,4 +1,10 @@
-Posts._ensureIndex({"status": 1, "postedAt": 1});
+Meteor.startup(function () {
+  Posts._ensureIndex({"status": 1});
+  Posts._ensureIndex({"postedAt": 1});
+  Posts._ensureIndex({"createdAt": 1});
+  Posts._ensureIndex({"categories": 1});  
+  Posts._ensureIndex({"userId": 1});  
+});
 
 // Publish a list of posts
 

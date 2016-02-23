@@ -20,6 +20,7 @@ Package.onUse(function (api) {
     // '255kb:meteor-status@1.4.2',
     // 'meteortoys:allthings@2.2.0',
     // 'mdg:reload-on-resume@1.0.4',
+    'aldeed:autoform@5.7.1',
     'mpowaga:autoform-summernote@0.4.2',
     // 'meteorhacks:zones@1.6.0',
     // 'mixmax:smart-disconnect'
@@ -47,10 +48,14 @@ Package.onUse(function (api) {
   // // client
 
   api.addFiles([
+    'lib/client/stylesheets/test.css',     
     'lib/client/templates/dh_post_edit.html', 
     'lib/client/templates/dh_post_submit.html',    
     'lib/client/templates/dh_tabs.html',  
     'lib/client/templates/dh_layout.html',   
+    'lib/client/templates/dh_posts_list.html',   
+    'lib/client/templates/dh_post_item.html',   
+    'lib/client/templates/dh_post_item.js',   
     'lib/client/templates/dh_submit_button.html',    
     'lib/client/templates/main.html',
     'lib/client/templates/main.js',

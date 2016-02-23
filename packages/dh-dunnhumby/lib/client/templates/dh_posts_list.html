@@ -1,0 +1,44 @@
+<!-- 
+
+Posts List Component
+
+title (String)
+| The title of the post list
+
+incoming (Cursor)
+| A cursor containing the new posts since render
+
+postsCursor (Cursor)
+| A cursor containing the post list
+
+postsCount (Number)
+| How many posts are loaded
+
+postsReady (Boolean)
+| Whether the subscription is ready
+
+hasMorePosts (Boolean)
+| Whether there are still more posts that can be loaded
+
+loadMoreHandler (Function)
+| What to do when the user clicks "load more"
+
+showFilters (Boolean)
+| Whether to show filters (views nav) (*not implemented yet*)
+-->
+
+<template name="dh_posts_list">
+  <!--<div class="posts-wrapper grid">-->
+  <!--  <div class="posts list {{postsLayout}} animated fadeIn" aria-live="polite">-->
+  <div class="ui three stackable cards">
+      {{#each postsCursor}}
+        <!--{{> before_post_item}}-->
+        {{> dh_post_item}} 
+        <!--post=this}}-->
+        <!--{{> after_post_item}}-->
+      {{/each}}
+    </div>
+    <!--</div>-->
+    {{> postsLoadMore}}
+  <!--</div>-->
+</template>

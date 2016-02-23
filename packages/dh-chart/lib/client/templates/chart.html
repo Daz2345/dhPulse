@@ -2,7 +2,9 @@
     {{#if chartTitle}}
         <div><h4>{{chartTitle}}</h4></div>
     {{/if}}
-    <div class="chart"></div>
+    {{#if chart}}
+        <div class="chart"></div>
+    {{/if}}
     {{#if chartDescription}}    
         <div><p><small><em>{{chartDescription}}</em></small></p></div>
     {{/if}}

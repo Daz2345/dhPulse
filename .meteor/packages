@@ -55,3 +55,9 @@ dh:push
 dh:csv-import
 dh:poll
 simonrycroft:ip-whitelist
+#meteorhacks:cluster
+#semantic:ui
+#flemay:less-autoprefixer
+#fabienb4:autoform-semantic-ui
+random
+kadira:debug

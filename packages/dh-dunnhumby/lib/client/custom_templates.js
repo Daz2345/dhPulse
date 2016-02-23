@@ -5,5 +5,8 @@ Template.dh_post_page.replaces("post_page");
 Template.dh_layout.replaces("layout");
 // Template.dh_tabs.replaces("iris_tabs");
 Template.dh_post_submit.replaces("post_submit");
-// Template.dh_post_edit.replaces("post_edit");
+// Template.dh_posts_list.replaces("posts_list");
+// Template.dh_post_item.replaces("post_item");
+
+Template.dh_post_edit.replaces("post_edit");
 // Template.dh_user_menu_label.replaces("user_menu_label");

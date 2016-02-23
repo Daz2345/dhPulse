@@ -1,0 +1,30 @@
+<template name="dh_post_item">
+    <!--{{> modules zone="postComponents" zoneClass=postClass moduleClass="post-module" wrapperId=_id moduleData=post}}-->
+
+    <div class="card" style="border:none;">
+
+        <div class="image">
+            <a href="{{this.getLink}}" target="{{this.getLinkTarget}}">
+            <img class="ui fluid image" src={{image}}>
+            </a>
+        </div>
+        <div class="content" style="padding-top: 0px;    padding-left: 0px;    padding-bottom: 0px;    padding-right: 0px;    border-top-width: 0px;{{content_back}}">
+            <a href="{{this.getLink}}" target="{{this.getLinkTarget}}"><div class="postTitle">{{this.title}}</div></a>
+
+            <div class="meta">
+                <!--    {{#each categoriesArray}}-->
+                <!--  <a href="{{categoryLink}}" class="ui label category-{{slug}}">{{this.name}}</a>-->
+                <!--{{/each}}-->
+            </div>
+            <div class="description">
+
+            </div>
+        </div>
+        <div class="extra content">
+            <div><a href="{{getProfileUrl this.userId}}"><i class="user icon"></i>{{this.author}}</a></div>
+            <div>{{#if this.postedAt}}<span class="post-time">{{timeAgo this.postedAt}}</span>{{/if}}</div>
+        </div>
+
+    </div>
+
+</template>

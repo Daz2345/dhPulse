@@ -27,6 +27,14 @@ Meteor.methods({
     },
     serverNotification: function(text,title, usersVal) {
         var badge = +1;
+        var userQuery;
+        
+        if (usersVal.length > 1) {
+             userQuery = {userId:{$in : usersVal}};
+        } else {
+            userQuery = {userId:usersVal};
+        }
+        
         Push.send({
             from: Settings.get('title'),
             title: title + " - " + text,
@@ -37,9 +45,7 @@ Meteor.methods({
                 title: title,
                 text:text
             },
-            query: {
-                userId:  {$in : usersVal}
-            }
+            query: userQuery                
         });
     },
     userNotification: function(text,title,userId) {

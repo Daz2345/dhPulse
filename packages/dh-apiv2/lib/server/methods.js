@@ -5,7 +5,10 @@ Meteor.method('submitpost', function(post){
         getArgsFromRequest: function (request) {
             var post = request.body;
             check(post, Posts.simpleSchema());
-
+            
+                console.log(request);
+                console.log(post);
+            
             return [ post ];
         }
     }

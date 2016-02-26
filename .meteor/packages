@@ -56,3 +56,4 @@ dh:csv-import
 dh:poll
 simonrycroft:ip-whitelist
 appcache
+meteorhacks:cluster

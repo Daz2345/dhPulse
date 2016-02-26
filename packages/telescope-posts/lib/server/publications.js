@@ -11,7 +11,7 @@ Meteor.startup(function () {
 Meteor.publish('postsList', function(terms) {
 
   terms.userId = this.userId; // add userId to terms
-  
+
   if(Users.can.viewById(this.userId)){
     var parameters = Posts.parameters.get(terms),
         posts = Posts.find(parameters.find, parameters.options);

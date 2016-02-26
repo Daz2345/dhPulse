@@ -1,6 +1,7 @@
 Template.user_controller.onCreated(function () {
   var template = this;
   template.subscribe('singleUser', FlowRouter.getParam("_idOrSlug"));
+  template.subscribe('all-categories');
 });
 
 Template.user_controller.helpers({

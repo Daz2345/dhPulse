@@ -43,10 +43,10 @@ telescope:theme-hubble
 
 ############ dh Packages ############
 
+dh:personal
 dh:theme
 dh:chart
 dh:apiv2
-dh:personal
 dh:map
 dh:d3
 dh:section
@@ -55,9 +55,4 @@ dh:push
 dh:csv-import
 dh:poll
 simonrycroft:ip-whitelist
-#meteorhacks:cluster
-#semantic:ui
-#flemay:less-autoprefixer
-#fabienb4:autoform-semantic-ui
-random
-kadira:debug
+appcache

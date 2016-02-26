@@ -5,7 +5,7 @@ function userCategories (parameters, terms) {
     var find = {};
     var userCats = Users.getCategoriesById(terms.userId);
 
-  if (typeof userCats !== 'undefined' && !terms.cat && userCats.length !== 0 && parameters.find.categories === 'undefined') {
+  if (typeof userCats !== 'undefined' && userCats.length !== 0) {
 
     if (userCats.length === 1) { // One Category
       find = {"_id": userCats};
@@ -23,12 +23,13 @@ function userCategories (parameters, terms) {
     });
 
     parameters.find.categories = {$in: categoriesIds};
+
   }
   return parameters;
 }
+// Telescope.callbacks.remove("postsParameters", addCategoryParameter);
 Telescope.callbacks.add("postsParameters", userCategories);
 
-// Telescope.callbacks.remove("postsParameters", "addCategoryParameter");
 
 // function addCategoryIntersectionParameter (parameters, terms) {
 //   // filter by category if category slugs are provided
@@ -53,3 +54,36 @@ Telescope.callbacks.add("postsParameters", userCategories);
 //   return parameters;
 // }
 // Telescope.callbacks.add("postsParameters", addCategoryIntersectionParameter);
+
+function addCategoryParameter (parameters, terms) {
+
+  var cat = terms.cat || terms["cat[]"];
+
+  // filter by category if category slugs are provided
+  if (cat) {
+
+    var categoriesIds = [];
+    var find = {};
+    
+    parameters.find.categories = {};
+    
+    if (typeof cat === "string") { // cat is a string
+      find = {slug: cat};
+    } else if (Array.isArray(cat)) { // cat is an array
+      find = {slug: {$in: cat}};
+    }
+
+    // get all categories passed in terms
+    var categories = Categories.find(find).fetch();
+    
+    // for each category, add its ID and the IDs of its children to categoriesId array
+    categories.forEach(function (category) {
+      categoriesIds.push(category._id);
+      categoriesIds = categoriesIds.concat(_.pluck(category.getChildren(), "_id"));
+    });
+
+    parameters.find.categories = {$in: categoriesIds};
+  }
+  return parameters;
+}
+Telescope.callbacks.add("postsParameters", addCategoryParameter);

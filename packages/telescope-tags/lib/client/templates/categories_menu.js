@@ -6,7 +6,7 @@ var getRoute = function () {
   return FlowRouter.path("postsDefault", FlowRouter.current().params, newQuery);
 };
 
-Meteor.startup(function () {
+// Meteor.startup(function () {
   Template.categories_menu.helpers({
     hasCategories: function () {
       return Categories.find().count();
@@ -30,7 +30,15 @@ Meteor.startup(function () {
     // var userCats = (userLoggedIn) ? Meteor.user().categories : "";
     // var menuItems = _.map(Categories.find({_id: {$in : userCats}}, {sort: {name: 1}}).fetch(), function (category) {          
 
-      var menuItems = Categories.find({}, {sort: {order: 1, name: 1}}).fetch();
+      var userCats = Users.getCategoriesById(Meteor.userId());
+      
+      if (userCats.length === 1) { // One Category
+        find = {"_id": userCats};
+      } else { // cat is an array
+        find = {"_id": { $in : userCats}};
+      }      
+      
+      var menuItems = Categories.find(find, {sort: {order: 1, name: 1}}).fetch();
 
       // filter out categories with no items
       if (Settings.get("hideEmptyCategories", false)) {
@@ -79,4 +87,4 @@ Meteor.startup(function () {
       }
     }
   });
-});
+// });

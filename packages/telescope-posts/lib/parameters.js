@@ -14,8 +14,6 @@ Posts.parameters.get = function (terms) {
   // add this to ensure all post publications pass audit-arguments-check
   check(terms, Match.Any);
 
-  // console.log(terms)
-
   // note: using jquery's extend() with "deep" parameter set to true instead of shallow _.extend()
   // see: http://api.jquery.com/jQuery.extend/
 
@@ -24,7 +22,7 @@ Posts.parameters.get = function (terms) {
 
   // iterate over postsParameters callbacks
   parameters = Telescope.callbacks.run("postsParameters", parameters, terms);
-  
+
   // if sort options are not provided, default to "top" sort
   if (_.isEmpty(parameters.options.sort)) {
     parameters.options.sort = {sticky: -1, score: -1};
@@ -33,8 +31,6 @@ Posts.parameters.get = function (terms) {
   // extend sort to sort posts by _id to break ties
   // NOTE: always do this last to avoid _id sort overriding another sort
   parameters = Telescope.utils.deepExtend(true, parameters, {options: {sort: {_id: -1}}});
-
-  // console.log(parameters);
 
   return parameters;
 };

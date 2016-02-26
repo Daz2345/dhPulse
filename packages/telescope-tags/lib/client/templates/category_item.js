@@ -1,4 +1,4 @@
-Meteor.startup(function () {
+// Meteor.startup(function () {
   Template.category_item.helpers({
     category: function () {
       return this.item.data;
@@ -21,4 +21,4 @@ Meteor.startup(function () {
       }
     }
   });
-});
+// });

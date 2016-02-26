@@ -9,7 +9,7 @@ var getRoute = function () {
 // Meteor.startup(function () {
   Template.categories_menu.helpers({
     hasCategories: function () {
-      return Categories.find().count();
+      return true;
     },
     menuLabel: function () {
       return i18n.t("categories");
@@ -30,13 +30,17 @@ var getRoute = function () {
     // var userCats = (userLoggedIn) ? Meteor.user().categories : "";
     // var menuItems = _.map(Categories.find({_id: {$in : userCats}}, {sort: {name: 1}}).fetch(), function (category) {          
 
-      var userCats = Users.getCategoriesById(Meteor.userId());
-      
+      var userCats = Meteor.user().categories; 
+      var find = {};
+      // Users.getCategoriesById(Meteor.userId());
+
+      if (userCats !== undefined) {
       if (userCats.length === 1) { // One Category
-        find = {"_id": userCats};
+        find = {"_id": userCats[0]};
       } else { // cat is an array
         find = {"_id": { $in : userCats}};
       }      
+      }
       
       var menuItems = Categories.find(find, {sort: {order: 1, name: 1}}).fetch();
 

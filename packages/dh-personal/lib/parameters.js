@@ -8,7 +8,7 @@ function userCategories (parameters, terms) {
   if (typeof userCats !== 'undefined' && userCats.length !== 0) {
 
     if (userCats.length === 1) { // One Category
-      find = {"_id": userCats};
+      find = {"_id": userCats[0]};
     } else { // cat is an array
       find = {"_id": { $in : userCats}};
     }
@@ -64,8 +64,6 @@ function addCategoryParameter (parameters, terms) {
 
     var categoriesIds = [];
     var find = {};
-    
-    parameters.find.categories = {};
     
     if (typeof cat === "string") { // cat is a string
       find = {slug: cat};

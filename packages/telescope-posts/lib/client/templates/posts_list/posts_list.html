@@ -29,7 +29,7 @@ showFilters (Boolean)
 
 <template name="posts_list">
   <div class="posts-wrapper grid">
-    <div class="posts list {{postsLayout}} animated fadeIn" aria-live="polite">
+    <div class="posts list {{postsLayout}}" aria-live="polite">
       {{#each postsCursor}}
         {{> before_post_item}}
         {{> post_item post=this}}

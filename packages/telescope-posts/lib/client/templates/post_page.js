@@ -53,7 +53,7 @@ Template.post_page.onCreated(function() {
   template.ready = new ReactiveVar(false);
 
   var postSubscription = Telescope.subsManager.subscribe('singlePost', postId);
-  var postUsersSubscription = Telescope.subsManager.subscribe('postUsers', postId);
+  // var postUsersSubscription = Telescope.subsManager.subscribe('postUsers', postId);
   var commentSubscription = Telescope.subsManager.subscribe('commentsList', {
     view: 'postComments',
     postId: postId

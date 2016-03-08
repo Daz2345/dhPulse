@@ -1,0 +1,13 @@
+<template name='post_star'>
+  <div class="post-star {{moduleClass}}">
+    {{#if starred}}  
+        <a class="unstar-post" href="" title="{{_ 'unstar me'}}">
+          {{{icon "star"}}}
+        </a>
+    {{else}}
+        <a class="star-post" href="" title="{{_ 'star me'}}">
+          {{{icon "star-o"}}}
+        </a>    
+    {{/if}}
+  </div>    
+</template>

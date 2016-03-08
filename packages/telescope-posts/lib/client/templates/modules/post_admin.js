@@ -1,4 +1,10 @@
 Template.post_admin.helpers({
+  starsCount: function () {
+    if (this.starred !== undefined) {
+      return this.starred.length;
+    }
+    return 0;
+  },
   showApprove: function () {
     return !!Settings.get('requirePostsApproval') && (this.status === Posts.config.STATUS_PENDING || this.status === Posts.config.STATUS_REJECTED);
   },

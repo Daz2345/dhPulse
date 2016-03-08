@@ -38,6 +38,12 @@ var viewsMenuItems = [
   },
   {
     route: Posts.getRoute,
+    name: 'starred',
+    label: 'Starred',
+    description: 'starred_posts'
+  },  
+  {
+    route: Posts.getRoute,
     name: 'pending',
     label: 'pending',
     description: 'posts_awaiting_moderation',

@@ -1,52 +1,41 @@
 <template name="dh_post_page">
-  {{#if ready}}
-    {{#if post}}
-      {{#with post}}
-        {{#if canView}}
-          {{#if isPending}}
-            <div class="grid">
-              <div class="error pending-message module">
-                {{_ "thanks_your_post_is_awaiting_approval"}}
-              </div>
-            </div>
-          {{/if}}
-        <div class="single-post grid animated fadeIn">
-            <div class="posts posts-list">
-              {{> post_item post=this}}
-            </div>
-          {{> mention}}  
-          {{#if sections}}
-            {{> sections}}
-          {{else}}
-            {{#if chartData}}
-              {{> chart}}
-            {{/if}}
-            {{#if poll}}
-              {{ > poll }}
-            {{/if}}
-            {{#if heatMap}}
-              {{> heatMap}}
-            {{/if}}   
-            {{#if d3Viz}}
-              {{ > d3}}
-            {{/if}}                    
-            {{#if body}}
-              {{> post_body}}
-            {{/if}}
-          {{/if}}
-          <!--{{#if isdunnhumby}}-->
-            {{> comment_submit}}
-            {{> comment_list}}
-          <!--{{/if}}-->
-          </div>
-        {{else}}
-          {{> no_rights}}
-        {{/if}}
-      {{/with}}
-    {{else}}
-      {{> not_found}}
+  {{#if ready}} {{#if post}} {{#with post}} {{#if canView}} {{#if isPending}}
+  <div class="grid">
+    <div class="error pending-message module">
+      {{_ "thanks_your_post_is_awaiting_approval"}}
+    </div>
+  </div>
+  {{/if}}
+  <div class="single-post grid animated fadeIn">
+    <div class="posts posts-list">
+      {{> post_item post=this}}
+    </div>
+    {{> mention}} 
+    {{#if sections}} 
+    {{> sections}} 
+    {{else}} 
+    {{#if chartData}} 
+    {{> chart}} 
+    {{/if}} 
+    {{#if poll}} 
+    {{ > poll }} 
+    {{/if}} 
+    {{#if heatMapData}} 
+    {{> heatMap}} 
+    {{/if}} 
+    {{#if d3Data}} 
+    {{ > d3}} 
+    {{/if}} 
+    {{#if body}} 
+    {{> post_body}} 
+    {{/if}} 
+    {{/if}} 
+    {{#if isdunnhumby}} 
+    {{> comment_submit}} 
+    {{> comment_list}} 
     {{/if}}
-  {{else}}
-    <div class="posts-loading">{{> loading}}</div>
+  </div>
+  {{else}} {{> no_rights}} {{/if}} {{/with}} {{else}} {{> not_found}} {{/if}} {{else}}
+  <div class="posts-loading">{{> loading}}</div>
   {{/if}}
 </template>

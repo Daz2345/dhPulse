@@ -1,7 +1,7 @@
 Package.describe({
-  summary: 'Telescope custom package – use as template for your own packages',
+  summary: 'User connection Log',
   version: '0.1.0',
-  name: 'my-custom-package'
+  name: 'dh:userlog'
 });
 
 Package.onUse(function (api) {
@@ -25,11 +25,11 @@ Package.onUse(function (api) {
 
   // client & server
 
-  // api.addFiles([
-  //   'lib/custom_fields.js',
+  api.addFiles([
+    'lib/custom_fields.js'
   //   'lib/template_modules.js',
   //   'lib/callbacks.js'
-  // ], ['client', 'server']);
+  ], ['client', 'server']);
 
   // // client
 

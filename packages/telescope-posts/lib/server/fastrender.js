@@ -36,38 +36,39 @@ Posts.fastRenderSubscribe = function (params) {
 
     var daysCount = params.days ? params.days : 5;
     var days = getDays(daysCount);
+    var subscriptionTerms = {};
 
     days.forEach(function (day) {
       
-      var subscriptionTerms = {
+      subscriptionTerms = {
         view: "top",
         date: day.date,
         after: moment(day.date).format("YYYY-MM-DD"),
         before: moment(day.date).format("YYYY-MM-DD")
       };
 
-      fr.subscribe('postsList', subscriptionTerms);
-      fr.subscribe('postsListUsers', subscriptionTerms);
+      // fr.subscribe('postsListUsers', subscriptionTerms);
     
     });
 
+      fr.subscribe('postsList', subscriptionTerms);
 
   } else {
 
     fr.subscribe('postsList', params.query);
-    fr.subscribe('postsListUsers', params.query);
+    // fr.subscribe('postsListUsers', params.query);
 
   }
 };
 
 Meteor.startup(function () {
 
-  FastRender.route("/", Posts.fastRenderSubscribe);
+  FlowRouter.route("/", Posts.fastRenderSubscribe);
   
-  FastRender.route("/posts/:_id/:slug?", function (params) {
+  FlowRouter.route("/posts/:_id/:slug?", function (params) {
     var postId = params._id;
     this.subscribe('singlePost', postId);
-    this.subscribe('postUsers', postId);
+    // this.subscribe('postUsers', postId);
     this.subscribe('commentsList', {view: 'postComments', postId: postId});
   });
 

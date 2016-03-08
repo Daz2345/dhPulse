@@ -1,23 +1,12 @@
 <template name="poll">
     <div class=" zone-wrapper post padded">
-        {{#if hasVoted}} 
-            {{#if awaitingVotes}}
-                {{ > moreVotes}}
-            {{else}}
-                {{ > pollResult}} 
-            {{/if}}
-        {{else}} 
-            {{ > pollElements}} 
-        {{/if}}
+        {{#if hasVoted}} {{#if awaitingVotes}} {{ > moreVotes}} {{else}} {{ > pollResult}} {{/if}} {{else}} {{ > pollElements}} {{/if}}
     </div>
 </template>
 
 <template name="pollElements">
     <form class="pollElements">
-        {{#each this.poll.pollOptions}} 
-            {{ > pollOption}} 
-        {{/each}} 
-        {{ > pollButton}}
+        {{#each this.poll.pollOptions}} {{ > pollOption}} {{/each}} {{ > pollButton}}
     </form>
 </template>
 

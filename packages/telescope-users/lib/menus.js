@@ -8,7 +8,7 @@ Telescope.modules.add("secondaryNav", [
 Telescope.modules.add("mobileNav", [
   {
     template: 'user_menu',
-    order: 20
+    order: 10
   }
 ]);
 

@@ -1,4 +1,4 @@
-Meteor.startup(function () {
+// Meteor.startup(function () {
   Template.post_categories.helpers({
     categoriesArray: function(){
       return _.map(this.categories, function (categoryId) { // note: this.categories maybe be undefined
@@ -9,4 +9,4 @@ Meteor.startup(function () {
       return Categories.getUrl(this);
     }
   });
-});
+// });

@@ -1,7 +1,7 @@
 <template name="search">
   {{#if canSearch}}
-    <div class="search {{searchQueryEmpty}} {{moduleClass}}">
-        <input id="search" type="search" class="search-field" placeholder="{{_ 'search'}}" value="{{searchQuery}}">
+    <div class="search {{searchQueryEmpty}} {{moduleClass}} {{hideme}}">
+        <input id="search" type="search" class="search-field {{hide}}" placeholder="{{_ 'search'}}" value="{{searchQuery}}" autofocus>
     </div>
   {{/if}}
 </template>

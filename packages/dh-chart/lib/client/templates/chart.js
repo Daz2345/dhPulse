@@ -29,8 +29,6 @@ Template.chart.rendered = function() {
         showSubChart = chartValues.showSubChart,
         groupData = (grouped) ? chData[0] : [];
 
-    console.log(chartRotated);
-
     var chartSetup = {
         bindto: this.find('.chart'),
         data: {

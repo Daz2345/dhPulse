@@ -16,8 +16,32 @@ Template.search.helpers({
   },
   searchQueryEmpty: function () {
     return !!FlowRouter.getQueryParam("query") ? "" : "empty";
-  }
+  },
+  hideme: function() {
+    var hidden = "";
+    if (Session.get('hide_search') === true) {
+      hidden = 'hideme';
+    }
+    else {
+      hidden = '';
+    }
+    return hidden;
+  },
+  hide: function() {
+    var hidden = "";
+    if (Session.get('hide_search') === true) {
+      hidden = 'hide';
+    }
+    else {
+      hidden = '';
+    }
+    return hidden;
+  }, 
 });
+
+Template.search.onRendered = function () {
+  
+};
 
 Template.search.events({
   'keyup .search-field': function (e) {

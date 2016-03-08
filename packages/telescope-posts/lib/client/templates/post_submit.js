@@ -4,7 +4,6 @@ Template.post_submit.onCreated(function () {
 
 Template.post_submit.helpers({
   postFields: function () {
-    console.log(this.postType);
     return Posts.simpleSchema().getEditableFields(Meteor.user());
     
   }

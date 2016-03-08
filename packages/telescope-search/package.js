@@ -20,6 +20,8 @@ Package.onUse(function (api) {
   api.addFiles([
     'lib/client/templates/search.html',
     'lib/client/templates/search.js',
+    'lib/client/templates/search_icon.html',
+    'lib/client/templates/search_icon.js',
     'lib/client/stylesheets/search.scss'
     ], ['client']);
 

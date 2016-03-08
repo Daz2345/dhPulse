@@ -12,6 +12,14 @@ Users.addField({
   }
 });
 
+Posts.addField({
+  fieldName: 'starred',
+  fieldSchema: {
+    type: [String],
+    optional: true
+  }
+});
+
 Users.addField({
   fieldName: 'categories',
   fieldSchema: {

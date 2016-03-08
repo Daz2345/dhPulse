@@ -1,5 +1,9 @@
 // ------------------------------------ posts ------------------------------------ //
 
+.post-rank {
+	display: none;
+}
+
 .posts-wrapper{
 	padding: 0;
 }
@@ -38,6 +42,14 @@
 		}
 	}
 	align-items: center;
+}
+
+.icon-star {
+	color :#e17000;
+}
+
+.icon-star-o {
+	color :#b3c1c6;
 }
 
 .post-list-title, .page-title{
@@ -112,6 +124,9 @@
 	.post-vote {
 		order: 1;
 		flex-grow: 0;
+		@include small {
+			display: none;
+		}		
 	}
 	.post-content {
 		order: 2;
@@ -130,11 +145,17 @@
 		flex-grow: 1;
 	}
 	.post-discuss {
-		order: 7;
+		order: 8;
 		@include small {
 			display: none;
 		}
 	}
+	.post-star {
+		order: 7;
+		@include small {
+			display: none;
+		}
+	}	
 	.post-share,
 	.post-discuss {
 		// width: 60px;
@@ -144,7 +165,7 @@
 		// top: -5px;
 	}
 	.post-actions {
-		order: 8;
+		order: 9;
 		@include small {
 			display: block;
 		}
@@ -159,8 +180,10 @@
 		.post-content {
 			display: none;
 		}
+		.post-vote,
 		.post-share,
-		.post-discuss {
+		.post-discuss,
+		.post-star {
 			display: block;
 		}
 	}
@@ -183,16 +206,15 @@
   }
 }
 @mixin threecol(){
-  @media screen and (min-width: 1000px) and (max-width: 1400px) {
+  @media screen and (min-width: 1000px) and (max-width: 1200px) {
     @content;
   }
 }
 @mixin fourcol(){
-  @media screen and (min-width: 1400px) {
+  @media screen and (min-width: 1200px)  and (max-width: 1600px){
     @content;
   }
 }
-
 
 .posts-grid {
 	@include medium-large {
@@ -282,6 +304,11 @@
 		right: 48px;
 		bottom: 0px;
 		padding: 8px 0px;
+	}
+	.post-star {
+		position: absolute;
+		right: 45px;
+		bottom: 0px;
 	}
 	.post-discuss {
 		position: absolute;
@@ -464,6 +491,10 @@
 	.icon-comment{
   	font-size: 30px;
 	}
+}
+
+.post-star {
+	font-size: 30px;
 }
 
 .post-actions {

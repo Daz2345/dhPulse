@@ -30,26 +30,27 @@ var getRoute = function () {
     // var userCats = (userLoggedIn) ? Meteor.user().categories : "";
     // var menuItems = _.map(Categories.find({_id: {$in : userCats}}, {sort: {name: 1}}).fetch(), function (category) {          
 
+      if (Meteor.user()) {
       var userCats = Meteor.user().categories; 
       var find = {};
       // Users.getCategoriesById(Meteor.userId());
 
       if (userCats !== undefined) {
-      if (userCats.length === 1) { // One Category
-        find = {"_id": userCats[0]};
-      } else { // cat is an array
-        find = {"_id": { $in : userCats}};
-      }      
+        if (userCats.length === 1) { // One Category
+          find = {"_id": userCats[0]};
+        } else { // cat is an array
+          find = {"_id": { $in : userCats}};
+        }      
       }
       
       var menuItems = Categories.find(find, {sort: {order: 1, name: 1}}).fetch();
 
       // filter out categories with no items
-      if (Settings.get("hideEmptyCategories", false)) {
-        menuItems = _.filter(menuItems, function (category){
-          return !!Counts.get(category.getCounterName());
-        });
-      }
+      // if (Settings.get("hideEmptyCategories", false)) {
+      //   menuItems = _.filter(menuItems, function (category){
+      //     return !!Counts.get(category.getCounterName());
+      //   });
+      // }
 
       menuItems = _.map(menuItems, function (category) {
 
@@ -61,6 +62,7 @@ var getRoute = function () {
 
         return {
           route: getRoute,
+          // label: category.name,
           label: category.name+=" <span class=\"category-posts-count\">("+Counts.get(category.getCounterName())+")</span>",
           description: category.description,
           _id: category._id,
@@ -73,6 +75,8 @@ var getRoute = function () {
       });
 
       return defaultItem.concat(menuItems);
+      }
+      return false
     },
     expandLevel: function () {
       if (this.zone === "mobileNav") {

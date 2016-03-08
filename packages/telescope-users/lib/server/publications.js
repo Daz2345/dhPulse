@@ -40,7 +40,7 @@ Meteor.publish('userDownvotedPosts', function(terms) {
 // Publish the current user
 
 Meteor.publish('currentUser', function() {
-  var user = Meteor.users.find({_id: this.userId}, {fields: Users.pubsub.hiddenProperties});
+  var user = Users.find({_id: this.userId}, {fields: Users.pubsub.hiddenProperties});
   return user;
 });
 
@@ -50,7 +50,7 @@ Meteor.publish('currentUser', function() {
 Meteor.publish('allUsersAdmin', function() {
   var selector = Settings.get('requirePostInvite') ? {isInvited: true} : {}; // only users that can post
   if (Users.is.adminById(this.userId)) {
-    return Meteor.users.find(selector, {fields: Users.pubsub.avatarProperties});
+    return Users.find(selector, {fields: Users.pubsub.avatarProperties});
   }
   return [];
 });
@@ -61,7 +61,7 @@ Meteor.publish('allUsersAdmin', function() {
 
 ReactiveTable.publish("all-users", function() {
   if(Users.is.adminById(this.userId)){
-    return Meteor.users;
+    return Users;
   } else {
     return [];
   }
@@ -72,6 +72,6 @@ ReactiveTable.publish("all-users", function() {
 
  Meteor.publish('allUsers', function() {
    var options = Users.is.adminById(this.userId) ? {} : {fields: Users.pubsub.avatarProperties};
-   var usersList = Meteor.users.find({}, options);
+   var usersList = Users.find({}, options);
    return usersList;
  });

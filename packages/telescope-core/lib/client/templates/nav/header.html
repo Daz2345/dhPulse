@@ -1,5 +1,5 @@
 <template name="header">
-  <header class="header {{headerClass}}">
+  <div class="header {{headerClass}}">
 
     <a href="#menu" class="mobile-only mobile-menu-button button">
       {{{icon "menu"}}}
@@ -8,12 +8,14 @@
     {{> logo}}
 
     {{#if hasPrimaryNav}}
-      {{> modules zone="primaryNav" zoneClass="nav primary-nav desktop-nav header-module desktop-only" moduleClass="header-submodule"}}
+      {{#if currentUser}}
+        {{> modules zone="primaryNav" zoneClass="nav primary-nav desktop-nav header-module desktop-only" moduleClass="header-submodule"}}
+      {{/if}}
     {{/if}}
 
     {{#if hasSecondaryNav}}
       {{> modules zone="secondaryNav" zoneClass="nav secondary-nav desktop-nav header-module desktop-only" moduleClass="header-submodule"}}
     {{/if}}
 
-  </header>
+  </div>
 </template>

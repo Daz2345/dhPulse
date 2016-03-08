@@ -1,13 +1,12 @@
 <template name="d3">
     <div class="zone-wrapper post d3section">
         {{#if d3Title}}
-            <div><h4>{{d3Title}}</h4></div>
-        {{/if}}
-        
-        {{> UI.dynamic template=myTemplate}}
-        
-        {{#if d3Description}}
-            <div><p><small>{{d3Description}}</small></p></div>
+        <div>
+            <h4>{{d3Title}}</h4></div>
+        {{/if}} {{> UI.dynamic template=myTemplate}} {{#if d3Description}}
+        <div>
+            <p><small>{{d3Description}}</small></p>
+        </div>
         {{/if}}
     </div>
 </template>

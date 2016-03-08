@@ -18,7 +18,7 @@ Telescope.modules.add("primaryNav", {
 
 Telescope.modules.add("mobileNav", {
   template: 'categories_menu',
-  order: 10
+  order: 20
 });
 
 Telescope.modules.add("postsListTop", {

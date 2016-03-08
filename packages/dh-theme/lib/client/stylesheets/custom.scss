@@ -4,7 +4,7 @@
     width: 100%;
     background-color: #353433;
     color:#fff;
-    position: fixed;
+    // position: fixed;
     height: 50px;
     border-bottom: 1px solid #bbb;
   }
@@ -45,9 +45,30 @@ table, th, td {
 }
 
 h1.logo-image {
-    margin-top:0px;
+    margin-top:auto;
+    margin-bottom:auto;
 }
 
 // .categories-list .form-module {
 //     max-width: 100%;
 // }
+
+ul.menu-items.js-menu-items {
+    margin-bottom: 0px;
+}
+
+h3.post-title.postHeading-module {
+    margin-top: 0px;
+}
+.menu-component.view-menu.menu-list.menu-has-items.menu-expanded.js-menu-container {
+    float: left;
+}
+i.icon.fa.fa-fw.fa-search.icon-search.icon {
+    float: right;
+}
+.views-menu-wrapper.postsListTop-module {
+    min-height: 40px;
+}
+.main-category-title {
+    margin-top: 0px;
+}

@@ -292,11 +292,37 @@ Meteor.methods({
 
     // only let users increment a post's view counter once per session
     var view = {_id: postId, userId: this.userId, sessionId: sessionId};
-
+  
     if(_.where(postViews, view).length === 0){
       postViews.push(view);
       Posts.update(postId, { $inc: { viewCount: 1 }});
     }
+  },
+
+  starPost: function(postId){
+
+    // check(postId, String);
+    // this.unblock();
+    Posts.update(postId, { $addToSet: { starred : this.userId }});
+    
+  },
+
+  unstarPost: function(postId){
+
+    // check(postId, String);
+    // this.unblock();
+
+    Posts.update(postId, { $pull: { starred : this.userId }});
+    
+  },
+
+  addToReadBy: function(postId){
+
+    check(postId, String);
+    this.unblock();
+
+    Posts.update(postId, { $addToSet: { readBy : this.userId }});
+    
   },
 
   deletePostById: function(postId) {

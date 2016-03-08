@@ -136,7 +136,7 @@ Settings.schema = new SimpleSchema({
           return {
             value: view.name,
             label: view.label()
-          };
+            };
         });
       }
     }

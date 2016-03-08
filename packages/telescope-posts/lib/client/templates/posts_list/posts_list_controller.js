@@ -31,7 +31,7 @@ Template.posts_list_controller.onCreated(function () {
   var subscriber = enableCache ? Telescope.subsManager : template;
 
   // enable not subscribing to users on a per-controller basis
-  var subscribeToUsers = (typeof terms.subscribeToUsers === "undefined") ? true : terms.subscribeToUsers;
+  // var subscribeToUsers = (typeof terms.subscribeToUsers === "undefined") ? true : terms.subscribeToUsers;
 
   template.autorun(function () {
 
@@ -49,17 +49,17 @@ Template.posts_list_controller.onCreated(function () {
 
     // subscribe to posts and (optionally) users
     var postsSubscription = subscriber.subscribe('postsList', newTerms);
-    if (subscribeToUsers) {
-      var usersSubscription = subscriber.subscribe('postsListUsers', newTerms);
-    }
+    // if (subscribeToUsers) {
+    //   var usersSubscription = subscriber.subscribe('postsListUsers', newTerms);
+    // }
 
     // check if subscriptions are ready
-    var subscriptionsReady;
-    if (subscribeToUsers) {
-      subscriptionsReady = postsSubscription.ready() && usersSubscription.ready(); // ⚡ reactive ⚡
-    } else {
-      subscriptionsReady = postsSubscription.ready(); // ⚡ reactive ⚡
-    }
+    // var subscriptionsReady;
+    // if (subscribeToUsers) {
+    //   subscriptionsReady = postsSubscription.ready() && usersSubscription.ready(); // ⚡ reactive ⚡
+    // } else {
+      // subscriptionsReady = postsSubscription.ready(); // ⚡ reactive ⚡
+    // }
 
     // console.log('// ------ autorun ------ //');
     // console.log("newTerms: ", newTerms);
@@ -67,7 +67,12 @@ Template.posts_list_controller.onCreated(function () {
     // console.log("subscriptionsReady: ", subscriptionsReady);
 
     // if subscriptions are ready, set terms to newTerms
-    if (subscriptionsReady) {
+    // if (subscriptionsReady) {
+    //   template.rTerms.set(newTerms);
+    //   template.rReady.set(true);
+    // }
+
+    if (postsSubscription.ready()) {
       template.rTerms.set(newTerms);
       template.rReady.set(true);
     }

@@ -15,7 +15,8 @@ Package.onUse(function (api) {
     'telescope:posts@0.25.6',
     // 'dh:personal',
     'fastclick',
-    // 'appcache',
+    'appcache',
+    'random',
     // 'force-ssl',
     // '255kb:meteor-status@1.4.2',
     // 'meteortoys:allthings@2.2.0',
@@ -49,6 +50,7 @@ Package.onUse(function (api) {
 
   api.addFiles([
     'lib/client/stylesheets/test.css',     
+    'lib/client/stylesheets/pleaseWait.scss',
     'lib/client/templates/dh_post_edit.html', 
     'lib/client/templates/dh_post_submit.html',    
     'lib/client/templates/dh_tabs.html',  
@@ -65,14 +67,16 @@ Package.onUse(function (api) {
     'lib/client/templates/dh_users_list_actions.html',
     'lib/client/templates/dh_users_list_actions.js',    
     'lib/client/templates/dh_user_menu_label.html',
+    'lib/client/templates/pleaseWait.html',
+    'lib/client/templates/pleaseWait.js',
     'lib/client/custom_templates.js'  
   ], ['client']);
 
   // // server
 
-  // api.addFiles([
-  //   'lib/server/templates/custom_emailPostItem.handlebars'
-  // ], ['server']);
+  api.addFiles([
+    'lib/server/start.js'
+  ], ['server']);
 
   // // i18n languages (must come last)
 

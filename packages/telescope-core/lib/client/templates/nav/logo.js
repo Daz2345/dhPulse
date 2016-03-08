@@ -11,3 +11,10 @@ Template.logo.onRendered(function  () {
     truncate: false
   });
 });
+
+Template.logo.events({
+  'click a': function(e){
+    e.preventDefault();
+    (FlowRouter.getRouteName() === 'postsDefault') ? FlowRouter.go('postsDefault') : window.history.back();
+  }
+})

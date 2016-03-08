@@ -48,6 +48,8 @@ Package.onUse(function (api) {
     'lib/client/templates/modules/post_content.html',
     'lib/client/templates/modules/post_content.js',
     'lib/client/templates/modules/post_discuss.html',
+    'lib/client/templates/modules/post_star.html',
+    'lib/client/templates/modules/post_star.js',
     'lib/client/templates/modules/post_domain.html',
     'lib/client/templates/modules/post_domain.js',
     'lib/client/templates/modules/post_info.html',

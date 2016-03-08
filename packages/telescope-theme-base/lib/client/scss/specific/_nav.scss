@@ -74,9 +74,16 @@ $mobile-header-height: 50px;
     display: block;
     max-height: 100%;
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .account-link{
   display: inline-block;
+}
+
+.mobile-nav-open .outer-wrapper .inner-wrapper .header{
+    left: calc(100% - 60px);
+    transition: all, 300ms, ease-out, 0ms;
 }

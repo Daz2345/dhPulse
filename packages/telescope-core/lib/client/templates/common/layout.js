@@ -29,12 +29,11 @@ Template.layout.onCreated(function (){
 
   });
 
-
 });
 
 Template.layout.helpers({
   appIsReady: function () {
-    return FlowRouter.subsReady();
+      return FlowRouter.subsReady();
   },
   notAllowed: function () {
 
@@ -89,12 +88,12 @@ Template.layout.onRendered( function () {
     Session.set('currentScroll', null);
   }
 
-  // favicon
-  var link = document.createElement('link');
-  link.type = 'image/x-icon';
-  link.rel = 'shortcut icon';
-  link.href = Settings.get('faviconUrl', '/img/favicon.ico');
-  document.getElementsByTagName('head')[0].appendChild(link);
+  // // favicon
+  // var link = document.createElement('link');
+  // link.type = 'image/x-icon';
+  // link.rel = 'shortcut icon';
+  // link.href = Settings.get('faviconUrl', '/img/favicon.ico');
+  // document.getElementsByTagName('head')[0].appendChild(link);
 
   // canonical
   var canonicalLink = document.createElement('link');

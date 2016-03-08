@@ -30,6 +30,7 @@ Package.onUse(function (api) {
   api.addFiles([
     'lib/client/templates/chart.html',
     'lib/client/templates/chart.js',
+    'lib/client/stylesheets/custom.scss',
   ], ['client']);
 
 

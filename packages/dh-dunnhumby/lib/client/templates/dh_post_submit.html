@@ -1,11 +1,9 @@
 <template name="dh_post_submit">
   <div class="form-page post-submit animated fadein">
     <div class="grid grid-module">
-      
-      {{> mention}}
 
       <!--{{> quickForm collection="Posts" id="submitPostForm" template="bootstrap3-horizontal" input-col-class="controls" type="method" meteormethod="submitPost" fields=postFields}} -->
-      {{#autoForm collection="Posts" id="submitPostForm" template="semanticUI" input-col-class="controls" type="method" meteormethod="submitPost"}}
+      {{#autoForm collection="Posts" id="submitPostForm" template="bootstrap3-horizontal" input-col-class="controls" type="method" meteormethod="submitPost"}}
       
       {{> afFormGroup name="postType" input-col-class="controls" options="allowed"}}
       

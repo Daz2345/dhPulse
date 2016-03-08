@@ -292,6 +292,13 @@ Posts.schema = new SimpleSchema({
     optional: true
   },
   /**
+    An array containing the `_id`s of readers
+  */  
+  readBy: {
+    type: [String],
+    optional: true
+  },
+  /**
     Timestamp of the last comment
   */
   lastCommentedAt: {

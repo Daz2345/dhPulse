@@ -100,6 +100,16 @@ Posts.views.add("userPosts", function (terms) {
 });
 
 /**
+ * User starred posts view
+ */
+Posts.views.add("starred", function (terms) {
+  return {
+    find: {starred: terms.userId},
+    options: {sort: {sticky: -1, postedAt: -1}}
+  };
+});
+
+/**
  * User upvoted posts view
  */
 Posts.views.add("userUpvotedPosts", function (terms) {

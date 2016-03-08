@@ -9,6 +9,12 @@ var completeUserProfile = function (modifier, userId, user) {
 };
 
 Meteor.methods({
+  // unstarPost: function(postId) {
+  //   Users.update({_id:this.userId}, {$pull:{starredPosts : postId}});
+  // },
+  // starPost: function(postId) {
+  //   Users.update({_id:this.userId}, {$addToSet:{starredPosts : postId}});
+  // },
   completeUserProfile: function (modifier, userId) {
     
     check(modifier, Match.OneOf({$set: Object}, {$unset: Object}, {$set: Object, $unset: Object}));

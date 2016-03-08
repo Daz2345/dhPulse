@@ -3,8 +3,6 @@ Meteor.publish('categories', function() {
   if (Users.can.viewById(this.userId)) {
     var userCats = Users.getCategoriesById(this.userId);
 
-    console.log(userCats);
-
     if (typeof userCats !== 'undefined') {
 
       if (userCats.length === 1) { // One Category
@@ -17,28 +15,40 @@ Meteor.publish('categories', function() {
           "_id": {
             $in: userCats
           }
-        });
+        },{sort: {order: 1, name: 1}});
       }
 
     }
     else {
-      var categories = Categories.find();
+      var categories = Categories.find({},{sort: {order: 1, name: 1}});
     }
 
-    var publication = this;
-
+    var publication = this,
+        user = this.userId;
+      
     categories.forEach(function(category) {
+
       var childrenCategories = category.getChildren();
       var categoryIds = [category._id].concat(_.pluck(childrenCategories, "_id"));
       var cursor = Posts.find({
-        $and: [{
-          categories: {
-            $in: categoryIds
-          }
-        }, {
-          status: Posts.config.STATUS_APPROVED
-        }]
+        // $and: [{
+        //   categories: {
+        //     $in: categoryIds
+        //   }
+        // }, {
+        //   status: Posts.config.STATUS_APPROVED
+        // }, {
+        //   $not: { $in : {
+        //     readBy : this.userId
+        //   }}
+        // }]
+        
+          categories: {$in: categoryIds}, 
+          status: Posts.config.STATUS_APPROVED,
+          readBy : {$ne : user}
+                
       });
+      
       Counts.publish(publication, category.getCounterName(), cursor, {
         noReady: true
       });
@@ -73,7 +83,7 @@ Meteor.publish('all-categories', function() {
     //   });
     // });
 
-    return Categories.find();;
+    return Categories.find({},{sort: {order: 1, name: 1}});;
   // }
   // return [];
 });

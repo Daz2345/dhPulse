@@ -15,6 +15,6 @@ Template.logo.onRendered(function  () {
 Template.logo.events({
   'click a': function(e){
     e.preventDefault();
-    (FlowRouter.getRouteName() === 'postsDefault') ? FlowRouter.go('postsDefault') : window.history.back();
+    (FlowRouter.getRouteName() === 'postsDefault') ? FlowRouter.go('postsDefault', null, null) : window.history.back();
   }
 })

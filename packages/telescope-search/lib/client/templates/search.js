@@ -39,10 +39,6 @@ Template.search.helpers({
   }, 
 });
 
-Template.search.onRendered = function () {
-  
-};
-
 Template.search.events({
   'keyup .search-field': function (e) {
     
@@ -54,7 +50,7 @@ Template.search.events({
     // if we're not on search route, go to it
 
     if (FlowRouter.getRouteName() !== "postsDefault") {
-      FlowRouter.go("postsDefault");
+      FlowRouter.go("postsDefault", null ,null);
     }
 
     if (val === '') {
@@ -67,7 +63,7 @@ Template.search.events({
 
     delay(function(){
       FlowRouter.setQueryParams({query: val});
-    }, 700 );
+    }, 500 );
 
   }
 });

@@ -10,13 +10,15 @@ Meteor.startup(function () {
 
 Meteor.publish('postsList', function(terms) {
 
-  terms.userId = this.userId; // add userId to terms
-
-  if(Users.can.viewById(this.userId)){
-    var parameters = Posts.parameters.get(terms);
-    var posts = Posts.find(parameters.find, parameters.options);
-
-    return posts;
+  if (this.userId) {
+    terms.userId = this.userId; // add userId to terms
+  
+    if(Users.can.viewById(this.userId)){
+      var parameters = Posts.parameters.get(terms);
+      var posts = Posts.find(parameters.find, parameters.options);
+  
+      return posts;
+    }
   }
   return [];
 });
@@ -49,10 +51,12 @@ Meteor.publish('postsList', function(terms) {
 
 Meteor.publish('singlePost', function(postId) {
 
-  check(postId, String);
-
-  if (Users.can.viewById(this.userId)){
-    return Posts.find(postId);
+  if (this.userId) {
+    check(postId, String);
+  
+    if (Users.can.viewById(this.userId)){
+      return Posts.find(postId);
+    }
   }
   return [];
 });

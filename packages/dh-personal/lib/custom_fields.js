@@ -32,7 +32,7 @@ Users.addField({
       group: 'dunnhumby',      
       noselect: true,
       options: function () {
-        var categories = Categories.find().map(function (category) {
+        var categories = Categories.find({},{sort:{name:1}}).map(function (category) {
           return {
             value: category._id,
             label: category.name

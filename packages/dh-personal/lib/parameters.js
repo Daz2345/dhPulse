@@ -1,6 +1,7 @@
 // limit the post categories to those that the user has pemission to see
 function userCategories (parameters, terms) {
 
+  if (terms.userId) {
     var categoriesIds = [];
     var find = {};
     var userCats = Users.getCategoriesById(terms.userId);
@@ -24,6 +25,7 @@ function userCategories (parameters, terms) {
 
     parameters.find.categories = {$in: categoriesIds};
 
+  }
   }
   return parameters;
 }

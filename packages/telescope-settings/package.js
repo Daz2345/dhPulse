@@ -24,6 +24,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'lib/server/publications.js',
+    'lib/server/start.js',
   ], 'server');
 
   api.addFiles([

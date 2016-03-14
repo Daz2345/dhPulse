@@ -32,6 +32,16 @@ Template.layout.onCreated(function (){
 });
 
 Template.layout.helpers({
+  signinshow: function(){
+    var routeName = FlowRouter.getRouteName(),
+        signinstates = ['signUp', 'signIn'];
+    return _.contains(signinstates, routeName);
+  },
+  signinstate: function(){
+    var routeName = FlowRouter.getRouteName(),
+        signinstates = ['signUp', 'signIn'];
+    return (_.contains(signinstates, routeName)) ? signinstateval : 'hide';
+  },
   appIsReady: function () {
       return FlowRouter.subsReady();
   },
@@ -41,6 +51,10 @@ Template.layout.helpers({
     var user = Meteor.user();
     var userRoutes = ['signIn', 'signUp', 'changePwd', 'forgotPwd', 'resetPwd', 'enrollAccount', 'verifyEmail', 'signOut', 'userEdit', 'userProfile'];
     var isOnUserRoute = _.contains(userRoutes, FlowRouter.getRouteName());
+
+    // if (user === null) {
+    //   return {template: "no_rights", data: {message: 'this is a test message!'}};
+    // }
 
     if (!isOnUserRoute && user && ! Users.userProfileComplete(user)){
       return {template: "user_complete"};

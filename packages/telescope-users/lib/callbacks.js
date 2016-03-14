@@ -103,9 +103,9 @@ function setupUser (user, options) {
   }
 
   // generate email hash
-  if (!!user.telescope.email) {
-    user.telescope.emailHash = Gravatar.hash(user.telescope.email);
-  }
+  // if (!!user.telescope.email) {
+  //   user.telescope.emailHash = Gravatar.hash(user.telescope.email);
+  // }
 
   // look in a few places for the displayName
   if (user.profile.username) {
@@ -128,8 +128,28 @@ function setupUser (user, options) {
 }
 Telescope.callbacks.add("onCreateUser", setupUser);
 
+/**
+ * Allow user to access public posts on register
+ */
+function makeUserPublic (user) {
+  // ------------------------------ Properties ------------------------------ //
+  
+  PublicCategory = Categories.findOne({name: 'Public'})
+  
+  console.log(PublicCategory);
+  
+  var userProperties = {
+    categories: [ PublicCategory._id ]
+  };
+  user = _.extend(user, userProperties);
+
+  return user;
+}
+Telescope.callbacks.add("onCreateUser", makeUserPublic);
 
 function hasCompletedProfile (user) {
   return Users.hasCompletedProfile(user);
 }
 Telescope.callbacks.add("profileCompletedChecks", hasCompletedProfile);
+
+

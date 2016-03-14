@@ -1,5 +1,6 @@
 Meteor.publish('categories', function() {
 
+  if (this.userId){
   if (Users.can.viewById(this.userId)) {
     var userCats = Users.getCategoriesById(this.userId);
 
@@ -31,18 +32,7 @@ Meteor.publish('categories', function() {
       var childrenCategories = category.getChildren();
       var categoryIds = [category._id].concat(_.pluck(childrenCategories, "_id"));
       var cursor = Posts.find({
-        // $and: [{
-        //   categories: {
-        //     $in: categoryIds
-        //   }
-        // }, {
-        //   status: Posts.config.STATUS_APPROVED
-        // }, {
-        //   $not: { $in : {
-        //     readBy : this.userId
-        //   }}
-        // }]
-        
+
           categories: {$in: categoryIds}, 
           status: Posts.config.STATUS_APPROVED,
           readBy : {$ne : user}
@@ -55,6 +45,7 @@ Meteor.publish('categories', function() {
     });
 
     return categories;
+  }
   }
   return [];
 });

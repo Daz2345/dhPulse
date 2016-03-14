@@ -7,6 +7,6 @@ Posts.addField({
     autoform: {
         type: "boolean-checkbox"  
     },        
-    editableBy: ["member", "admin"]
+    editableBy: ["dunnhumby", "admin"]
   }
 });

@@ -36,7 +36,7 @@ Users.addField([
       defaultValue: false,
       editableBy: ['admin'],
       autoform: {
-        group: 'Email Notifications'
+        group: 'Notifications'
       }
     }
   },
@@ -49,7 +49,7 @@ Users.addField([
       defaultValue: false,
       editableBy: ['admin', 'member'],
       autoform: {
-        group: 'Email Notifications'
+        group: 'Notifications'
       }
     }
   },
@@ -62,7 +62,7 @@ Users.addField([
       defaultValue: true,
       editableBy: ['admin', 'member'],
       autoform: {
-        group: 'Email Notifications'
+        group: 'Notifications'
       }
     }
   },
@@ -75,7 +75,7 @@ Users.addField([
       defaultValue: true,
       editableBy: ['admin', 'member'],
       autoform: {
-        group: 'Email Notifications'
+        group: 'Notifications'
       }
     }
   }

@@ -5,7 +5,7 @@
 AccountsTemplates.configure({
   defaultLayout: 'layout',
   defaultLayoutRegions: {},
-  defaultContentRegion: 'main',
+  defaultContentRegion: 'login',
   enablePasswordChange: true,
   showForgotPasswordLink: true,
   confirmPassword: false,

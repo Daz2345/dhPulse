@@ -25,11 +25,6 @@ var getRoute = function () {
         template: "defaultMenuItem"
       }];
 
-      // var menuItems = _.map(Categories.find({}, {sort: {order: 1, name: 1}}).fetch(), function (category) {
-    // var userLoggedIn = (Meteor.user() !== null) ? true : this.userLoggedIn;    
-    // var userCats = (userLoggedIn) ? Meteor.user().categories : "";
-    // var menuItems = _.map(Categories.find({_id: {$in : userCats}}, {sort: {name: 1}}).fetch(), function (category) {          
-
       if (Meteor.user()) {
       var userCats = Meteor.user().categories; 
       var find = {};
@@ -46,11 +41,11 @@ var getRoute = function () {
       var menuItems = Categories.find(find, {sort: {order: 1, name: 1}}).fetch();
 
       // filter out categories with no items
-      // if (Settings.get("hideEmptyCategories", false)) {
-      //   menuItems = _.filter(menuItems, function (category){
-      //     return !!Counts.get(category.getCounterName());
-      //   });
-      // }
+      if (Settings.get("hideEmptyCategories", false)) {
+        menuItems = _.filter(menuItems, function (category){
+          return !!Counts.get(category.getCounterName());
+        });
+      }
 
       menuItems = _.map(menuItems, function (category) {
 

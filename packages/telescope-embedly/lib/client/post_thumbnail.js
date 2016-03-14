@@ -1,6 +1,6 @@
 Template.post_thumbnail.onCreated(function () {
   var instance = this;
-  instance.showVideo = new ReactiveVar(false);
+  instance.showVideo = new ReactiveVar(true);
 });
 
 Template.post_thumbnail.helpers({

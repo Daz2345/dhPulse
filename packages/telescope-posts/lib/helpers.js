@@ -7,6 +7,7 @@
  * @param {Object} post
  */
 Posts.getLink = function (post, isAbsolute) {
+  // return this.getPageUrl(post, isAbsolute)
   return !!post.url ? Telescope.utils.getOutgoingUrl(post.url) : this.getPageUrl(post, isAbsolute);
 };
 Posts.helpers({getLink: function (isAbsolute) {return Posts.getLink(this, isAbsolute);}});

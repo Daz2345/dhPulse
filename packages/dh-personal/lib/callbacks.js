@@ -85,3 +85,4 @@ function commentMentionNotifications (comment) {
 Telescope.callbacks.remove("commentSubmitAsync", commentSubmitNotifications);
 
 Telescope.callbacks.add("commentSubmitAsync", commentMentionNotifications);
+

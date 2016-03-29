@@ -16,8 +16,8 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'lib/client/stylesheets/custom.css',
     'lib/client/messages.js',
-
     'lib/client/templates/messages.html',
     'lib/client/templates/messages.js',
     'lib/client/templates/message_item.html',

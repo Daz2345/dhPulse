@@ -51,6 +51,55 @@ Telescope.schemas.userData = new SimpleSchema({
     editableBy: ["member", "admin"]
   },
   /**
+    Users Job Description. Can contain spaces and special characters, doesn't need to be unique
+  */
+  jobDescription: {
+    type: String,
+    optional: true,
+    public: true,
+    profile: true,
+    editableBy: ["member", "admin"]
+  },  
+  /**
+    Department. Can contain spaces and special characters, doesn't need to be unique
+  */
+  department: {
+    type: String,
+    optional: true,
+    public: true,
+    profile: true,
+    editableBy: ["member", "admin"]
+  },    
+  /**
+    Company. Can contain spaces and special characters, doesn't need to be unique
+  */
+  company: {
+    type: String,
+    optional: true,
+    public: true,
+    profile: true,
+    editableBy: ["member", "admin"]
+  },    
+  /**
+    Telephone Number
+  */
+  tel: {
+    type: String,
+    optional: true,
+    public: true,
+    profile: true,
+    editableBy: ["member", "admin"],    
+    autoform: {
+        type: 'intl-tel',
+        class: 'form-control',
+        intlTelOptions: {
+            autoFormat: true,
+            defaultCountry: 'gb',
+            utilsScript: 'lib/libphonenumber/build/utils.js'
+        }
+      }
+  },
+  /**
     An array containing comment downvotes
   */
   downvotedComments: {

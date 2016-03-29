@@ -23,7 +23,7 @@ telescope:invites
 telescope:kadira
 # telescope:newsletter
 telescope:notifications
-# telescope:pages
+telescope:pages
 telescope:post-by-feed
 # telescope:prerender
 # telescope:releases
@@ -52,8 +52,9 @@ dh:d3
 dh:section
 dh:dunnhumby
 dh:push
-dh:csv-import
+# dh:csv-import
 dh:poll
 simonrycroft:ip-whitelist
 meteorhacks:cluster
-dh:userlog
+# dh:userlog
+smaltcreation:autoform-intl-tel-input

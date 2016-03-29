@@ -1,4 +1,5 @@
-Template.post_submit.helpers({
+
+Template.dh_post_submit.helpers({
   postFields: function () {
     return Posts.simpleSchema().getEditableFields(Meteor.user());
   }

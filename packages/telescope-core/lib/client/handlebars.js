@@ -99,3 +99,7 @@ Template.registerHelper('moduleClass', function() {
     return moduleClass;
   }
 });
+
+Template.registerHelper( 'equals', ( a1, a2 ) => {
+  return a1 === a2;
+});

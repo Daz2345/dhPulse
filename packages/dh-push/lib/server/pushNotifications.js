@@ -105,7 +105,7 @@ function commentSubmitPush(comment) {
 
                     // Herald.createPush(parentComment.userId, {courier: 'newReply', data: pushData});
                     userIdsNotified.push(parentComment.userId);
-                    Meteor.call("serverNotification", 'New Comment', pushData.post.title, post.userId);
+                    Meteor.call("serverNotification", 'New Comment', pushData.post.title, parentComment.userId);
                 }
             }
         }

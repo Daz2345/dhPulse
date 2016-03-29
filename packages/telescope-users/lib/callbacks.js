@@ -62,7 +62,7 @@ Users.before.update(function (userId, doc, fieldNames, modifier) {
       }
 
       // update email hash
-      modifier.$set["telescope.emailHash"] = Gravatar.hash(newEmail);
+      // modifier.$set["telescope.emailHash"] = Gravatar.hash(newEmail);
 
     }
   });
@@ -152,4 +152,11 @@ function hasCompletedProfile (user) {
 }
 Telescope.callbacks.add("profileCompletedChecks", hasCompletedProfile);
 
-
+/**
+ * Check user company from email address
+ */
+function extractCompany (user) {
+  user.telescope.company = user.telescope.email.split('@')[1].split('.')[0];
+  return user;
+}
+Telescope.callbacks.add("onCreateUser", extractCompany);

@@ -5,7 +5,7 @@ Template.users_dashboard.helpers({
       rowsPerPage: 20,
       showFilter: true,
       fields: [
-        { key: 'avatar', label: '', tmpl: Template.users_list_avatar, sortable: false },
+        // { key: 'avatar', label: '', tmpl: Template.users_list_avatar, sortable: false },
         { key: 'createdAt', label: 'Member Since', tmpl: Template.users_list_created_at, sort: 'descending' },
         { key: 'isAdmin', label: 'Admin', fn: function(val){return val ? 'Yes':'No'} },
         { key: 'username', label: 'Username', tmpl: Template.users_list_username },

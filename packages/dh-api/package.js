@@ -10,13 +10,20 @@ Package.onUse(function (api) {
 
   var packages = [
     'telescope:core',
-    'xcv58:collection-api@0.2.4'
+    'xcv58:collection-api@0.2.4',
+    'random'
   ];
 
   api.use(packages);
   api.imply(packages);
 
   // ---------------------------------- 2. Files to include ----------------------------------
+
+  // server
+
+  api.addFiles([
+    'lib/custom_fields.js'
+  ], ['client','server']);
 
   // server
 

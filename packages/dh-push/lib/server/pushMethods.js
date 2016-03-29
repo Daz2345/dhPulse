@@ -29,7 +29,7 @@ Meteor.methods({
         var badge = +1;
         var userQuery;
         
-        if (usersVal.length > 1) {
+        if (usersVal.isArray()) {
              userQuery = {userId:{$in : usersVal}};
         } else {
             userQuery = {userId:usersVal};

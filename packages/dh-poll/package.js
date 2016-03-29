@@ -21,9 +21,9 @@ Package.onUse(function (api) {
 
   // client & server
 
-  // api.addFiles([
-  //   'lib/custom_fields.js',
-  // ], ['client', 'server']);
+  api.addFiles([
+    'lib/methods.js',
+  ], ['client', 'server']);
 
   // client
 
@@ -35,8 +35,8 @@ Package.onUse(function (api) {
 
   // server
 
-  api.addFiles([
-    'lib/server/methods.js'
-  ], ['server']);
+  // api.addFiles([
+  //   'lib/server/methods.js'
+  // ], ['server']);
   
 });

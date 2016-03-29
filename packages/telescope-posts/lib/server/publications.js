@@ -51,13 +51,12 @@ Meteor.publish('postsList', function(terms) {
 
 Meteor.publish('singlePost', function(postId) {
 
-  if (this.userId) {
     check(postId, String);
   
     if (Users.can.viewById(this.userId)){
       return Posts.find(postId);
     }
-  }
+
   return [];
 });
 

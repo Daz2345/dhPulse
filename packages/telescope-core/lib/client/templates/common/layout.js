@@ -52,11 +52,7 @@ Template.layout.helpers({
     var userRoutes = ['signIn', 'signUp', 'changePwd', 'forgotPwd', 'resetPwd', 'enrollAccount', 'verifyEmail', 'signOut', 'userEdit', 'userProfile'];
     var isOnUserRoute = _.contains(userRoutes, FlowRouter.getRouteName());
 
-    // if (user === null) {
-    //   return {template: "no_rights", data: {message: 'this is a test message!'}};
-    // }
-
-    if (!isOnUserRoute && user && ! Users.userProfileComplete(user)){
+    if (!isOnUserRoute && user && !Users.userProfileComplete(user)){
       return {template: "user_complete"};
     }
 

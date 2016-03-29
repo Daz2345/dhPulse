@@ -67,5 +67,11 @@
   "sort_by" : "Sort by",
   "you_have_been_logged_out" : "You have been logged out",
   "delete_users_posts_comments_as_well" : "Delete user's posts and comments as well?",
-  "commentedAt" : "Commented at"
+  "commentedAt" : "Commented at",
+  "jobDescription" : "Job Description",
+  "tel" : "Telephone Number",
+  "ext" : "Extension",
+  "company" : "Company",
+  "market" : "Market",
+  "department" : "Department"  
 }

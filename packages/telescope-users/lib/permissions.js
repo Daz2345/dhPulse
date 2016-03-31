@@ -119,9 +119,10 @@ Users.can.submitField = function (user, field) {
   }
 
   var adminCheck = _.contains(field.editableBy, "admin") && Users.is.admin(user); // is the field editable by admins?
+  var dunnhumbyCheck = _.contains(field.editableBy, "dunnhumby"); // is the field editable by regular users?
   var memberCheck = _.contains(field.editableBy, "member"); // is the field editable by regular users?
 
-  return adminCheck || memberCheck;
+  return adminCheck || dunnhumbyCheck || memberCheck;
 
 };
 Users.helpers({canSubmitField: function (field) {return Users.can.submitField(this, field);}});

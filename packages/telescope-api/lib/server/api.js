@@ -1,4 +1,4 @@
-serveAPI = function(terms){
+servePosts = function(terms){
   var posts = [];
 
   var parameters = Posts.parameters.get(terms);
@@ -67,4 +67,21 @@ serveAPI = function(terms){
   });
 
   return JSON.stringify(posts);
+};
+
+serveCategories = function(){
+  var categories = [];
+
+  Categories.find().forEach(function(category) {
+
+    var categoryOutput = {
+      id: category._id,
+      category: category.name,
+      description: category.description
+    };
+
+    categories.push(categoryOutput);
+  });
+
+  return JSON.stringify(categories);
 };

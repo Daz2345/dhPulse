@@ -22,8 +22,8 @@ function postSubmitPush(post) {
             }
         }).fetch(), '_id');
         var notifiedUserIds = _.pluck(Users.find({
-            'telescope.notifications.posts': true//,
-            // categories: post.categories
+            'telescope.notifications.posts': true,
+            categories: post.categories
         }, {
             fields: {
                 _id: 1

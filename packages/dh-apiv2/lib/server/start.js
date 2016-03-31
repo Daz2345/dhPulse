@@ -1,4 +1,3 @@
 SimpleRest.configure({
-  collections: [],
-  methods: []
+  collections: ["categories"]
 });

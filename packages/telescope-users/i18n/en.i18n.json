@@ -73,5 +73,7 @@
   "ext" : "Extension",
   "company" : "Company",
   "market" : "Market",
-  "department" : "Department"  
+  "department" : "Department",  
+  "workingOn" : "What are you working on?",
+  "greatIf" : "It would be great if...."
 }

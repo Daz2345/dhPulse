@@ -1,7 +1,8 @@
 Meteor.method('submitpost', function(post){
-
-    Posts.submit(post);
-
+    if (this.userId) {
+        post.userId = this.userId;
+        Posts.submit(post);        
+    }
     },{
         url: '/api/submitpost/',
         getArgsFromRequest: function (request) {

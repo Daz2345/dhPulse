@@ -10,7 +10,8 @@ Package.onUse(function (api) {
 
   var packages = [
     'telescope:core',
-    'simple:rest@1.1.0'
+    'simple:rest@1.1.0',
+    'simple:rest-accounts-password@1.1.2'
   ];
 
   api.use(packages);

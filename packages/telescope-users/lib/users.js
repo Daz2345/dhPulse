@@ -100,6 +100,26 @@ Telescope.schemas.userData = new SimpleSchema({
       }
   },
   /**
+    What are you working on?. Can contain spaces and special characters, doesn't need to be unique
+  */
+  workingOn: {
+    type: String,
+    optional: true,
+    public: true,
+    profile: true,
+    editableBy: ["member"]
+  },      
+  /**
+    It would be great if. Can contain spaces and special characters, doesn't need to be unique
+  */
+  greatIf: {
+    type: String,
+    optional: true,
+    public: true,
+    profile: true,
+    editableBy: ["member"]
+  },     
+  /**
     An array containing comment downvotes
   */
   downvotedComments: {

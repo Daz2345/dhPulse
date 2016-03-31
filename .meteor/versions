@@ -41,6 +41,7 @@ ddp-server@1.2.2
 deps@1.0.9
 dh:apiv2@0.1.0
 dh:chart@0.1.0
+dh:csv-import@0.1.0
 dh:d3@0.1.0
 dh:dunnhumby@0.1.0
 dh:map@0.1.0
@@ -56,11 +57,13 @@ ecmascript-runtime@0.2.6
 ejson@1.0.7
 email@1.0.8
 es5-shim@4.1.14
+evaisse:csv@0.1.4
 fastclick@1.0.7
 fortawesome:fontawesome@4.4.0_1
 fourseven:scss@3.4.1
 geojson-utils@1.0.4
 handlebars@1.0.4
+harrison:babyparse@1.0.1
 harrison:papa-parse@1.1.1
 hot-code-push@1.0.0
 html-tools@1.0.5
@@ -138,8 +141,12 @@ service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4
 simonrycroft:ip-whitelist@1.0.1
+simple:authenticate-user-by-token@1.0.1
 simple:json-routes@2.1.0
 simple:rest@1.1.1
+simple:rest-accounts-password@1.1.2
+simple:rest-bearer-token-parser@1.0.1
+simple:rest-json-error-handler@1.0.1
 smaltcreation:autoform-intl-tel-input@1.0.0
 softwarerero:accounts-t9n@1.1.7
 spacebars@1.0.7
@@ -149,6 +156,7 @@ standard-app-packages@1.0.6
 summernote:standalone@0.6.16
 summernote:summernote@0.5.10
 tap:i18n@1.7.0
+telescope:api@0.25.6
 telescope:comments@0.25.6
 telescope:core@0.25.6
 telescope:daily@0.25.6

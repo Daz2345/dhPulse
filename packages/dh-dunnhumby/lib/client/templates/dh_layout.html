@@ -1,6 +1,5 @@
 <template name="dh_layout">
   {{#if appIsReady}}
-
     {{> css}}
     <div class="outer-wrapper {{currentPage}} {{navLayout}}">
       {{> mobile_nav}}
@@ -11,17 +10,13 @@
           {{#if notAllowed}}
             {{> Template.dynamic template=notAllowed.template data=notAllowed.data}}
           {{else}}
-            {{> Template.dynamic template=adminMenu}}
-            {{#if isLoggedIn}}
+            {{#if currentUser}}
+              {{> Template.dynamic template=adminMenu}}
               {{> modules zone="contentTop"}}
               {{> Template.dynamic template=main}}
               {{> modules zone="contentBottom"}}
             {{else}}
-              {{#if signinshow}}
-                {{> atForm state=signinstate}}
-              {{else}}
-                <div>This is where the home screen can go!!</div>
-              {{/if}}
+              {{> Template.dynamic template=guest}}
             {{/if}}
           {{/if}}
           {{> modules zone="footer"}}
@@ -31,8 +26,6 @@
       {{{extraCode}}}
     </div>
     <!--{{> meteorStatus}}-->
-
-  
   {{else}}
     <!--<div class="app-loading">{{> loading}}</div>-->
     <div class="app-loading">{{> pleaseWait}}</div>

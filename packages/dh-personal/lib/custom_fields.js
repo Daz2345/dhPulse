@@ -12,11 +12,26 @@ Users.addField({
   }
 });
 
-Posts.addField({
-  fieldName: 'starred',
+
+Users.addField({
+  fieldName: 'audienceGroup',
   fieldSchema: {
     type: [String],
-    optional: true
+    autoform: {
+      type: "select-checkbox-inline",
+      group: 'dunnhumby',      
+      label: 'Audience',
+      options: function() {
+        return [{
+          value: "Tesco",
+          label: "Tesco"
+        }, {
+          value: "Public",
+          label: "Public"
+        }];
+      }
+    },
+    editableBy: ["admin"]
   }
 });
 

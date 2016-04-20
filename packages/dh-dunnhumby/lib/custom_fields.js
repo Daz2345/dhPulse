@@ -4,7 +4,6 @@ Posts.addField({
   fieldName: 'postType',
   fieldSchema: {
     type: String,
-    optional: true,
     autoform: {
       label: 'Post Type',
       order: 1
@@ -17,6 +16,40 @@ Posts.addField({
       "Poll",
       "Custom"
     ],
+    editableBy: ["member", "admin"]
+  }
+});
+
+Posts.addField({
+  fieldName: 'starred',
+  fieldSchema: {
+    type: [String],
+    optional: true
+  }
+});
+
+Posts.addField({
+  fieldName: 'audienceGroup',
+  fieldSchema: {
+    type: [String],
+    autoform: {
+      type: "select-radio-inline",
+      group: 'dunnhumby',
+      label: 'Audience',
+      options: function() {
+        return [{
+          value: "dunnhumby",
+          label: "dunnhumby"
+        },
+          {
+          value: "Tesco",
+          label: "Tesco"
+        }, {
+          value: "Public",
+          label: "Public"
+        }];
+      }
+    },
     editableBy: ["member", "admin"]
   }
 });

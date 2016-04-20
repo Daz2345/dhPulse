@@ -136,10 +136,9 @@ function makeUserPublic (user) {
   
   PublicCategory = Categories.findOne({name: 'Public'})
   
-  console.log(PublicCategory);
-  
   var userProperties = {
-    categories: [ PublicCategory._id ]
+    categories: [ PublicCategory._id ],
+    audienceGroup: ['Public']    
   };
   user = _.extend(user, userProperties);
 

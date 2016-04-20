@@ -121,17 +121,14 @@ Telescope.schemas.poll = new SimpleSchema({
    "pollOptions": {
       type: [Object],
       optional: true,      
+      editableBy: ["member", "admin"],      
       autoform: {
-         label: "Poll Options",
-         editableBy: ["member", "admin"]
+         label: "Poll Options"
       }
    },   
    "pollOptions.$.Option": {
       type: String,
-      optional: true,
-      autoform: {
-         editableBy: ["member", "admin"]
-      }
+      optional: true
    },     
    "pollOptions.$.Voters": {
       type: [String],
@@ -218,10 +215,10 @@ Posts.schema = new SimpleSchema({
   */  
   poll: {
     type: Telescope.schemas.poll,
+    editableBy: ["member", "admin"],    
     optional: true,
     autoform: {
-      label: "Poll",    
-      editableBy: ["member", "admin"]
+      label: "Poll"
     }
   },  
   /**
@@ -404,7 +401,8 @@ Posts.schema = new SimpleSchema({
   */
   author: {
     type: String,
-    optional: true
+    optional: true,
+    editableBy: ["member", "admin"]
   },
   /**
     The post author's `_id`. 

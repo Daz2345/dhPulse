@@ -160,6 +160,7 @@
 	.post-discuss {
 		// width: 60px;
 		text-align: center;
+		padding-right: 30px;
 		// height: 60px;
 		// position: relative;
 		// top: -5px;
@@ -296,8 +297,8 @@
 	.post-info {
 		padding: 10px;
 	}
-	.no-thumbnail .post-info {
-		padding-right: 35px;
+	.no-thumbnail .post-heading {
+		padding-right: 40px;
 	}
 	.post-avatars {
 		position: absolute;

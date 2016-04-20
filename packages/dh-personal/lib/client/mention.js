@@ -19,6 +19,6 @@ Template.mention.rendered = function() {
         },
         sensitive: true,
         emptyQuery: false,
-        queryBy: ['telescope.displayName', 'username', 'email'],
+        queryBy: ['telescope.displayName', 'username', 'telescope.email'],
     });
 };

@@ -8,7 +8,7 @@ function postSubmitNotification (post) {
   var adminIds = _.pluck(Users.adminUsers({fields: {_id:1}}), '_id');
   var notifiedUserIds = _.pluck(Users.find({'telescope.notifications.posts': true}, {fields: {_id:1}}).fetch(), '_id');
   var notificationData = {
-    post: _.pick(post, '_id', 'userId', 'title', 'url')
+    post: _.pick(post, '_id', 'userId', 'title', 'url', 'author')
   };
 
   // remove post author ID from arrays
@@ -17,7 +17,6 @@ function postSubmitNotification (post) {
 
   if (post.status === Posts.config.STATUS_PENDING && !!adminIds.length) {
     // if post is pending, only notify admins
-    // Herald.createNotification(adminIds, {courier: 'newPendingPost', data: notificationData});
     // Herald.createNotification(adminIds, {courier: 'newPendingPost', data: notificationData});
   } else if (!!notifiedUserIds.length) {
     // if post is approved, notify everybody

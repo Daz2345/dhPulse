@@ -60,15 +60,16 @@ Users.can.post = function (user, returnError) {
     return returnError ? "no_account" : false;
   } else if (Users.is.admin(user) || Users.is.dunnhumby(user)) {
     return true;
-  } else if (Settings.get('requirePostInvite')) {
-    if (user.telescope.isInvited) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return true;
-  }
+  } 
+  // else if (Settings.get('requirePostInvite')) {
+  //   if (user.telescope.isInvited) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // } else {
+  //   return true;
+  // }
 };
 Users.helpers({canPost: function () {return Users.can.post(this);}});
 
@@ -119,7 +120,7 @@ Users.can.submitField = function (user, field) {
   }
 
   var adminCheck = _.contains(field.editableBy, "admin") && Users.is.admin(user); // is the field editable by admins?
-  var dunnhumbyCheck = _.contains(field.editableBy, "dunnhumby"); // is the field editable by regular users?
+  var dunnhumbyCheck = _.contains(field.editableBy, "dunnhumby") && Users.is.dunnhumby(user); // is the field editable by dunnhumby users?
   var memberCheck = _.contains(field.editableBy, "member"); // is the field editable by regular users?
 
   return adminCheck || dunnhumbyCheck || memberCheck;

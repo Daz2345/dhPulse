@@ -13,6 +13,10 @@ Telescope.modules.add("postComponents", [
     order: 10
   },
   {
+    template: 'dh_icon',
+    order: 12
+  },  
+  {
     template: 'post_content',
     order: 20
   },

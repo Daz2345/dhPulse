@@ -25,5 +25,4 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/custom.scss'
   ], ['client']);
 
-
 });

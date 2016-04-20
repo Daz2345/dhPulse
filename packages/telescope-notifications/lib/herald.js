@@ -4,8 +4,9 @@
 
 Meteor.startup(function () {
 
-  Herald.settings.queueTimer = 1000;
-
+  Herald.settings.queueTimer = 60000;
+  Herald.settings.expireAfterSeconds = 10;
+  
   Herald.collection.deny({
     update: function(){ return !Users.can.editById; },
     remove: function(){ return !Users.can.editById; }

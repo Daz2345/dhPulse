@@ -13,8 +13,8 @@ Template.heatMap.rendered = function() {
         if (Mapbox.loaded('markercluster', 'locate', 'fullscreen')) {
             // personal accessToken - needs to be updated for production purposes!!
             L.mapbox.accessToken = 'pk.eyJ1IjoiZGF6MjM0NSIsImEiOiJmNDkwNmQ2NjllNzg5NDFiZWQ1M2I0OGUxMzBmZGU3MSJ9.W70b10qRbEkzfJdlKP6Fhw';
-            var geocoder = L.mapbox.geocoder('mapbox.places'),
-                map = L.mapbox.map('map', null, {
+            // var geocoder = L.mapbox.geocoder('mapbox.places'),
+            var map = L.mapbox.map('map', null, {
                     // This map option disables world wrapping. by default, it is false.
                     continuousWorld: false,
                     // This option disables loading tiles outside of the world bounds.

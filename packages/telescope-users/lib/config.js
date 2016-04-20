@@ -5,15 +5,15 @@
 AccountsTemplates.configure({
   defaultLayout: 'layout',
   defaultLayoutRegions: {},
-  defaultContentRegion: 'login',
+  defaultContentRegion: 'guest',
   enablePasswordChange: true,
   showForgotPasswordLink: true,
   confirmPassword: false,
   overrideLoginErrors: true,
   lowercaseUsername: true,
 
-  negativeFeedback: false,
-  positiveFeedback: false,
+  negativeFeedback: true,
+  positiveFeedback: true,
   negativeValidation: true,
   positiveValidation: true
 });

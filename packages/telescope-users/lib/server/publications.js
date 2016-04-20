@@ -70,8 +70,11 @@ ReactiveTable.publish("all-users", function() {
 // publish all users for mentions
 // TODO: find a better way
 
- Meteor.publish('allUsers', function() {
-   var options = Users.is.adminById(this.userId) ? {} : {fields: Users.pubsub.avatarProperties};
-   var usersList = Users.find({}, options);
-   return usersList;
- });
+Meteor.publish('allUsers', function() {
+  if (this.userId) {
+    var options = Users.is.adminById(this.userId) ? {} : {fields: Users.pubsub.publicAllProperties};
+    var usersList = Users.find({}, options);
+    return usersList;
+  }
+  return [];
+});

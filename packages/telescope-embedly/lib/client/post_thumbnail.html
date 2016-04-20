@@ -5,17 +5,17 @@
         <img class="post-thumbnail-image" src="{{thumbnailUrl}}" onerror="this.style.display='none';" aria-hidden="true"/>
       </a>
     </div>
-  <!--{{else}}-->
-  <!--  <div class="post-thumbnail-empty"></div>-->
+  {{else}}
+    <div class="post-thumbnail-empty"></div>
   {{/if}}
-  <!--{{#with media}}-->
-  <!--  {{#if showVideo}}-->
-  <!--      <div class="post-video-lightbox">-->
-  <!--        <a class="post-video-lightbox-hide" href="#">×</a>-->
-  <!--        <div class="post-video-lightbox-inner js-video">-->
-  <!--          {{{html}}}-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--  {{/if}}-->
-  <!--{{/with}}-->
+  {{#with media}}
+    {{#if showVideo}}
+        <div class="post-video-lightbox">
+          <a class="post-video-lightbox-hide" href="#">×</a>
+          <div class="post-video-lightbox-inner js-video">
+            {{{html}}}
+          </div>
+        </div>
+    {{/if}}
+  {{/with}}
 </template>

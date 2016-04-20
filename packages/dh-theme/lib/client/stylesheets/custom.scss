@@ -1,3 +1,25 @@
+@font-face {
+    font-family: "TradeGothicLTCom-BdCn20";
+    src: url("/fonts/TradeGothicLTCom-BdCn20.woff") format('woff');
+}
+
+@font-face {
+    font-family: "TradeGothicLTCom-Obl";
+    src: url("/fonts/TradeGothicLTCom-Obl.woff") format('woff');
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.BoldTradeGothic {
+    font-family: TradeGothicLTCom-BdCn20;
+}
+
+.ItalicTradeGothic {
+    font-family: TradeGothicLTCom-Obl;
+}
+
 @media (max-width: 599px) {
 
   .side-nav .header {
@@ -42,11 +64,6 @@ a.retry{
 
 table, th, td {
    border: 1px solid lightgrey;
-}
-
-h1.logo-image {
-    margin-top:auto;
-    margin-bottom:auto;
 }
 
 // .categories-list .form-module {

@@ -34,6 +34,12 @@ Users.pubsub.hiddenProperties = {
   'services.password.bcrypt': false
 };
 
+Users.pubsub.publicAllProperties = {
+  'username': true,
+  'telescope.displayName':true,
+  'telescope.email':true
+};
+
 /**
  * Minimum required properties to display avatars and display names
  * @type {Object}

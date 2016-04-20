@@ -19,13 +19,14 @@ fetchPostCSV = function () {
                 headers: true,
                 delimiter: ","
             }, Meteor.bindEnvironment(function(line) {
-                // Need to put Categories lookup in here
                 var userId = !!line.userId ? line.userId : getFirstAdminUser()._id;
                 try {
                     var post = {
                         title: line.title,
-                        userId: userId
+                        userId: userId,
+                        postType: "Article"
                     };
+
                     if (line.body)
                         post.body = line.body;
 
@@ -34,11 +35,12 @@ fetchPostCSV = function () {
                     }
                     catch (error) {
                         // catch errors so they don't stop the loop
+                        // console.log(error);
                         Telescope.log(error);
                     }
                 }
                 catch (error) {
-                    console.log(error);
+                    // console.log(error);
                     return true; // just go to next CSV URL
                 }
             }));
@@ -48,7 +50,7 @@ fetchPostCSV = function () {
             });
         }
     }));
-}
+};
 
 Meteor.methods({
     fetchPostCSV: function() {

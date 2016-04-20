@@ -1,7 +1,7 @@
 FlowRouter.route('/', {
   name: "postsDefault",
   action: function(params, queryParams) {
-    BlazeLayout.render("layout", {main: "main_posts_list"});
+    BlazeLayout.render("layout", {main: "main_posts_list", guest: "landing_page"});
   }
 });
 

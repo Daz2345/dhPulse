@@ -6,33 +6,33 @@
     </div>
   </div>
   {{/if}}
-  <div class="single-post grid animated fadeIn">
+  <div class="single-post grid">
     <div class="posts posts-list">
       {{> post_item post=this}}
     </div>
     {{> mention}} 
     {{#if sections}} 
-    {{> sections}} 
+      {{> sections}} 
     {{else}} 
-    {{#if chartData}} 
-    {{> chart}} 
-    {{/if}} 
-    {{#if poll}} 
-    {{ > poll }} 
-    {{/if}} 
-    {{#if heatMapData}} 
-    {{> heatMap}} 
-    {{/if}} 
-    {{#if d3Data}} 
-    {{ > d3}} 
-    {{/if}} 
-    {{#if body}} 
-    {{> post_body}} 
-    {{/if}} 
+      {{#if chartData}} 
+        {{> chart}} 
+      {{/if}} 
+      {{#if poll}} 
+        {{ > poll }} 
+      {{/if}} 
+      {{#if heatMapData}} 
+        {{> heatMap}} 
+      {{/if}} 
+      {{#if d3Data}} 
+        {{ > d3}} 
+      {{/if}} 
+      {{#if body}} 
+        {{> post_body}} 
+      {{/if}} 
     {{/if}} 
     {{#if isdunnhumby}} 
-    {{> comment_submit}} 
-    {{> comment_list}} 
+      {{> comment_submit}} 
+      {{> comment_list}} 
     {{/if}}
   </div>
   {{else}} {{> no_rights}} {{/if}} {{/with}} {{else}} {{> not_found}} {{/if}} {{else}}

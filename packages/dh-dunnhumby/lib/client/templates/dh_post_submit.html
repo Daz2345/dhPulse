@@ -1,5 +1,5 @@
 <template name="dh_post_submit">
-  <div class="form-page post-submit animated fadein">
+  <div class="form-page post-submit">
     <div class="grid grid-module">
 
       <!--{{> quickForm collection="Posts" id="submitPostForm" template="bootstrap3-horizontal" input-col-class="controls" type="method" meteormethod="submitPost" fields=postFields}} -->
@@ -65,6 +65,7 @@
       {{/if}} 
 
       {{> afFormGroup name="categories" input-col-class="controls"}}
+      {{> afFormGroup name="audienceGroup" input-col-class="controls"}}
       {{> afFormGroup name="sendNotification" input-col-class="controls"}}
       
       <!--Admin Section-->

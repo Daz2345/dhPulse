@@ -298,3 +298,17 @@ Users.getId = function (user) {
 };
 Users.helpers({getId: function () {return Users.getId(this);}});
 Users.getIdByUserName = function (userName) {return Users.getId(Meteor.users.findOne(userName))};
+
+/**
+* Get a user's audienceGroup
+* @param {Object} user
+*/
+Users.getAudienceGroup = function (user) {
+  if (typeof user !== "undefined") {
+        return user.audienceGroup;
+    } else {
+      return {};
+  }
+};
+Users.helpers({getAudienceGroup: function () {return Users.getAudienceGroup(this);}});
+Users.getAudienceGroupById = function (userId) {return Users.getAudienceGroup(Meteor.users.findOne(userId));};

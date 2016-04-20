@@ -17,7 +17,7 @@ Package.onUse(function (api) {
     'fastclick',
     'appcache',
     'random',
-    'force-ssl',
+    // 'force-ssl',
     // '255kb:meteor-status@1.4.2',
     // 'meteortoys:allthings@2.2.0',
     // 'mdg:reload-on-resume@1.0.4',

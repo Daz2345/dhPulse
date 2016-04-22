@@ -194,9 +194,11 @@ Meteor.methods({
    * @param {Object} postId - the id of the post being updated
    */
   editPost: function (modifier, postId) {
-
+    
+    // console.log(modifier);
+    
     // checking might be redundant because SimpleSchema already enforces the schema, but you never know
-    check(modifier, Match.OneOf({$set: Posts.simpleSchema()}, {$unset: Object}, {$set: Posts.simpleSchema(), $unset: Object}));
+    // check(modifier, Match.OneOf({$set: Posts.simpleSchema(), $unset: Object}, {$set: Posts.simpleSchema(), $unset: Object}));
     check(postId, String);
 
     var user = Meteor.user(),

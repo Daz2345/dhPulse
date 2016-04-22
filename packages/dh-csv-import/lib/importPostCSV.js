@@ -24,7 +24,8 @@ fetchPostCSV = function () {
                     var post = {
                         title: line.title,
                         userId: userId,
-                        postType: "Article"
+                        postType: "Article",
+                        audienceGroup: ["Tesco"]
                     };
 
                     if (line.body)
@@ -35,18 +36,18 @@ fetchPostCSV = function () {
                     }
                     catch (error) {
                         // catch errors so they don't stop the loop
-                        // console.log(error);
+                        console.log(error);
                         Telescope.log(error);
                     }
                 }
                 catch (error) {
-                    // console.log(error);
+                    console.log(error);
                     return true; // just go to next CSV URL
                 }
             }));
             fs.move(fileName, process.env.HOME + '/imported/' + new Date() + "/imported.csv", function(err) {
                 if (err) return Telescope.log(err)
-                    //   console.log("success!");
+                      console.log("success!");
             });
         }
     }));

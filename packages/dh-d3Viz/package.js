@@ -31,6 +31,7 @@ Package.onUse(function (api) {
     'lib/client/templates/bullet.js',
     'lib/client/templates/boxplot.js',
     'lib/client/templates/chord.js',
+    'lib/client/templates/chord2.js',
     'lib/client/templates/circle.js',    
     'lib/client/templates/circularHeatmap.js',    
     'lib/client/templates/sunburst.js',        

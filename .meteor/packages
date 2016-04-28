@@ -27,7 +27,7 @@ telescope:pages
 telescope:post-by-feed
 # telescope:prerender
 # telescope:releases
-# telescope:rss
+telescope:rss
 telescope:scoring
 telescope:search
 # telescope:share
@@ -54,9 +54,7 @@ dh:dunnhumby
 dh:push
 dh:csv-import
 dh:poll
-simonrycroft:ip-whitelist
-meteorhacks:cluster
-# dh:userlog
+dh:userlog
 smaltcreation:autoform-intl-tel-input
 eluck:accounts-lockout
 # browser-policy

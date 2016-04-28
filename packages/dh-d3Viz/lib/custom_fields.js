@@ -45,6 +45,7 @@ Posts.addField({
       "Circular Heatmap",
       "Clustered Force Layout",
       "Chord",
+      "Chord2",
       "Dendogram",
       "Force",
       "Matrix",
@@ -66,6 +67,20 @@ Posts.addField({
     autoform: {
       group: 'd3',
       label: 'Data',
+      rows: 10
+    },
+    editableBy: ["member", "admin"]
+  }
+});
+
+Posts.addField({
+  fieldName: 'd3Data2',
+  fieldSchema: {
+    type: String,
+    optional: true,
+    autoform: {
+      group: 'd3',
+      label: 'Data2',
       rows: 10
     },
     editableBy: ["member", "admin"]

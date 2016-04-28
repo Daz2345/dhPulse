@@ -10,7 +10,8 @@ Meteor.method('submitpost', function(post) {
         // if (request.headers['content-type'] === 'application/json') {
             if (request.authToken !== undefined) {
                 var post = request.body;
-                check(post, Posts.simpleSchema());
+                console.log(post);
+                // check(post, Posts.simpleSchema());
                 return [post];
             }
             else {

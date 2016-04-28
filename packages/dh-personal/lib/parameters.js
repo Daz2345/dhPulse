@@ -100,12 +100,6 @@ function userAudienceGroup (parameters, terms) {
     
   if (typeof audienceGroups !== 'undefined' && audienceGroups.length !== 0 && !isDunnhumby) {
 
-    // if (audienceGroups.length === 1) { // One Category
-    //   find = audienceGroups[0];
-    // } else { // cat is an array
-    //   find = {$in : audienceGroups};
-    // }
-
       parameters.find.audienceGroup = {$in: audienceGroups};
     
   }

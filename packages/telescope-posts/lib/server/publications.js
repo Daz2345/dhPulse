@@ -1,5 +1,6 @@
 Meteor.startup(function () {
   Posts._ensureIndex({"status": 1});
+  Posts._ensureIndex({"audienceGroup": 1});
   Posts._ensureIndex({"postedAt": 1});
   Posts._ensureIndex({"createdAt": 1});
   Posts._ensureIndex({"categories": 1});  

@@ -28,9 +28,14 @@ fetchPostCSV = function () {
                         audienceGroup: ["Tesco"]
                     };
 
-                    if (line.body)
+                    if (line.audienceGroup) {
+                        post.audienceGroup = line.audienceGroup;
+                    }
+                    
+                    if (line.body) {
                         post.body = line.body;
-
+                    }
+                    
                     try {
                         Posts.submit(post);
                     }

@@ -7,7 +7,7 @@ Users.addField({
     optional: true,
     editableBy: ["admin"],
     autoform: {    
-    group: 'dunnhumby'
+      group: 'dunnhumby'
     }
   }
 });
@@ -23,6 +23,9 @@ Users.addField({
       label: 'Audience',
       options: function() {
         return [{
+          value: "dunnhumby",
+          label: "dunnhumby"
+        }, {
           value: "Tesco",
           label: "Tesco"
         }, {

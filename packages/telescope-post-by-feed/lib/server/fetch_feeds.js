@@ -106,6 +106,7 @@ var feedHandler = {
           feedId: feedId,
           feedItemId: item.guid,
           userId: userId,
+          audienceGroup: ['public'],
           categories: self.getItemCategories(item, feedCategories)
         };
 

@@ -41,6 +41,7 @@ Package.onUse(function (api) {
   // // client & server
 
   api.addFiles([
+    'lib/callbacks.js',
     'lib/custom_fields.js',
     'lib/users.js',
     'lib/start.js',    

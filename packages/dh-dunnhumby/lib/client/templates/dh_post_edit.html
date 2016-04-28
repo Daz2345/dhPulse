@@ -62,11 +62,17 @@
             {{> afFormGroup name="segmentLabels" input-col-class="controls"}}        
           {{/if}} 
           {{> afFormGroup name="d3Data" input-col-class="controls"}}
+          
+          {{#if afFieldValueIs name="d3Type" value="Chord2"}} 
+            {{> afFormGroup name="d3Data2" input-col-class="controls"}}
+          {{/if}}          
+           
           {{> afFormGroup name="d3Description" input-col-class="controls"}}   
         <!--{{/if}}   -->
       {{/if}} 
 
       {{> afFormGroup name="categories" input-col-class="controls"}}
+      {{> afFormGroup name="audienceGroup" input-col-class="controls"}}      
       {{> afFormGroup name="sendNotification" input-col-class="controls"}}
       
       <!--Admin Section-->

@@ -1,7 +1,8 @@
 Template.heatMap.rendered = function() {
 
     Mapbox.load({
-        plugins: ['markercluster', 'locate', 'fullscreen']
+        // plugins: ['markercluster', 'locate', 'fullscreen']
+        plugins: ['markercluster']
     });
 
     Session.set('sortOrder', false);
@@ -10,7 +11,8 @@ Template.heatMap.rendered = function() {
 
     Meteor.autorun(function() {
 
-        if (Mapbox.loaded('markercluster', 'locate', 'fullscreen')) {
+        // if (Mapbox.loaded('markercluster', 'locate', 'fullscreen')) {
+        if (Mapbox.loaded('markercluster')) {
             // personal accessToken - needs to be updated for production purposes!!
             L.mapbox.accessToken = 'pk.eyJ1IjoiZGF6MjM0NSIsImEiOiJmNDkwNmQ2NjllNzg5NDFiZWQ1M2I0OGUxMzBmZGU3MSJ9.W70b10qRbEkzfJdlKP6Fhw';
             // var geocoder = L.mapbox.geocoder('mapbox.places'),
@@ -25,14 +27,14 @@ Template.heatMap.rendered = function() {
             // add the ability to change map layer
             var layers = {
                 Streets: L.mapbox.tileLayer('mapbox.streets'),
-                Outdoors: L.mapbox.tileLayer('mapbox.outdoors'),
-                Satellite: L.mapbox.tileLayer('mapbox.satellite')
+            //     Outdoors: L.mapbox.tileLayer('mapbox.outdoors'),
+            //     Satellite: L.mapbox.tileLayer('mapbox.satellite')
             };
 
             layers.Streets.addTo(map);
-            L.control.layers(layers).addTo(map);
-            L.control.locate().addTo(map);
-            L.control.fullscreen().addTo(map);
+            // L.control.layers(layers).addTo(map);
+            // L.control.locate().addTo(map);
+            // L.control.fullscreen().addTo(map);
 
             // extract data out of string
             var hmData = Papa.parse(hmValues).data;
@@ -230,3 +232,25 @@ Template.heatMap.rendered = function() {
 // function sortBy(a, b) {
 //     return b.options.feedbackCount - a.options.feedbackCount;
 // }
+
+
+// Template.heatMap.rendered = function() {
+
+//     Mapbox.load({
+//         gl: true
+//     });
+
+//     Session.set('sortOrder', false);
+
+//     Meteor.autorun(function() {
+//         if (Mapbox.loaded()) {
+//             mapboxgl.accessToken = 'pk.eyJ1IjoiZGF6MjM0NSIsImEiOiJjaW5rNmd4NXkwMDZvdzdrbDFqeTltdW1oIn0.9YeTD3S8dV4U8Dl3nGigbA';
+//             var map = new mapboxgl.Map({
+//                 container: 'map', // container id
+//                 style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+//                 center: [-74.50, 40], // starting position
+//                 zoom: 9 // starting zoom
+//             });
+//         }
+//     });
+// };

@@ -33,15 +33,11 @@ Posts.addField({
   fieldSchema: {
     type: [String],
     autoform: {
-      type: "select-radio-inline",
+      type: "select-checkbox-inline",
       group: 'dunnhumby',
-      label: 'Audience',
+      label: 'Audience Group(s)',
       options: function() {
         return [{
-          value: "dunnhumby",
-          label: "dunnhumby"
-        },
-          {
           value: "Tesco",
           label: "Tesco"
         }, {

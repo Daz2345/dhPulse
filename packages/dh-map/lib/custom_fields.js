@@ -1,19 +1,3 @@
-// Posts.addField({
-//   fieldName: 'heatMap',
-//   fieldSchema: {
-//     type: Boolean,
-//     optional: true,
-//     label: 'Include Map?',      
-//     autoform: {
-//         group: 'heatMap',
-//         type: "boolean-checkbox",
-//         // trueLabel: "Yes",
-//         // falseLabel: "No",
-//     },        
-//     editableBy: ["member", "admin"]
-//   }
-// });
-
 Posts.addField({
   fieldName: 'heatMapTitle',
   fieldSchema: {

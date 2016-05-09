@@ -5,7 +5,6 @@ function insertCategory(element, index, array){
 var insertCategories = function() {
     
     var defaultCategories = [
-        "Public",
         "dunnhumby"
         ];
   

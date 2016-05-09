@@ -1,4 +1,14 @@
 Template.dendogram.rendered = function() {
+
+  d3.select(window).on('resize', createdendogramlayout);
+  d3.select(window).on('orientationchange', createdendogramlayout);
+
+  var dendogramData = this.data
+
+  function createdendogramlayout() {
+
+    d3.select(".dendogramViz").selectAll("svg").remove()
+    
     var width = $(".dendogramViz").parent().width(), 
         height = (width < 600)? width : width * 0.5,
         diameter = Math.min(width, height) * .41,
@@ -13,9 +23,11 @@ Template.dendogram.rendered = function() {
             transitionToRadialCluster();
         else if (this.value === "tree")
             transitionToTree();
+        else if (this.value === "cluster")            
+            transitionToCluster();
         else
             transitionToCluster();
-    };
+    }
 
     function transitionToRadialTree() {
 
@@ -45,7 +57,7 @@ Template.dendogram.rendered = function() {
             .duration(duration)
             .style("stroke", "#984ea3");
 
-    };
+    }
 
     function transitionToRadialCluster() {
 
@@ -75,7 +87,7 @@ Template.dendogram.rendered = function() {
             .duration(duration)
             .style("stroke", "#4daf4a");
 
-    };
+    }
 
     function transitionToTree() {
 
@@ -103,7 +115,7 @@ Template.dendogram.rendered = function() {
             .duration(duration)
             .style("stroke", "#377eb8");
 
-    };
+    }
 
     function transitionToCluster() {
 
@@ -131,7 +143,7 @@ Template.dendogram.rendered = function() {
             .duration(duration)
             .style("stroke", "#e41a1c");
 
-    };
+    }
 
     var tree = d3.layout.tree()
         .size([height, width - 160]);
@@ -168,7 +180,7 @@ Template.dendogram.rendered = function() {
         .append("g")
         .attr("transform", "translate(40,0)");
 
-    var root = JSON.parse(this.data.d3Data),
+    var root = JSON.parse(dendogramData.d3Data),
         nodes = cluster.nodes(root),
         links = cluster.links(nodes);
 
@@ -201,5 +213,6 @@ Template.dendogram.rendered = function() {
             .style("text-anchor", function (d) { return d.children ? "end" : "start"; })
             .text(function (d) { return d.name; });
     */
-
+}
+createdendogramlayout();
 };

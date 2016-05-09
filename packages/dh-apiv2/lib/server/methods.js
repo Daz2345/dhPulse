@@ -7,10 +7,9 @@ Meteor.method('submitpost', function(post) {
     url: '/api/submitpost/',
     httpMethod: "post",
     getArgsFromRequest: function(request) {
-        // if (request.headers['content-type'] === 'application/json') {
+        if (request.headers['content-type'] === 'application/json') {
             if (request.authToken !== undefined) {
                 var post = request.body;
-                console.log(post);
                 // check(post, Posts.simpleSchema());
                 return [post];
             }
@@ -19,7 +18,7 @@ Meteor.method('submitpost', function(post) {
                 error.statusCode = 401;
                 throw error;
             }
-        // }
+        }
     }
 });
 

@@ -1,5 +1,14 @@
 Template.treemap.rendered = function() {
 
+    d3.select(window).on('resize', createTreemap);
+    d3.select(window).on('orientationchange', createTreemap);
+
+    var treemapData = this.data;
+
+    function createTreemap() {
+
+        d3.select(".treemapViz").selectAll("div").remove()
+
     var width = $(".treemapViz").parent().width(),
         height = (width < 600)? width : width * 0.5,
         x = d3.scale.linear().range([0, width]),
@@ -26,7 +35,7 @@ Template.treemap.rendered = function() {
         .append("svg:g")
         .attr("transform", "translate(.5,.5)");
 
-    node = root = JSON.parse(this.data.d3Data);
+    node = root = JSON.parse(treemapData.d3Data);
 
     var nodes = treemap.nodes(root)
         .filter(function(d) {
@@ -107,7 +116,7 @@ Template.treemap.rendered = function() {
             })
             .attr("height", function(d) {
                 return ky * d.dy - 1;
-            })
+            });
 
         t.select("text")
             .attr("x", function(d) {
@@ -123,5 +132,6 @@ Template.treemap.rendered = function() {
         node = d;
         d3.event.stopPropagation();
     }
-
+}
+createTreemap();
 };

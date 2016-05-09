@@ -4,6 +4,8 @@
     height:100%;
     -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
     animation-delay: 2s;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .message {
@@ -637,3 +639,6 @@
   }
 }
 
+.whiteText {
+  color: white;
+}

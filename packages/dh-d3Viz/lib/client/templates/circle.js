@@ -1,5 +1,14 @@
 Template.circle.rendered = function() {
 
+    d3.select(window).on('resize', createCircle); 
+    d3.select(window).on('orientationchange', createCircle); 
+
+    var circleData = this.data;
+
+    function createCircle() {
+
+    d3.select(".circleViz").selectAll("svg").remove()
+    
     var width = $(".circleViz").parent().width(),
         height = (width < 600)? width : width * 0.5,
         margin = 20,
@@ -23,7 +32,7 @@ Template.circle.rendered = function() {
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    var root = JSON.parse(this.data.d3Data),
+    var root = JSON.parse(circleData.d3Data),
         focus = root,
         nodes = pack.nodes(root),
         view;
@@ -105,4 +114,7 @@ Template.circle.rendered = function() {
     }
 
     d3.select(self.frameElement).style("height", diameter + "px");
+    
+    }
+    createCircle();
 };

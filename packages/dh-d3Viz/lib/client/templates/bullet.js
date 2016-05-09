@@ -1,6 +1,13 @@
 Template.bullethorizontal.rendered = function() {
 
-    (function() {
+    d3.select(window).on('resize', createBullet); 
+    d3.select(window).on('orientationchange', createBullet); 
+
+    var bulletdata = this.data;
+
+     function createBullet() {
+
+        d3.select(".bulletViz").selectAll("svg").remove()
 
         // Chart design based on the recommendations of Stephen Few. Implementation
         // based on the work of Clint Ivy, Jamie Love, and Jason Davies.
@@ -244,9 +251,9 @@ Template.bullethorizontal.rendered = function() {
             };
         }
 
-    })();
+    // })();
 
-    var data = JSON.parse(this.data.d3Data)
+    var data = JSON.parse(bulletdata.d3Data);
 
     var margin = {
             top: 5,
@@ -287,11 +294,23 @@ Template.bullethorizontal.rendered = function() {
         .text(function(d) {
             return d.subtitle;
         });
-}
+        
+    };
+    
+    createBullet()
+    
+};
 
 Template.bulletvertical.rendered = function() {
 
-    (function() {
+    d3.select(window).on('resize', createBullet); 
+    d3.select(window).on('orientationchange', createBullet); 
+    
+    var bulletdata = this.data;
+
+     function createBullet() {
+
+        d3.select(".bulletViz").selectAll("svg").remove()
 
         // Chart design based on the recommendations of Stephen Few. Implementation
         // based on the work of Clint Ivy, Jamie Love, and Jason Davies.
@@ -471,8 +490,6 @@ Template.bulletvertical.rendered = function() {
             };
         }
 
-    })();
-
     var data = JSON.parse(this.data.d3Data)
 
     var margin = {
@@ -515,5 +532,9 @@ Template.bulletvertical.rendered = function() {
         .text(function(d) {
             return d.subtitle;
         });
+        
+     }
+     
+     createBullet();
 
-}
+};

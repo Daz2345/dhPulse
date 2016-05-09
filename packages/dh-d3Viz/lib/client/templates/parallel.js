@@ -1,34 +1,45 @@
 Template.parallel.rendered = function() {
-    var m = [30, 10, 10, 10],
-        w = $(".parallelViz").parent().width() - m[1] - m[3],
-        h = 500 - m[0] - m[2];
 
-    var x = d3.scale.ordinal().rangePoints([0, w], 1),
-        y = {},
-        dragging = {};
+    d3.select(window).on('resize', createParallel);
+    d3.select(window).on('orientationchange', createParallel);
 
-    var line = d3.svg.line(),
-        axis = d3.svg.axis().orient("left"),
-        background,
-        foreground;
+    var parallelData = this.data;
 
-    var svg = d3.select(".parallelViz").append("svg")
-        .attr("width", w + m[1] + m[3])
-        .attr("height", h + m[0] + m[2])
-        .append("g")
-        .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+    function createParallel() {
 
-    var vizData = Papa.parse(this.data.d3Data).data
-    ArrayStringToNumber(vizData, 1, 1);
+        d3.select(".parallelViz").selectAll("svg").remove()
+
+        var m = [30, 10, 10, 10],
+            w = $(".parallelViz").parent().width() - m[1] - m[3],
+            h = 500 - m[0] - m[2];
+
+        var x = d3.scale.ordinal().rangePoints([0, w], 1),
+            y = {},
+            dragging = {};
+
+        var line = d3.svg.line(),
+            axis = d3.svg.axis().orient("left"),
+            background,
+            foreground;
+
+        var svg = d3.select(".parallelViz").append("svg")
+            .attr("width", w + m[1] + m[3])
+            .attr("height", h + m[0] + m[2])
+            .append("g")
+            .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+        var vizData = Papa.parse(parallelData.d3Data).data
+        ArrayStringToNumber(vizData, 1, 1);
 
         // Extract the list of dimensions and create a scale for each.
         x.domain(dimensions = d3.keys(vizData[0]).filter(function(d) {
             if (d != 0) {
-            return d != "name" && (y[d] = d3.scale.linear()
-                .domain(d3.extent(vizData, function(p) {
-                    return +p[d];
-                }))
-                .range([h, 0]));}
+                return d != "name" && (y[d] = d3.scale.linear()
+                    .domain(d3.extent(vizData, function(p) {
+                        return +p[d];
+                    }))
+                    .range([h, 0]));
+            }
         }));
 
         // Add grey background lines for context.
@@ -94,7 +105,9 @@ Template.parallel.rendered = function() {
             .append("text")
             .attr("text-anchor", "middle")
             .attr("y", -9)
-            .text(function(d){return vizData[d, 0][d]});
+            .text(function(d) {
+                return vizData[d, 0][d]
+            });
 
         // Add and store a brush for each axis.
         g.append("g")
@@ -106,41 +119,43 @@ Template.parallel.rendered = function() {
             .attr("x", -8)
             .attr("width", 16);
 
-    function position(d) {
-        var v = dragging[d];
-        return v == null ? x(d) : v;
-    }
+        function position(d) {
+            var v = dragging[d];
+            return v == null ? x(d) : v;
+        }
 
-    function transition(g) {
-        return g.transition().duration(1500);
-    }
+        function transition(g) {
+            return g.transition().duration(1500);
+        }
 
-    // Returns the path for a given data point.
-    function path(d) {
-        return line(dimensions.map(function(p) {
-            return [position(p), y[p](d[p])];
-        }));
-    }
+        // Returns the path for a given data point.
+        function path(d) {
+            return line(dimensions.map(function(p) {
+                return [position(p), y[p](d[p])];
+            }));
+        }
 
-    // When brushing, don’t trigger axis dragging.
-    function brushstart() {
-        d3.event.sourceEvent.stopPropagation();
-    }
+        // When brushing, don’t trigger axis dragging.
+        function brushstart() {
+            d3.event.sourceEvent.stopPropagation();
+        }
 
-    // Handles a brush event, toggling the display of foreground lines.
-    function brush() {
-        var actives = dimensions.filter(function(p) {
-                return !y[p].brush.empty();
-            }),
-            extents = actives.map(function(p) {
-                return y[p].brush.extent();
+        // Handles a brush event, toggling the display of foreground lines.
+        function brush() {
+            var actives = dimensions.filter(function(p) {
+                    return !y[p].brush.empty();
+                }),
+                extents = actives.map(function(p) {
+                    return y[p].brush.extent();
+                });
+            foreground.style("display", function(d) {
+                return actives.every(function(p, i) {
+                    return extents[i][0] <= d[p] && d[p] <= extents[i][1];
+                }) ? null : "none";
             });
-        foreground.style("display", function(d) {
-            return actives.every(function(p, i) {
-                return extents[i][0] <= d[p] && d[p] <= extents[i][1];
-            }) ? null : "none";
-        });
+        }
     }
+    createParallel();
 };
 
 function ArrayStringToNumber(arrayVal, startRow, startColumn) {

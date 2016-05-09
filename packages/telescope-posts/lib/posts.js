@@ -254,7 +254,7 @@ Posts.schema = new SimpleSchema({
           ['insert',['link', 'hr', 'table']],
           ['color', ['color']],
           ['para', ['paragraph']],
-          ['height', ['height', 'codeview', 'video']]
+          ['height', ['height', 'codeview', 'picture', 'video']]
         ]
       },
       order: 30

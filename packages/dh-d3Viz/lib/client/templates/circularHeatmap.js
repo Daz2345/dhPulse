@@ -1,8 +1,17 @@
 Template.circularheatmap.rendered = function() {
 
-    var radialLabelsVal = Papa.parse(this.data.radialLabels).data,
-        segmentLabelsVal = Papa.parse(this.data.segmentLabels).data,
-        circularHeatmapData = Papa.parse(this.data.d3Data).data,
+    d3.select(window).on('resize', createCircularheat); 
+    d3.select(window).on('orientationchange', createCircularheat); 
+
+    var circularheatData = this.data;
+
+    function createCircularheat() {
+
+    d3.select(".circularHeatmapViz").selectAll("svg").remove()
+    
+    var radialLabelsVal = Papa.parse(circularheatData.radialLabels).data,
+        segmentLabelsVal = Papa.parse(circularheatData.segmentLabels).data,
+        circularHeatmapData = Papa.parse(circularheatData.d3Data).data,
         width = $(".circularHeatmapViz").parent().width(),
         height = (width < 600)? width : width * 0.5,
         innerRadiusVal = 50,
@@ -37,7 +46,8 @@ Template.circularheatmap.rendered = function() {
     d3.selectAll(".circularHeatmapViz svg").on('mouseout', function() {
         d3.select("#info").text('');	
     });        
-        
+    }     
+    createCircularheat();
 };
 
 function circularHeatChart() {

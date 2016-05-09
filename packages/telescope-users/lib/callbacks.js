@@ -133,11 +133,8 @@ Telescope.callbacks.add("onCreateUser", setupUser);
  */
 function makeUserPublic (user) {
   // ------------------------------ Properties ------------------------------ //
-  
-  PublicCategory = Categories.findOne({name: 'Public'})
-  
+
   var userProperties = {
-    categories: [ PublicCategory._id ],
     audienceGroup: ['Public']    
   };
   user = _.extend(user, userProperties);

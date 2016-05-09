@@ -2,6 +2,13 @@ Template.chord.rendered = function() {
 
     var matrix = Papa.parse(this.data.d3Data).data
 
+    d3.select(window).on('resize', createChord); 
+    d3.select(window).on('orientationchange', createChord); 
+
+    function createChord() {
+
+    d3.select(".chordViz").selectAll("svg").remove()
+
     ArrayStringToNumber(matrix, 0, 0);
 
     var chord = d3.layout.chord()
@@ -9,7 +16,7 @@ Template.chord.rendered = function() {
         .sortSubgroups(d3.descending)
         .matrix(matrix);
 
-    var width = $(".chordViz").parent().width(),
+    var width = Math.max($(".chordViz").parent().width(), 600),
         height = (width < 600)? width : width * 0.5,
         innerRadius = (width * .41) / 2,
         outerRadius = innerRadius * 1.1;
@@ -22,7 +29,7 @@ Template.chord.rendered = function() {
         .attr("width", width)
         .attr("height", height)
         .append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        .attr("transform", "translate(" + $(".chordViz").parent().width() / 2 + "," + height / 2 + ")");
 
     svg.append("g").selectAll("path")
         .data(chord.groups)
@@ -102,6 +109,8 @@ Template.chord.rendered = function() {
                 .style("opacity", opacity);
         };
     }
+}
+    createChord();
 
 };
 

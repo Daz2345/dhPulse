@@ -1,6 +1,15 @@
 Template.bundle.rendered = function() {
 
-    var diameter = $(".bundleViz").parent().width() - 150,
+    d3.select(window).on('resize', createBundle); 
+    d3.select(window).on('orientationchange', createBundle); 
+
+    var bundleData = this.data;
+
+    function createBundle() {
+
+    d3.select(".bundleViz").selectAll("svg").remove()
+
+    var diameter = Math.max($(".bundleViz").parent().width() - 100, 600),
         radius = diameter / 2,
         innerRadius = radius - 120;
 
@@ -24,15 +33,15 @@ Template.bundle.rendered = function() {
         });
 
     var svg = d3.select(".bundleViz").append("svg")
-        .attr("width", diameter)
-        .attr("height", diameter)
+        .attr("width", $(".bundleViz").parent().width())
+        .attr("height", $(".bundleViz").parent().width())
         .append("g")
-        .attr("transform", "translate(" + radius + "," + radius + ")");
+        .attr("transform", "translate(" + $(".bundleViz").parent().width() / 2 + "," + $(".bundleViz").parent().width() / 2 + ")");
 
     var link = svg.append("g").selectAll(".link"),
         node = svg.append("g").selectAll(".node");
 
-        var nodes = cluster.nodes(packageHierarchy(JSON.parse(this.data.d3Data))),
+        var nodes = cluster.nodes(packageHierarchy(JSON.parse(bundleData.d3Data))),
             links = packageImports(nodes);
 
         link = link
@@ -154,4 +163,6 @@ Template.bundle.rendered = function() {
 
         return imports;
     }
+    }
+    createBundle()
 };

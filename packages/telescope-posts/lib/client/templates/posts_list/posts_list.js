@@ -7,6 +7,16 @@ Template.posts_list.created = function() {
     title += ": "+Settings.get("tagline");
   // }  
   Telescope.SEO.setTitle(title);  
+  
+// var grid = function() {
+//     var options = {
+//         cellHeight: 80
+//     };
+//     $('.grid-stack').gridstack(options);
+// };
+
+//   grid();  
+  
 };
 
 Template.posts_list.helpers({
@@ -69,6 +79,8 @@ Template.postsLoadMore.helpers({
     return !!this.postsCursor.count();
   }
 });
+
+
 
 Template.postsLoadMore.onCreated(function() {
 

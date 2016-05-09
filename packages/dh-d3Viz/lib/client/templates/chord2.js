@@ -1,6 +1,15 @@
 Template.chord2.rendered = function() {
 
-    var width = $(".chordViz").parent().width(),
+    d3.select(window).on('resize', createChord); 
+    d3.select(window).on('orientationchange', createChord); 
+
+    var chordData = this.data;
+
+    function createChord() {
+
+    d3.select(".chordViz").selectAll("svg").remove()
+    
+    var width = Math.max($(".chordViz").parent().width(), 600),
       height = (width < 600) ? width : width * 0.6,
       innerRadius = (width < 600) ? (width * .9) / 2 : (width * .5) / 2,
       outerRadius = innerRadius * 1.1;
@@ -24,17 +33,17 @@ Template.chord2.rendered = function() {
       .attr("height", height)
       .append("g")
       .attr("id", "circle")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+      .attr("transform", "translate(" + $(".chordViz").parent().width() / 2 + "," + height / 2 + ")");
 
     svg.append("circle")
       .attr("r", outerRadius);
 
-    var cities = Papa.parse(this.data.d3Data, {
+    var cities = Papa.parse(chordData.d3Data, {
         header: true
       }).data,
       // matrix = JSON.parse(this.data.d3Data2);
 
-      matrix = Papa.parse(this.data.d3Data2).data
+      matrix = Papa.parse(chordData.d3Data2).data
 
     ArrayStringToNumber(matrix, 0, 0);
 
@@ -103,6 +112,8 @@ Template.chord2.rendered = function() {
         return p.source.index != i && p.target.index != i;
       });
     }
+    }
+    createChord();
 };
 
 function ArrayStringToNumber(arrayVal, startRow, startColumn) {

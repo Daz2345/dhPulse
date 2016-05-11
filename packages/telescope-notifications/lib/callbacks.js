@@ -20,8 +20,8 @@ function postSubmitNotification (post) {
     // Herald.createNotification(adminIds, {courier: 'newPendingPost', data: notificationData});
   } else if (!!notifiedUserIds.length) {
     // if post is approved, notify everybody
-    // Herald.createNotification(notifiedUserIds, {courier: 'newPost', data: notificationData});
-    Herald.createNotification(notifiedUserIds, {courier: 'newPostWebNotification', data: notificationData});
+    Herald.createNotification(notifiedUserIds, {courier: 'newPost', data: notificationData});
+    // Herald.createNotification(notifiedUserIds, {courier: 'newPostWebNotification', data: notificationData});
   }
 
 }
@@ -94,11 +94,10 @@ function commentSubmitNotifications (comment) {
       // and of comment author (they could be replying in a thread they're subscribed to)
       var subscriberIdsToNotify = _.difference(post.subscribers, userIdsNotified, [comment.userId]);
       Herald.createNotification(subscriberIdsToNotify, {courier: 'newCommentSubscribed', data: notificationData});
-
       userIdsNotified = userIdsNotified.concat(subscriberIdsToNotify);
 
     }
 
   }
 }
-// Telescope.callbacks.add("commentSubmitAsync", commentSubmitNotifications);
+Telescope.callbacks.add("commentSubmitAsync", commentSubmitNotifications);

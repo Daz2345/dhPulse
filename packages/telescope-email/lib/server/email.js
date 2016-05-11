@@ -92,7 +92,8 @@ Telescope.email.buildAndSend = function (to, subject, template, properties) {
 Meteor.methods({
   testEmail: function () {
     if(Users.is.adminById(this.userId)){
-      var email = Telescope.email.buildAndSend (Settings.get('defaultEmail'), 'Telescope email test', 'emailTest', {date: new Date()});
+      // var email = Telescope.email.buildAndSend (Settings.get('defaultEmail'), 'Telescope email test', 'emailTest', {date: new Date()});
+      var email = Telescope.email.buildAndSend ('darren.impey@dunnhumby.com', 'Telescope email test', 'emailTest', {date: new Date()});
     }
   }
 });

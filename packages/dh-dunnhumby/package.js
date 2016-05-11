@@ -13,18 +13,18 @@ Package.onUse(function (api) {
     'telescope:lib@0.25.6',    
     'telescope:users@0.25.6',
     'telescope:posts@0.25.6',
-    // 'dh:personal',
+    'dh:personal',
     'fastclick',
     'appcache',
     'random',
-    // 'force-ssl',
-    // '255kb:meteor-status@1.4.2',
+    'force-ssl',
+    '255kb:meteor-status@1.4.2',
     // 'meteortoys:allthings@2.2.0',
-    // 'mdg:reload-on-resume@1.0.4',
+    'mdg:reload-on-resume@1.0.4',
     'aldeed:autoform@5.7.1',
     'mpowaga:autoform-summernote@0.4.2',
     // 'meteorhacks:zones@1.6.0',
-    // 'mixmax:smart-disconnect'
+    'mixmax:smart-disconnect'
   ];
 
   api.use(packages);

@@ -106,12 +106,13 @@ var feedHandler = {
           feedId: feedId,
           feedItemId: item.guid,
           userId: userId,
-          audienceGroup: ['public'],
+          postType: 'Article',
+          audienceGroup: ['Public'],
           categories: self.getItemCategories(item, feedCategories)
         };
 
-        if (item.description)
-          post.body = toMarkdown(he.decode(item.description));
+        // if (item.description)
+        //   post.body = toMarkdown(he.decode(item.description));
 
         // console.log(item)
 

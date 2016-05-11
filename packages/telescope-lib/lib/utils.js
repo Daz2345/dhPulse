@@ -200,10 +200,10 @@ Telescope.utils.cleanUp = function(s) {
 };
 
 Telescope.utils.sanitize = function(s) {
-  console.log('// before sanitization:')
-  console.log(s)
-  if(Meteor.isServer){
-    s = s
+  // console.log('// before sanitization:')
+  // console.log(s)
+  // if(Meteor.isServer){
+  //   s = s;
     // sanitizeHtml(s, {
     //   allowedTags: [
     //     'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul',
@@ -215,9 +215,9 @@ Telescope.utils.sanitize = function(s) {
     //     '*': ['*']
     //   }
     // });
-    console.log('// after sanitization:')
-    console.log(s)
-  }
+    // console.log('// after sanitization:')
+    // console.log(s)
+  // }
   return s;
 };
 

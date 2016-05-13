@@ -49,6 +49,9 @@ Template.chart.rendered = function() {
             x: {
                 type: xAxisType,
                 categories: xAxisCats,
+                tick: {
+                    multiline: true
+                },                
                 padding: {
                     top: 0,
                     bottom: 0

@@ -1,5 +1,5 @@
 var insertSettings = function() {
-    
+
     var defaultSettings = {
         "requirePostsApproval" : false, 
         "enableDownvotes" : true, 
@@ -16,6 +16,9 @@ var insertSettings = function() {
         "debug" : false, 
         "requireViewInvite" : true, 
         "requirePostInvite" : true, 
+        "embedlyKey": "557f02ec57ed47c3b629d38b5c5be4fb",
+        "thumbnailWidth": 500,
+        "thumbnailHeight": 400,
         "startInvitesCount" : 3, 
         "enableNewsletter" : false, 
         "showBanner" : false, 
@@ -25,7 +28,7 @@ var insertSettings = function() {
         "title" : "dhPulse", 
         "siteUrl" : "https://dhpulse-daz2345.c9.io/", 
         "navLayout" : "top-nav", 
-        "logoUrl" : "/img/dhlogo.png", 
+        "logoUrl" : "http://www.dunnhumby.com/sites/all/themes/dunnhumby/images/logo.png", 
         "faviconUrl" : "/web/icons/favicon.ico", 
         "authMethods" : [ "email" ], 
         "tagline" : "what your customers are thinking, feeling and doing", 

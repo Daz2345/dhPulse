@@ -1,1 +1,1 @@
-//   Meteor.AppCache.config({onlineOnly: ['/Android/', '/iOS/']});
+  Meteor.AppCache.config({onlineOnly: ['/Android/', '/iOS/']});

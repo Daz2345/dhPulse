@@ -1,4 +1,5 @@
 App.info({
+  id: 'com.dunnhumby.dhpulse',
   name: 'dhPulse',
   description: 'What your customers are thinking, feeling and doing',
   author: 'Darren Impey',

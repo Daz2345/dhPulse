@@ -8,7 +8,7 @@
  */
 Posts.getLink = function (post, isAbsolute) {
   // return this.getPageUrl(post, isAbsolute)
-  if (Settings.get("outsideLinksPointTo", "link") === "link") {
+  if (Settings.get("RSSLinksPointTo") === "link") {
     return !!post.url ? Telescope.utils.getOutgoingUrl(post.url) : this.getPageUrl(post, isAbsolute);    
   } else {
     return this.getPageUrl(post, isAbsolute);
@@ -22,7 +22,7 @@ Posts.helpers({getLink: function (isAbsolute) {return Posts.getLink(this, isAbso
  * @param {Object} post
  */
 Posts.getShareableLink = function (post) {
-  return Settings.get("outsideLinksPointTo", "link") === "link" ? Posts.getLink(post) : Posts.getPageUrl(post, true);
+  return Settings.get("RSSLinksPointTo") === "link" ? Posts.getLink(post) : Posts.getPageUrl(post, true);
 };
 Posts.helpers({getShareableLink: function () {return Posts.getShareableLink(this);}});
 
@@ -31,7 +31,7 @@ Posts.helpers({getShareableLink: function () {return Posts.getShareableLink(this
  * @param {Object} post
  */
 Posts.getLinkTarget = function (post) {
-    if (Settings.get("outsideLinksPointTo", "link") === "link") {
+    if (Settings.get("RSSLinksPointTo") === "link") {
     return !!post.url ? "_blank" : "";
   } else {
     return "";

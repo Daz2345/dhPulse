@@ -9,8 +9,8 @@ Package.onUse(function (api) {
   // ---------------------------------- 1. Core dependency -----------------------------------
 
   var packages = [
-    'telescope:core@0.25.6',    
-    'telescope:lib@0.25.6',    
+    'telescope:core@0.25.6',
+    'telescope:lib@0.25.6',
     'telescope:users@0.25.6',
     'telescope:posts@0.25.6',
     'dh:personal',
@@ -44,35 +44,36 @@ Package.onUse(function (api) {
     'lib/callbacks.js',
     'lib/custom_fields.js',
     'lib/users.js',
-    'lib/start.js',    
+    'lib/start.js',
   ], ['client', 'server']);
 
   // // client
 
   api.addFiles([
-    'lib/client/stylesheets/test.scss',     
+    'lib/client/stylesheets/test.scss',
     'lib/client/stylesheets/pleaseWait.scss',
-    'lib/client/templates/dh_post_edit.html', 
-    'lib/client/templates/dh_post_submit.html',    
-    'lib/client/templates/dh_tabs.html',  
-    'lib/client/templates/dh_icon.html',   
-    'lib/client/templates/dh_icon.js',   
-    'lib/client/templates/dh_layout.html',   
-    'lib/client/templates/dh_posts_list.html',   
-    'lib/client/templates/dh_post_item.js',   
-    'lib/client/templates/dh_submit_button.html',    
+    'lib/client/templates/dh_post_edit.html',
+    'lib/client/templates/dh_post_submit.html',
+    'lib/client/templates/dh_tabs.html',
+    'lib/client/templates/dh_icon.html',
+    'lib/client/templates/dh_icon.js',
+    'lib/client/templates/dh_layout.html',
+    'lib/client/templates/dh_posts_list.html',
+    'lib/client/templates/dh_post_item.js',
+    'lib/client/templates/dh_submit_button.html',
     'lib/client/templates/landingPage.html',
     'lib/client/templates/main.html',
     'lib/client/templates/main.js',
     'lib/client/templates/dh_users_dashboard.html',
-    'lib/client/templates/dh_users_dashboard.js',    
+    'lib/client/templates/dh_users_dashboard.js',
     'lib/client/templates/dh_post_page.html',
     'lib/client/templates/dh_users_list_actions.html',
-    'lib/client/templates/dh_users_list_actions.js',    
+    'lib/client/templates/dh_users_list_actions.js',
     'lib/client/templates/dh_user_menu_label.html',
     'lib/client/templates/pleaseWait.html',
     'lib/client/templates/pleaseWait.js',
-    'lib/client/custom_templates.js'  
+    'lib/client/templates/post_title.js',
+    'lib/client/custom_templates.js'
   ], ['client']);
 
   // // server

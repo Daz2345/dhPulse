@@ -22,16 +22,26 @@ Posts.getShareableLink = function (post) {
 Posts.helpers({getShareableLink: function () {return Posts.getShareableLink(this);}});
 
 /**
+ * Whether a post's link should open in an external browser
+ * @param {Object} post
+ */
+Posts.onclick = function (post) {
+  // if (Meteor.isCordova) {
+    var link = Posts.getLink(post);
+    console.log("window.open('" & link & "', '_system')");
+    return "window.open('" & link & "', '_system')"
+  // } else {
+  //   return "";
+  // }
+};
+Posts.helpers({onclick: function () {return Posts.onclick(this);}});
+
+/**
  * Whether a post's link should open in a new tab or not
  * @param {Object} post
  */
 Posts.getLinkTarget = function (post) {
-  if (Meteor.isClient) {
     return !!post.url ? "_blank" : "";
-  }
-  if (Meteor.isCordova) {
-    return !!post.url ? "_system" : "";
-  }
 };
 Posts.helpers({getLinkTarget: function () {return Posts.getLinkTarget(this);}});
 

@@ -4,7 +4,7 @@ App.info({
   author: 'Darren Impey',
   email: 'darren.impey@dunnhumby.com',
   website: 'www.dunnhumby.com',
-  version: '0.0.2'
+  version: '0.0.3'
 });
 
 App.icons({

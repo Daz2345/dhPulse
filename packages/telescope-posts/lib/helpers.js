@@ -11,7 +11,7 @@ Posts.getLink = function (post, isAbsolute) {
   if (Settings.get("RSSLinksPointTo") === "link") {
     return !!post.url ? Telescope.utils.getOutgoingUrl(post.url) : this.getPageUrl(post, isAbsolute);    
   } else {
-    return this.getPageUrl(post, isAbsolute);
+    return this.getPageUrl(post, false);
   }
 
 };

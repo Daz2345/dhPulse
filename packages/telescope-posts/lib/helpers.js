@@ -26,7 +26,12 @@ Posts.helpers({getShareableLink: function () {return Posts.getShareableLink(this
  * @param {Object} post
  */
 Posts.getLinkTarget = function (post) {
-  return !!post.url ? "_blank" : "";
+  if (Meteor.isClient) {
+    return !!post.url ? "_blank" : "";
+  }
+  if (Meteor.isCordova) {
+    return !!post.url ? "_system" : "";
+  }
 };
 Posts.helpers({getLinkTarget: function () {return Posts.getLinkTarget(this);}});
 

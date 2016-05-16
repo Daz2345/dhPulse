@@ -42,10 +42,14 @@ App.launchScreens({
 
 App.accessRule('*://*.tiles.mapbox.com/*');
 App.accessRule('*://enginex.kadira.io/*');
-App.accessRule('*://secure.gravatar.com/*');
+// App.accessRule('*://secure.gravatar.com/*');
+App.accessRule('*:*.jpg');
+App.accessRule('*:*.png');
+App.accessRule('*:*.bmp');
 
 App.setPreference('Fullscreen', 'true');
 App.setPreference('Orientation', 'portrait');
 App.setPreference('StatusBarOverlaysWebView', 'false');
 App.setPreference('StatusBarBackgroundColor', '#353433');
 App.setPreference('ShowSplashScreenSpinner', 'false');
+App.setPreference('SplashScreenDelay', 3000);

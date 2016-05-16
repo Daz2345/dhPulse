@@ -89,3 +89,9 @@ i.icon.fa.fa-fw.fa-search.icon-search.icon {
 .main-category-title {
     margin-top: 0px;
 }
+
+
+.menu-dropdown .menu-items, .menu-dropdown .menu-child-items {
+    left: calc(100% - 120px);
+    min-width: 120px;
+}

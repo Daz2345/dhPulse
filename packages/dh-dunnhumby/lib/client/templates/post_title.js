@@ -3,7 +3,7 @@ Template.post_title.events({
     var target = $(evt.currentTarget).attr('target');
     if (target === "_blank") {
       e.preventDefault();
-      var destination = $(evt.currentTarget).attr('href');
+      var destination = $(e.currentTarget).attr('href');
       window.open(destination,'_system');
     }
   }

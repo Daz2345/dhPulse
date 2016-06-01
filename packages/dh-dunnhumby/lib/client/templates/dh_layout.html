@@ -1,12 +1,13 @@
 <template name="dh_layout">
-  {{#if appIsReady}}
-    {{> css}}
-    <div class="outer-wrapper {{currentPage}} {{navLayout}}">
-      {{> mobile_nav}}
-      <div class="inner-wrapper template-{{pageName}}">
-        {{> header}}
-        {{> modules zone="hero"}}
-        <div class="content-wrapper">
+
+    {{#if appIsReady}}
+      {{> css}}
+      <div class="outer-wrapper  animated fadeIn {{currentPage}} {{navLayout}}">
+        {{> mobile_nav}}
+        <div class="inner-wrapper template-{{pageName}}">
+          {{> header}}
+          {{> modules zone="hero"}}
+          <div class="content-wrapper">
             {{#if currentUser}}
               {{#if notAllowed}}
                 {{> Template.dynamic template=notAllowed.template data=notAllowed.data}}
@@ -19,15 +20,16 @@
             {{else}}
               {{> Template.dynamic template=guest}}
             {{/if}}
-          {{> modules zone="footer"}}
+            {{> modules zone="footer"}}
+          </div>
+          <div class="overlay hidden"></div>
         </div>
-        <div class="overlay hidden"></div>
+        {{{extraCode}}}
       </div>
-      {{{extraCode}}}
-    </div>
-    {{> meteorStatus}}
-  {{else}}
-    <!--<div class="app-loading">{{> loading}}</div>-->
-    <div class="app-loading">{{> pleaseWait}}</div>
-  {{/if}}
+      {{> meteorStatus msgText="Not currently connected to the server, will attempt reconnect in %delay%s"}}
+    {{else}}
+      <!--<div class="app-loading">{{> loading}}</div>-->
+      <div class="app-loading">{{> pleaseWait}}</div>
+    {{/if}}
+
 </template>

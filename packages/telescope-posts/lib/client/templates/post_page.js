@@ -114,8 +114,8 @@ Template.post_page.helpers({
   isPending: function() {
     return this.status === Posts.config.STATUS_PENDING;
   },
-  isdunnhumby: function() {
-    return Meteor.user().isdunnhumby;
+  isInvited: function() {
+    return Meteor.user().telescope.isInvited;
   }
 });
 

@@ -90,6 +90,26 @@ Posts.views.add("scheduled", function (terms) {
 });
 
 /**
+ * unread view
+ */
+Posts.views.add("unreadPosts", function (terms) {
+  return {
+    find: {readBy: {$nin: [terms.userId]}},
+    options: {sort: {sticky: -1, postedAt: -1}}
+  };
+});
+
+/**
+ * own posts view
+ */
+Posts.views.add("ownPosts", function (terms) {
+  return {
+    find: {userId: terms.userId},
+    options: {sort: {sticky: -1, postedAt: -1}}
+  };
+});
+
+/**
  * User posts view
  */
 Posts.views.add("userPosts", function (terms) {

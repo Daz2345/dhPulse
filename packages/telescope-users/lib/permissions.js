@@ -74,7 +74,8 @@ Users.can.post = function (user, returnError) {
 Users.helpers({canPost: function () {return Users.can.post(this);}});
 
 Users.can.comment = function (user, returnError) {
-  return Users.can.post(user, returnError);
+  // return Users.can.post(user, returnError);
+  return Users.is.invited(user);
 };
 Users.helpers({canComment: function () {return Users.can.comment(this);}});
 

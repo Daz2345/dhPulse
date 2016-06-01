@@ -43,10 +43,8 @@ App.launchScreens({
 
 App.accessRule('*://*.tiles.mapbox.com/*');
 App.accessRule('*://enginex.kadira.io/*');
-// App.accessRule('*://secure.gravatar.com/*');
-App.accessRule('*:*.jpg');
-App.accessRule('*:*.png');
-App.accessRule('*:*.bmp');
+App.accessRule('http://*');
+App.accessRule('https://*');
 
 App.setPreference('Fullscreen', 'true');
 App.setPreference('Orientation', 'portrait');

@@ -126,7 +126,7 @@ Meteor.methods({
   regenerateAllThumbnails: function () {
     if (Users.is.admin(Meteor.user())) {
       var posts = Posts.find({thumbnailUrl: {$exists: true}});
-      console.log("// regenerating thumbnails for "+posts.count()+" posts…");
+      // console.log("// regenerating thumbnails for "+posts.count()+" posts…");
       posts.forEach(function (post, index) {
         Meteor.setTimeout(function () {
           console.log(index+". "+post.title);

@@ -24,7 +24,7 @@ Package.onUse(function (api) {
     'aldeed:autoform@5.7.1',
     'mpowaga:autoform-summernote@0.4.2',
     // 'meteorhacks:zones@1.6.0',
-    'mixmax:smart-disconnect'
+    // 'mixmax:smart-disconnect'
   ];
 
   api.use(packages);
@@ -54,6 +54,8 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/pleaseWait.scss',
     'lib/client/templates/dh_post_edit.html',
     'lib/client/templates/dh_post_submit.html',
+    'lib/client/templates/dh_post_urlFrame.html',
+    'lib/client/templates/dh_post_urlFrame.js',
     'lib/client/templates/dh_tabs.html',
     'lib/client/templates/dh_icon.html',
     'lib/client/templates/dh_icon.js',

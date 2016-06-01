@@ -36,12 +36,10 @@ function postSubmitPush(post) {
 
         if (post.status === Posts.config.STATUS_PENDING && !!adminIds.length) {
             // if post is pending, only notify admins
-            // Herald.createPush(adminIds, {courier: 'newPendingPost', data: pushData});
             Meteor.call("serverNotification", pushData.post.title, 'New Post', adminIds);
         }
         else if (!!notifiedUserIds.length) {
             // if post is approved, notify everybody
-            // Herald.createPush(notifiedUserIds, {courier: 'newPost', data: pushData});
             Meteor.call("serverNotification", pushData.post.title, 'New Post', notifiedUserIds);
         }
     }

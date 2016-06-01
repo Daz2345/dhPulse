@@ -1,7 +1,17 @@
-<template name="notifications_menu">
+<template name="notifications_menu_desktop">
     {{#if isLoggedIn}}
       <div class="notifications-menu-wrapper {{moduleClass}}">
         {{> menuComponent menuName="notifications" menuLabel=menuLabel menuItems=menuItems menuType=menuType expandLevel=0}}
       </div>
+    {{/if}}
+</template>
+
+<template name="notifications_menu_mobile">
+    {{#if notificationLength}}
+    {{#if isLoggedIn}}
+      <div class="notifications-menu-wrapper {{moduleClass}}">
+        {{> menuComponent menuName="notifications" menuLabel=menuLabel menuItems=menuItems menuType=menuType expandLevel=0}}
+      </div>
+    {{/if}}
     {{/if}}
 </template>

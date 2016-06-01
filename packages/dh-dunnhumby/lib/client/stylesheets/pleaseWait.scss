@@ -1,11 +1,17 @@
 .pleaseWait {
     text-align: center;
     background-color:#353433;
-    height:100%;
-    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-    animation-delay: 2s;
-    margin-top: auto;
-    margin-bottom: auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.containingDiv {
+    position: relative;
+    background-color:#353433;
+    width: 100%;
+    height: 100%;
 }
 
 .message {
@@ -29,12 +35,12 @@
 /*loader 1*/
 
 .sk-folding-cube {
-  margin: 20px auto;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
 }
 
 .sk-folding-cube .sk-cube {

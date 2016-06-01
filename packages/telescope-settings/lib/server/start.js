@@ -37,12 +37,12 @@ var insertSettings = function() {
         "hideEmptyCategories" : true, 
         "footerCode" : "© dunnhumby", 
         "defaultView" : "new", 
-        "postsLayout" : "posts-list", 
+        "postsLayout" : "posts-grid", 
         "kadiraAppId" : "bkwDJb9oSL4mwbwy4", 
         "kadiraAppSecret" : "36e4a631-8ca8-4577-8111-a6d61480fb52", 
         "RSSLinksPointTo" : "page", 
         "loadMoreBehavior" : "button", 
-        "postViews" : [ "top", "new", "best", "starred" ], 
+        "postViews" : [ "unreadPosts", "top", "new", "best", "own", "starred" ], 
         "logoHeight" : 58, 
         "logoWidth" : 185 
     };

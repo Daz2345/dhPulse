@@ -1,12 +1,14 @@
 <template name="pleaseWait">
+  <div class="containingDiv">
     <div class="pleaseWait">
-        <div class="spacer"></div>
-        <h3 class="whiteText">dhPulse</h3>
-        <p class="whiteText">by</p>
-        <img src="/img/dhlogo.png" alt="dunnhumby"/>      
+        <!--<div class="spacer"></div>-->
+        <img src="/img/dhlogo.png" alt="dunnhumby"/> 
+        <!--<p class="message whiteText">presents</p>-->
+        <!--<h3 class="whiteText">dhPulse</h3>-->
         {{> UI.dynamic template=mytemplate}}
         <p class="message whiteText">{{message}}</p>            
     </div>
+  </div>
 </template>
 
 <template name="loader1">

@@ -53,6 +53,7 @@ dh:theme@0.1.0
 dh:userlog@0.1.0
 diff-sequence@1.0.1
 djedi:sanitize-html@1.11.3
+east5th:check-checker@0.2.0
 ecmascript@0.1.6
 ecmascript-runtime@0.2.6
 ejson@1.0.7
@@ -103,7 +104,6 @@ meteorhacks:subs-manager@1.6.4
 meteorspark:util@0.2.0
 minifiers@1.1.7
 minimongo@1.0.10
-mixmax:smart-disconnect@0.0.1
 mizzao:timesync@0.3.4
 mizzao:user-status@0.6.6
 mobile-status-bar@1.0.6
@@ -161,7 +161,6 @@ tap:i18n@1.7.0
 telescope:api@0.25.6
 telescope:comments@0.25.6
 telescope:core@0.25.6
-telescope:daily@0.25.6
 telescope:datetimepicker@0.25.6
 telescope:debug@0.25.6
 telescope:email@0.25.6

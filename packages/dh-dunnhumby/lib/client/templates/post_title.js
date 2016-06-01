@@ -7,4 +7,4 @@ Template.post_title.events({
       window.open(destination,'_system');
     }
   }
-})
+});

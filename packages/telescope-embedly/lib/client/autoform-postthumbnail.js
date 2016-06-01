@@ -17,7 +17,7 @@ var fillEmbedlyData = function (instance) {
   if (!!url) {
     $thumbnailContainer.addClass('loading');
     Messages.clearSeen();
-    console.log('getting embedly data for '+url);
+    // console.log('getting embedly data for '+url);
     Meteor.call('getEmbedlyData', url, function (error, data) {
       if (error) {
         console.log(error);

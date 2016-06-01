@@ -3,7 +3,7 @@ SyncedCron.options = {
   collectionName: 'cronHistory',
   utc: false, 
   collectionTTL: 172800
-}
+};
 
 var addJob = function () {
   SyncedCron.add({
@@ -17,8 +17,8 @@ var addJob = function () {
       }
     }
   });
-}
+};
 
 Meteor.startup(function () {
   addJob();
-})
+});

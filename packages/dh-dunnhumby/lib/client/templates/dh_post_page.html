@@ -18,7 +18,7 @@
         {{> chart}} 
       {{/if}} 
       {{#if poll}} 
-        {{ > poll }} 
+        {{ > poll}} 
       {{/if}} 
       {{#if heatMapData}} 
         {{> heatMap}} 
@@ -26,11 +26,14 @@
       {{#if d3Data}} 
         {{ > d3}} 
       {{/if}} 
+      {{#if url}} 
+        {{> post_urlFrame}} 
+      {{/if}} 
       {{#if body}} 
         {{> post_body}} 
       {{/if}} 
     {{/if}} 
-    {{#if isdunnhumby}} 
+    {{#if isInvited}} 
       {{> comment_submit}} 
       {{> comment_list}} 
     {{/if}}

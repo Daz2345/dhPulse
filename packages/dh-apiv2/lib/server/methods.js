@@ -1,4 +1,6 @@
 Meteor.method('submitpost', function(post) {
+    console.log(this.userId);
+    
     if (this.userId) {
         post.userId = this.userId;
         Posts.submit(post);
@@ -11,6 +13,7 @@ Meteor.method('submitpost', function(post) {
             if (request.authToken !== undefined) {
                 var post = request.body;
                 // check(post, Posts.simpleSchema());
+
                 return [post];
             }
             else {

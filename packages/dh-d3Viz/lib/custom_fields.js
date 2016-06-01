@@ -1,18 +1,16 @@
-// Posts.addField({
-//   fieldName: 'd3Viz',
-//   fieldSchema: {
-//     type: Boolean,
-//     optional: true,
-//     label: 'Include d3 Visualisation?',
-//     autoform: {
-//       group: 'd3',
-//       type: "boolean-checkbox"
-//         // trueLabel: "Yes",
-//         // falseLabel: "No",
-//     },
-//     editableBy: ["member", "admin"]
-//   }
-// });
+Posts.addField({
+  fieldName: 'd3Viz',
+  fieldSchema: {
+    type: Boolean,
+    optional: true,
+    label: 'Include d3 Visualisation?',
+    autoform: {
+      group: 'd3',
+      type: "boolean-checkbox"
+    },
+    editableBy: ["member", "admin"]
+  }
+});
 
 Posts.addField({
   fieldName: 'd3Title',

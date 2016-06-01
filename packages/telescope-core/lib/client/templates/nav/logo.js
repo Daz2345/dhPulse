@@ -1,6 +1,9 @@
 Template.logo.helpers({
   logoUrl: function(){
     return Settings.get("logoUrl");
+  },
+  logoLink: function() {
+    return FlowRouter.path('postsDefault');
   }
 });
 
@@ -14,8 +17,12 @@ Template.logo.onRendered(function  () {
 
 Template.logo.events({
   'click a': function(e){
-    e.preventDefault();
-    FlowRouter.go('postsDefault', null, null);
-    // (FlowRouter.getRouteName() === 'postsDefault') ? FlowRouter.go('postsDefault', null, null) : window.history.back();
+    if (FlowRouter.getRouteName() === 'postPage') { 
+      e.preventDefault();
+      window.history.back();
+    } 
+    // else {
+    //   FlowRouter.go('postsDefault', null, null); 
+    // }
   }
 })

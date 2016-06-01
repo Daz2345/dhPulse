@@ -16,6 +16,14 @@ Meteor.publish('postsList', function(terms) {
   
     if(Users.can.viewById(this.userId)){
       var parameters = Posts.parameters.get(terms);
+      
+      parameters.options.fields = {
+          body:0,
+          upvoters:0,
+          downvoters:0,
+          sendNotification:0
+      };
+      
       var posts = Posts.find(parameters.find, parameters.options);
   
       return posts;
@@ -53,11 +61,12 @@ Meteor.publish('postsList', function(terms) {
 Meteor.publish('singlePost', function(postId) {
 
     check(postId, String);
-  
-    if (Users.can.viewById(this.userId)){
-      return Posts.find(postId);
+    
+    if (this.userId) {
+      if (Users.can.viewById(this.userId)){
+        return Posts.find(postId);
+      }
     }
-
   return [];
 });
 

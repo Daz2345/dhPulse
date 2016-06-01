@@ -197,17 +197,17 @@
 // ------------------------------ posts-grid layout ------------------------------ //
 
 @mixin onecol(){
-  @media screen and (min-width: 600px) and (max-width: 800px) {
+  @media screen and (max-width: 600px) {
     @content;
   }
 }
 @mixin twocol(){
-  @media screen and (min-width: 800px) and (max-width: 1000px) {
+  @media screen and (min-width: 600px) and (max-width: 900px) {
     @content;
   }
 }
 @mixin threecol(){
-  @media screen and (min-width: 1000px) and (max-width: 1200px) {
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
     @content;
   }
 }

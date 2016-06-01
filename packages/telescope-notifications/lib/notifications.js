@@ -96,14 +96,14 @@ _.each(notifications, function (notification, notificationName) {
 
 });
 
-Herald.addCourier('newPostWebNotification', {
-    media: {
-        webNotification: {
-            title: 'dhPulse - New Post',
-            body: function() {
-                return this.data.post.title + " - " + this.data.post.author;
-            },
-            icon: 'https://dhpulse-daz2345.c9.io/img/dhlogo_sq.png'
-        }
-    }
-});
+// Herald.addCourier('newPostWebNotification', {
+//     media: {
+//         webNotification: {
+//             title: 'dhPulse - New Post',
+//             body: function() {
+//                 return this.data.post.title + " - " + this.data.post.author;
+//             },
+//             icon: 'https://dhpulse-daz2345.c9.io/img/dhlogo_sq.png'
+//         }
+//     }
+// });

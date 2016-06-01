@@ -17,7 +17,7 @@ function postSubmitNotification (post) {
 
   if (post.status === Posts.config.STATUS_PENDING && !!adminIds.length) {
     // if post is pending, only notify admins
-    // Herald.createNotification(adminIds, {courier: 'newPendingPost', data: notificationData});
+    Herald.createNotification(adminIds, {courier: 'newPendingPost', data: notificationData});
   } else if (!!notifiedUserIds.length) {
     // if post is approved, notify everybody
     Herald.createNotification(notifiedUserIds, {courier: 'newPost', data: notificationData});
@@ -35,7 +35,7 @@ function postApprovedNotification (post) {
 
   Herald.createNotification(post.userId, {courier: 'postApproved', data: notificationData});
 }
-// Telescope.callbacks.add("postApproveAsync", postApprovedNotification);
+Telescope.callbacks.add("postApproveAsync", postApprovedNotification);
 
 // ------------------------------------------------------------------------------------------- //
 // ---------------------------------------- Comments ----------------------------------------- //

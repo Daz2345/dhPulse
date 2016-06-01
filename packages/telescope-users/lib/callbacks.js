@@ -152,7 +152,10 @@ Telescope.callbacks.add("profileCompletedChecks", hasCompletedProfile);
  * Check user company from email address
  */
 function extractCompany (user) {
-  user.telescope.company = user.telescope.email.split('@')[1].split('.')[0];
-  return user;
+  if (user.telescope.email) {
+    user.telescope.company = user.telescope.email.split('@')[1].split('.')[0];
+    return user;
+  }
+  return;
 }
 Telescope.callbacks.add("onCreateUser", extractCompany);

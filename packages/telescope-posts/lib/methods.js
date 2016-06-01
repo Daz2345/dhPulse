@@ -114,7 +114,7 @@ Meteor.methods({
    * @param {Object} post - the post being inserted
    */
   submitPost: function(post){
-
+    
     check(post, Posts.simpleSchema());
 
     // required properties:

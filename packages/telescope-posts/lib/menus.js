@@ -20,6 +20,12 @@ Posts.getRoute = function () {
 var viewsMenuItems = [
   {
     route: Posts.getRoute,
+    name: 'unreadPosts',
+    label: 'Unread',
+    description: 'unread_posts'
+  },
+  {
+    route: Posts.getRoute,
     name: 'top',
     label: 'top',
     description: 'most_popular_posts'
@@ -38,10 +44,17 @@ var viewsMenuItems = [
   },
   {
     route: Posts.getRoute,
+    name: 'ownPosts',
+    label: 'Own',
+    description: 'own_posts',
+    dunnhumbyOnly: true
+  },  
+  {
+    route: Posts.getRoute,
     name: 'starred',
     label: 'Starred',
     description: 'starred_posts'
-  },  
+  },    
   {
     route: Posts.getRoute,
     name: 'pending',

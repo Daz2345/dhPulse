@@ -5,23 +5,23 @@ var init = _.once(function() {
   }
   DocHead.setTitle(title);
 
-  if (!!Settings.get("description")) {
-    DocHead.addMeta({
-      name: "description",
-      content: Settings.get("description")
-    });
-    DocHead.addMeta({
-      property: "og:description",
-      content: Settings.get("description")
-    });
-  }
+  // if (!!Settings.get("description")) {
+  //   DocHead.addMeta({
+  //     name: "description",
+  //     content: Settings.get("description")
+  //   });
+  //   DocHead.addMeta({
+  //     property: "og:description",
+  //     content: Settings.get("description")
+  //   });
+  // }
 
-  if (!!Settings.get("siteImage")) {
-    DocHead.addMeta({
-      property: "og:image",
-      content: Settings.get("siteImage")
-    });
-  }
+  // if (!!Settings.get("siteImage")) {
+  //   DocHead.addMeta({
+  //     property: "og:image",
+  //     content: Settings.get("siteImage")
+  //   });
+  // }
 
   Events.analyticsInit();
 });
@@ -41,16 +41,6 @@ Template.layout.onCreated(function() {
 });
 
 Template.layout.helpers({
-  // signinshow: function() {
-  //   var routeName = FlowRouter.getRouteName(),
-  //     signinstates = ['signUp', 'signIn', 'atForgotPwd'];
-  //   return _.contains(signinstates, routeName);
-  // },
-  // signinstate: function() {
-  //   var routeName = FlowRouter.getRouteName(),
-  //     signinstates = ['signUp', 'signIn', 'forgotPwd'];
-  //   return (_.contains(signinstates, routeName)) ? routeName : 'hide';
-  // },
   appIsReady: function() {
     return FlowRouter.subsReady();
   },
@@ -104,7 +94,6 @@ Template.layout.helpers({
         };
       }
     }
-
     return false;
   },
   navLayout: function() {
@@ -139,9 +128,9 @@ Template.layout.onRendered(function() {
   // document.getElementsByTagName('head')[0].appendChild(link);
 
   // canonical
-  var canonicalLink = document.createElement('link');
-  canonicalLink.rel = 'canonical';
-  document.getElementsByTagName('head')[0].appendChild(canonicalLink);
+  // var canonicalLink = document.createElement('link');
+  // canonicalLink.rel = 'canonical';
+  // document.getElementsByTagName('head')[0].appendChild(canonicalLink);
 });
 
 Template.layout.events({

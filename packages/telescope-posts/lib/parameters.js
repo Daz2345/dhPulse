@@ -28,20 +28,6 @@ Posts.parameters.get = function (terms) {
     parameters.options.sort = {sticky: -1, postedAt: -1};
   }
  
-// parameters.options.fields = {
-//     body:0,
-//     htmlBody:0,
-//     readBy:0,
-//     d3Viz:0,    
-//     d3Type:0,
-//     d3Data:0,
-//     heatMap:0,    
-//     heatMapData:0,
-//     chart:0,
-//     chartData:0,    
-//     showSubChart:0
-// };
- 
   // extend sort to sort posts by _id to break ties
   // NOTE: always do this last to avoid _id sort overriding another sort
   parameters = Telescope.utils.deepExtend(true, parameters, {options: {sort: {_id: -1}}});

@@ -34,7 +34,7 @@ Pages.before.insert(function (userId, doc) {
     doc.slug = Telescope.utils.slugify(doc.title);
 });
 
-Telescope.modules.add("primaryNav", {
+Telescope.modules.add("footer", {
   template: "pages_menu",
   order: 5
 });

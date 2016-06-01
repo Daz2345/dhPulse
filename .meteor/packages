@@ -13,7 +13,7 @@ telescope:core
 
 telescope:migrations
 telescope:api
-telescope:daily # singleday
+# telescope:daily # singleday
 telescope:datetimepicker
 telescope:debug
 telescope:email
@@ -55,6 +55,8 @@ dh:push
 # dh:csv-import
 dh:poll
 dh:userlog
+# dh:audience-groups
 smaltcreation:autoform-intl-tel-input
 eluck:accounts-lockout
 # browser-policy
+east5th:check-checker

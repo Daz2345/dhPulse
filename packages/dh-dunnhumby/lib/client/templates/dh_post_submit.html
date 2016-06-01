@@ -18,12 +18,44 @@
       {{#if afFieldValueIs name="postType" value="Article"}}
         {{> afFormGroup name="url" input-col-class="controls"}}
         {{> afFormGroup name="body" input-col-class="controls"}}
+        {{> afFormGroup name="chart" input-col-class="controls" options=optionsHelper}}
+        {{#if afFieldValueIs name="chart" value=true}}
+          {{> afFormGroup name="chartTitle" input-col-class="controls"}}
+          {{> afFormGroup name="chartType" input-col-class="controls" options="allowed"}}
+          {{> afFormGroup name="chartData" input-col-class="controls"}}
+          {{> afFormGroup name="chartColours" input-col-class="controls"}}
+          {{> afFormGroup name="chartXaxisType" input-col-class="controls" options="allowed"}}
+          {{#if afFieldValueIs name="chartXaxisType" value="category"}}
+            {{> afFormGroup name="chartXaxisCategories" input-col-class="controls"}}
+          {{/if}}
+          {{> afFormGroup name="showSubChart" input-col-class="controls"}}
+          {{> afFormGroup name="chartYaxisFormat" input-col-class="controls"}}
+          {{> afFormGroup name="chartDescription" input-col-class="controls"}}    
+        {{/if}}
+        {{> afFormGroup name="heatMap" input-col-class="controls" options=optionsHelper}}      
+        {{#if afFieldValueIs name="heatMap" value=true}}      
+          {{> afFormGroup name="heatMapTitle" input-col-class="controls"}}
+          {{> afFormGroup name="heatMapData" input-col-class="controls"}}
+          {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
+        {{/if}}        
+        {{> afFormGroup name="d3Viz" input-col-class="controls" options=optionsHelper}}      
+        {{#if afFieldValueIs name="d3Viz" value=true}}      
+          {{> afFormGroup name="d3Title" label="Visualisation Title" input-col-class="controls"}}
+          {{> afFormGroup name="d3Type" input-col-class="controls" options="allowed"}}       
+          {{#if afFieldValueIs name="d3Type" value="CircularHeatmap"}}          
+            {{> afFormGroup name="radialLabels" input-col-class="controls"}}
+            {{> afFormGroup name="segmentLabels" input-col-class="controls"}}        
+          {{/if}} 
+          {{> afFormGroup name="d3Data" input-col-class="controls"}}
+          {{#if afFieldValueIs name="d3Type" value="Chord2"}} 
+            {{> afFormGroup name="d3Data2" input-col-class="controls"}}
+          {{/if}}          
+          {{> afFormGroup name="d3Description" input-col-class="controls"}}   
+        {{/if}}   
       {{/if}}    
       
       <!--chart section-->
       {{#if afFieldValueIs name="postType" value="Chart"}}
-        <!--{{> afFormGroup name="chart" input-col-class="controls" options=optionsHelper}}-->
-        <!--  {{#if afFieldValueIs name="chart" value=true}}-->
           {{> afFormGroup name="chartTitle" input-col-class="controls"}}
           {{> afFormGroup name="chartType" input-col-class="controls" options="allowed"}}
           {{> afFormGroup name="chartData" input-col-class="controls"}}
@@ -36,23 +68,17 @@
           {{> afFormGroup name="showSubChart" input-col-class="controls"}}
           {{> afFormGroup name="chartYaxisFormat" input-col-class="controls"}}
           {{> afFormGroup name="chartDescription" input-col-class="controls"}}    
-        <!--{{/if}}-->
       {{/if}}
       
       <!-- map section-->
       {{#if afFieldValueIs name="postType" value="Map"}} 
-        <!--{{> afFormGroup name="heatMap" input-col-class="controls" options=optionsHelper}}      -->
-        <!--{{#if afFieldValueIs name="heatMap" value=true}}      -->
           {{> afFormGroup name="heatMapTitle" input-col-class="controls"}}
           {{> afFormGroup name="heatMapData" input-col-class="controls"}}
           {{> afFormGroup name="heatMapDescription" input-col-class="controls"}}   
-        <!--{{/if}}        -->
       {{/if}}  
       
       <!--d3 Viz section-->
       {{#if afFieldValueIs name="postType" value="D3 Visual"}} 
-        <!--{{> afFormGroup name="d3Viz" input-col-class="controls" options=optionsHelper}}      -->
-        <!--{{#if afFieldValueIs name="d3Viz" value=true}}      -->
           {{> afFormGroup name="d3Title" label="Visualisation Title" input-col-class="controls"}}
           {{> afFormGroup name="d3Type" input-col-class="controls" options="allowed"}}       
           {{#if afFieldValueIs name="d3Type" value="CircularHeatmap"}}          
@@ -60,15 +86,13 @@
             {{> afFormGroup name="segmentLabels" input-col-class="controls"}}        
           {{/if}} 
           {{> afFormGroup name="d3Data" input-col-class="controls"}}
-          
           {{#if afFieldValueIs name="d3Type" value="Chord2"}} 
             {{> afFormGroup name="d3Data2" input-col-class="controls"}}
           {{/if}}          
-          
           {{> afFormGroup name="d3Description" input-col-class="controls"}}   
-        <!--{{/if}}   -->
       {{/if}} 
 
+      {{> afFormGroup name="thumbnailUrl" input-col-class="controls"}}
       {{> afFormGroup name="categories" input-col-class="controls"}}
       {{> afFormGroup name="audienceGroup" input-col-class="controls"}}
       {{> afFormGroup name="sendNotification" input-col-class="controls"}}

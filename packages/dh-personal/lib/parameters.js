@@ -96,15 +96,9 @@ function userAudienceGroup (parameters, terms) {
     // var find = {};
     var audienceGroups = Users.getAudienceGroupById(terms.userId);
     // If user is dh employee then do nothing otherwise filter by user audience groups
-    var isDunnhumby = Users.is.dunnhumbyById(terms.userId);
+     isDunnhumby = Users.is.dunnhumbyById(terms.userId);
     
   if (typeof audienceGroups !== 'undefined' && audienceGroups.length !== 0 && !isDunnhumby) {
-
-    // if (audienceGroups.length === 1) { // One Category
-    //   find = audienceGroups[0];
-    // } else { // cat is an array
-    //   find = {$in : audienceGroups};
-    // }
 
       parameters.find.audienceGroup = {$in: audienceGroups};
     
@@ -112,5 +106,4 @@ function userAudienceGroup (parameters, terms) {
   }
   return parameters;
 }
-// Telescope.callbacks.remove("postsParameters", addCategoryParameter);
 Telescope.callbacks.add("postsParameters", userAudienceGroup);

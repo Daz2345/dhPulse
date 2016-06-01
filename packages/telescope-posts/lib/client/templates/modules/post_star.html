@@ -1,4 +1,5 @@
 <template name='post_star'>
+  {{#if isInvited}}
   <div class="post-star {{moduleClass}}">
     {{#if starred}}  
         <a class="unstar-post" href="" title="{{_ 'unstar me'}}">
@@ -10,4 +11,5 @@
         </a>    
     {{/if}}
   </div>    
+  {{/if}}
 </template>

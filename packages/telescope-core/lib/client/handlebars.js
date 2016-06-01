@@ -19,6 +19,9 @@ Template.registerHelper('isLoggedIn', function() {
 Template.registerHelper('canView', function() {
   return Users.can.view(Meteor.user());
 });
+Template.registerHelper('isInvited', function() {
+  return Users.is.invited(Meteor.user());
+});
 Template.registerHelper('canPost', function() {
   return Users.can.post(Meteor.user());
 });

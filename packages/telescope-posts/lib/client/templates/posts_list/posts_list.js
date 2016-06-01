@@ -64,7 +64,7 @@ Template.postsLoadMore.helpers({
       if ($(window).scrollTop() + $(window).height() === $(document).height()) {      
         return this.hasMorePosts;
       }
-      return false
+      return false;
     }
   },
   showLoadMoreButton: function() {

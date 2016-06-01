@@ -23,16 +23,20 @@ Meteor.methods({
                 // this will send to all users
             }
         });
-        
     },
     serverNotification: function(text,title, usersVal) {
         var badge = +1;
-        var userQuery;
+        var userQuery = {};
         
-        if (usersVal.length > 1) {
-             userQuery = {userId : {$in : usersVal}};
+        console.log(usersVal.length);
+        
+        if (typeof usersVal === "string") {
+            userQuery.userId = usersVal;
+        }
+        else if (usersVal.length > 1) {
+             userQuery.userId = {$in : usersVal};
         } else {
-            userQuery = {userId : usersVal[0] };
+            userQuery.userId = usersVal[0] ;
         }
         
         Push.send({
@@ -63,5 +67,5 @@ Meteor.methods({
                 userId: userId //this will send to a specific Meteor.user()._id
             }
         });
-    },
+    }
 });

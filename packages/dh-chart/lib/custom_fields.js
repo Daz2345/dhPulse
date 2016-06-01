@@ -13,22 +13,19 @@
 
 
 
-// Posts.addField({
-//   fieldName: 'chart',
-//   fieldSchema: {
-//     type: Boolean,
-//     optional: true,
-//     label: 'Include Chart?',      
-//     autoform: {
-//         group: 'chart',
-//         type: "boolean-checkbox",
-//         // trueLabel: "Yes",
-//         // falseLabel: "No",
-//         firstOption: "(Please Choose a Response)"        
-//     },        
-//     editableBy: ["member", "admin"]
-//   }
-// });
+Posts.addField({
+  fieldName: 'chart',
+  fieldSchema: {
+    type: Boolean,
+    optional: true,
+    label: 'Include Chart?',      
+    autoform: {
+        group: 'chart',
+        type: "boolean-checkbox"    
+    },        
+    editableBy: ["member", "admin"]
+  }
+});
 
 
 Posts.addField({

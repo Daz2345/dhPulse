@@ -7,6 +7,10 @@ var getMenuItems = function () {
     return (item.adminOnly && !Users.is.admin(Meteor.user())) || (!!Settings.get('postViews') && !_.contains(Settings.get('postViews'), item.name));
   });
 
+  viewableItems = _.reject(viewableItems, function (item) {
+    return (item.dunnhumbyOnly && !Users.is.dunnhumby(Meteor.user())) || (!!Settings.get('postViews') && !_.contains(Settings.get('postViews'), item.name));
+  });
+
   viewableItems = _.map(viewableItems, function (item) {
     item.itemClass = "view-"+item.name;
     return item;
